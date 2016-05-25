@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% block headerdetail %}
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+    {% endblock %}
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{ asset('bundles/lecturer/css/coursestyles.css') }}">
+
+        <!-- Font awesome -->
+        <link rel="stylesheet" href="{{ asset('bundles/nsep/css/font-awesome.min.css') }}">
+        <!-- Sandstone Bootstrap CSS -->
+        <link rel="stylesheet" href="{{ asset('bundles/lecturer/css/bootsrap.min.css') }}">
+        <!-- Bootstrap Datatables -->
+        <link rel="stylesheet" href="{{ asset('bundles/nsep/css/dataTables.bootstrap.min.css') }}">
+        <!-- Bootstrap social button library -->
+        <link rel="stylesheet" href="{{ asset('bundles/nsep/css/bootstrap-social.css') }}">
+        <!-- Bootstrap select -->
+        <link rel="stylesheet" href="{{ asset('bundles/nsep/css/bootstrap-select.css') }}">
+        <!-- Bootstrap file input -->
+        <link rel="stylesheet" href="{{ asset('bundles/nsep/css/fileinput.min.css') }}">
+        <!-- Awesome Bootstrap checkbox -->
+        <link rel="stylesheet" href="{{ asset('bundles/nsep/css/awesome-bootstrap-checkbox.css') }}">
+        <!-- Admin Stye -->
+        <link rel="stylesheet" href="{{ asset('bundles/nsep/css/style.css') }}">
+    {% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+</head>
+<body background="{{ asset('bundles/nsep/images/back.jpg') }}">
+{% block body %}
+    <div class="brand clearfix">
+        <a href="index.html" class="logo"><img src="{{ asset('bundles/nsep/images/logo.jpg') }}" class="img-responsive" alt=""></a>
+        <span class="menu-btn"><i class="fa fa-bars"></i></span>
+        <ul class="ts-profile-nav">
+            <li><a href="#">Help</a></li>
+            <li><a href="#">Settings</a></li>
+            <li class="ts-account">
+                <a href="#"><img src="{{ asset('bundles/nsep/images/ts-avatar.jpg') }}" class="ts-avatar hidden-side" alt=""> {% block authenticatedUsername %}{% endblock %} <i class="fa fa-angle-down hidden-side"></i></a>
+                <ul>
+                    <li><a href="#">My Account</a></li>
+                    <li><a href="#">Edit Account</a></li>
+                    <li><a href="{{ path('fos_user_security_logout') }}">Logout</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="ts-main-content">
+        <nav class="ts-sidebar">
+            <ul class="ts-sidebar-menu">
+                {% block sidebarmenu %}
+                    <li class="ts-label">Search</li>
+                    <li>
+                        <input type="text" class="ts-sidebar-search" placeholder="Search here...">
+                    </li>
+                    <li class="ts-label">Main</li>
+                    <li><a href="/"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+                    <li><a href="#"><i class="fa fa-desktop"></i> Courses</a>
+                        <ul>
+                            {% block courselist %}{% endblock courselist %}
+                        </ul>
+                    </li>
+                {% endblock sidebarmenu %}
+            </ul>
+        </nav>
+
+
+
+        <div class="content-wrapper">
+            <div class="container-fluid">
+
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <h2 class="page-title">{% block modulename %}easyGrade{% endblock %}</h2>
+                        {% block contentdetail %}{% endblock %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block javascripts %}
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+    <script src="{{ asset('bundles/nsep/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('bundles/nsep/js/bootstrap-select.min.js') }}"></script>
+    <script src="{{ asset('bundles/nsep/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('bundles/nsep/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('bundles/nsep/js/dataTables.bootstrap.min.js') }}"></script>
+    <script src="{{ asset('bundles/nsep/js/Chart.min.js') }}"></script>
+    <script src="{{ asset('bundles/nsep/js/fileinput.js') }}"></script>
+    <script src="{{ asset('bundles/nsep/js/chartData.js') }}"></script>
+    <script src="{{ asset('bundles/nsep/js/main.js') }}"></script>
+
+
+{% endblock %}
+</body>
+</html>
