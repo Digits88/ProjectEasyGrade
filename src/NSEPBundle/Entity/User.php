@@ -11,6 +11,7 @@ namespace NSEPBundle\Entity;
 
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
+use NSEPBundle\Entity\Course;
 
 
 /**
@@ -27,9 +28,17 @@ class User extends BaseUser
      */
     protected $id;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="Course", inversedBy="courselecturers")
+     * @ORM\JoinTable(name="courselecturers_course")
+     */
+    private $lecturercourse;
+
+
     public function __construct()
     {
         parent::__construct();
+        $this->lecturercourse = new \Doctrine\Common\Collections\ArrayCollection();
         // your own logic
     }
 }

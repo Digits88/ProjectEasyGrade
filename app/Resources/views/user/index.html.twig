@@ -1,37 +1,51 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}
-    <h1>User list</h1>
+{% block contentdetail %}
 
-    <table>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for user in users %}
-            <tr>
-                <td><a href="{{ path('user_show', { 'id': user.id }) }}">{{ user.id }}</a></td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('user_show', { 'id': user.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('user_edit', { 'id': user.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+
+    <!-- Zero Configuration Table -->
+    <div class="panel panel-default">
+        <div class="panel-heading">Existing Users</div>
+        <div class="panel-body">
+            <table id="zctb" class="display table table-striped table-bordered table-hover" cellspacing="0" width="100%">
+                <thead>
+                <tr>
+                    <th>User ID</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Manage Account</th>
+
+                </tr>
+                </thead>
+                <tbody>
+
+                {% for user in users %}
+                    <tr>
+                        <td>{{ user.id }}</td>
+                        <td>{{ user.username }}</td>
+                        <td>{{ user.email }}</td>
+                        <td>
+                            <ul>
+                                <li>
+                                    <a href="{{ path('user_edit', { 'id': user.id }) }}">Edit or Delete</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                {% endfor %}
+
+                </tbody>
+            </table>
+
+
+
+        </div>
+    </div>
 
     <ul>
         <li>
             <a href="{{ path('user_new') }}">Create a new entry</a>
         </li>
     </ul>
+
 {% endblock %}
