@@ -8,6 +8,10 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use NSEPBundle\Entity\User;
 use NSEPBundle\Form\UserType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 
 /**
  * User controller.
@@ -42,7 +46,17 @@ class UserController extends Controller
     public function newAction(Request $request)
     {
         $user = new User();
-        $form = $this->createForm('NSEPBundle\Form\UserType', $user);
+        //$form = $this->createForm('NSEPBundle\Form\UserType', $user);
+
+        $form = $this->createFormBuilder($user)
+            ->add('username', TextType::class,['attr'=>['class'=>'abc ghj hhh']])
+            ->add('email', EmailType::class)
+            ->add('plainPassword', PasswordType::class)
+            ->add('save', SubmitType::class, array('label' => 'Create User'))
+            ->getForm();
+
+
+
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -50,7 +64,7 @@ class UserController extends Controller
             $em->persist($user);
             $em->flush();
 
-            return $this->redirectToRoute('user_show', array('id' => $user->getId()));
+            return $this->redirectToRoute('user_index', array('id' => $user->getId()));
         }
 
         return $this->render('user/new.html.twig', array(

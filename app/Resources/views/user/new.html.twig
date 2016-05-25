@@ -1,6 +1,8 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}
+
+{% block authenticatedUsername %}{{ include('@NSEP/Default/userid.html.twig') }}{% endblock authenticatedUsername %}
+{% block contentdetail %}
     <h1>User creation</h1>
 
     {{ form_start(form) }}
@@ -13,4 +15,4 @@
             <a href="{{ path('user_index') }}">Back to the list</a>
         </li>
     </ul>
-{% endblock %}
+{% endblock contentdetail %}

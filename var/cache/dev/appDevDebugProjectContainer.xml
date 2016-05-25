@@ -18,6 +18,7 @@
       <parameter key="AppBundle">AppBundle\AppBundle</parameter>
       <parameter key="NSEPBundle">NSEPBundle\NSEPBundle</parameter>
       <parameter key="FOSUserBundle">FOS\UserBundle\FOSUserBundle</parameter>
+      <parameter key="VichUploaderBundle">Vich\UploaderBundle\VichUploaderBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
@@ -353,6 +354,9 @@
       <parameter>ResetPassword</parameter>
       <parameter>Default</parameter>
     </parameter>
+    <parameter key="vich_uploader.default_filename_attribute_suffix">_name</parameter>
+    <parameter key="vich_uploader.mappings" type="collection"/>
+    <parameter key="vich_uploader.file_injector.class">Vich\UploaderBundle\Injector\FileInjector</parameter>
     <parameter key="web_profiler.debug_toolbar.position">bottom</parameter>
     <parameter key="web_profiler.debug_toolbar.intercept_redirects">false</parameter>
     <parameter key="web_profiler.debug_toolbar.mode">2</parameter>
@@ -661,6 +665,7 @@
             <argument>E:\Semester 5\SEP easyGrade\SEP\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.ar.xlf</argument>
             <argument>E:\Semester 5\SEP easyGrade\SEP\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.ar.yml</argument>
             <argument>E:\Semester 5\SEP easyGrade\SEP\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.ar.yml</argument>
+            <argument>E:\Semester 5\SEP easyGrade\SEP\vendor\vich\uploader-bundle/Resources/translations\VichUploaderBundle.ar.yml</argument>
           </argument>
           <argument key="az" type="collection">
             <argument>E:\Semester 5\SEP easyGrade\SEP\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.az.xlf</argument>
@@ -704,6 +709,7 @@
             <argument>E:\Semester 5\SEP easyGrade\SEP\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.de.xlf</argument>
             <argument>E:\Semester 5\SEP easyGrade\SEP\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.de.yml</argument>
             <argument>E:\Semester 5\SEP easyGrade\SEP\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.de.yml</argument>
+            <argument>E:\Semester 5\SEP easyGrade\SEP\vendor\vich\uploader-bundle/Resources/translations\VichUploaderBundle.de.yml</argument>
           </argument>
           <argument key="el" type="collection">
             <argument>E:\Semester 5\SEP easyGrade\SEP\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.el.xlf</argument>
@@ -718,6 +724,7 @@
             <argument>E:\Semester 5\SEP easyGrade\SEP\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.en.xlf</argument>
             <argument>E:\Semester 5\SEP easyGrade\SEP\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.en.yml</argument>
             <argument>E:\Semester 5\SEP easyGrade\SEP\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.en.yml</argument>
+            <argument>E:\Semester 5\SEP easyGrade\SEP\vendor\vich\uploader-bundle/Resources/translations\VichUploaderBundle.en.yml</argument>
           </argument>
           <argument key="es" type="collection">
             <argument>E:\Semester 5\SEP easyGrade\SEP\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.es.xlf</argument>
@@ -725,6 +732,7 @@
             <argument>E:\Semester 5\SEP easyGrade\SEP\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.es.xlf</argument>
             <argument>E:\Semester 5\SEP easyGrade\SEP\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.es.yml</argument>
             <argument>E:\Semester 5\SEP easyGrade\SEP\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.es.yml</argument>
+            <argument>E:\Semester 5\SEP easyGrade\SEP\vendor\vich\uploader-bundle/Resources/translations\VichUploaderBundle.es.yml</argument>
           </argument>
           <argument key="et" type="collection">
             <argument>E:\Semester 5\SEP easyGrade\SEP\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.et.xlf</argument>
@@ -756,6 +764,7 @@
             <argument>E:\Semester 5\SEP easyGrade\SEP\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.fr.xlf</argument>
             <argument>E:\Semester 5\SEP easyGrade\SEP\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.fr.yml</argument>
             <argument>E:\Semester 5\SEP easyGrade\SEP\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.fr.yml</argument>
+            <argument>E:\Semester 5\SEP easyGrade\SEP\vendor\vich\uploader-bundle/Resources/translations\VichUploaderBundle.fr.yml</argument>
           </argument>
           <argument key="gl" type="collection">
             <argument>E:\Semester 5\SEP easyGrade\SEP\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.gl.xlf</argument>
@@ -846,6 +855,7 @@
             <argument>E:\Semester 5\SEP easyGrade\SEP\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.pl.xlf</argument>
             <argument>E:\Semester 5\SEP easyGrade\SEP\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.pl.yml</argument>
             <argument>E:\Semester 5\SEP easyGrade\SEP\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.pl.yml</argument>
+            <argument>E:\Semester 5\SEP easyGrade\SEP\vendor\vich\uploader-bundle/Resources/translations\VichUploaderBundle.pl.yml</argument>
           </argument>
           <argument key="pt" type="collection">
             <argument>E:\Semester 5\SEP easyGrade\SEP\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.pt.xlf</argument>
@@ -873,6 +883,7 @@
             <argument>E:\Semester 5\SEP easyGrade\SEP\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../Resources/translations\security.ru.xlf</argument>
             <argument>E:\Semester 5\SEP easyGrade\SEP\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.ru.yml</argument>
             <argument>E:\Semester 5\SEP easyGrade\SEP\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.ru.yml</argument>
+            <argument>E:\Semester 5\SEP easyGrade\SEP\vendor\vich\uploader-bundle/Resources/translations\VichUploaderBundle.ru.yml</argument>
           </argument>
           <argument key="sk" type="collection">
             <argument>E:\Semester 5\SEP easyGrade\SEP\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.sk.xlf</argument>
@@ -927,6 +938,7 @@
             <argument>E:\Semester 5\SEP easyGrade\SEP\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.uk.xlf</argument>
             <argument>E:\Semester 5\SEP easyGrade\SEP\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.uk.yml</argument>
             <argument>E:\Semester 5\SEP easyGrade\SEP\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.uk.yml</argument>
+            <argument>E:\Semester 5\SEP easyGrade\SEP\vendor\vich\uploader-bundle/Resources/translations\VichUploaderBundle.uk.yml</argument>
           </argument>
           <argument key="vi" type="collection">
             <argument>E:\Semester 5\SEP easyGrade\SEP\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.vi.xlf</argument>
@@ -1229,6 +1241,8 @@
               <argument key="FOS\UserBundle\Form\Type\RegistrationFormType">fos_user.registration.form.type</argument>
               <argument key="FOS\UserBundle\Form\Type\ChangePasswordFormType">fos_user.change_password.form.type</argument>
               <argument key="FOS\UserBundle\Form\Type\ResettingFormType">fos_user.resetting.form.type</argument>
+              <argument key="Vich\UploaderBundle\Form\Type\VichFileType">vich_uploader.form.type.file</argument>
+              <argument key="Vich\UploaderBundle\Form\Type\VichImageType">vich_uploader.form.type.image</argument>
             </argument>
             <argument type="collection">
               <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="collection">
@@ -1911,7 +1925,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>5745daf0eecd29.44239669</argument>
+            <argument>5745dfead28aa1.38343439</argument>
           </service>
         </argument>
       </argument>
@@ -2212,7 +2226,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>5745daf0eecd29.44239669</argument>
+            <argument>5745dfead28aa1.38343439</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -2458,6 +2472,14 @@
         <argument type="service">
           <service class="Doctrine\Bundle\DoctrineBundle\Twig\DoctrineExtension" public="false">
             <tag name="twig.extension"/>
+          </service>
+        </argument>
+      </call>
+      <call method="addExtension">
+        <argument type="service">
+          <service class="Vich\UploaderBundle\Twig\Extension\UploaderExtension" public="false">
+            <tag name="twig.extension"/>
+            <argument type="service" id="vich_uploader.templating.helper.uploader_helper"/>
           </service>
         </argument>
       </call>
@@ -2882,6 +2904,88 @@
       <argument type="service" id="router"/>
       <argument>86400</argument>
     </service>
+    <service id="vich_uploader.templating.helper.uploader_helper" class="Vich\UploaderBundle\Templating\Helper\UploaderHelper">
+      <tag name="templating.helper" alias="vich_uploader"/>
+      <argument type="service" id="vich_uploader.storage"/>
+    </service>
+    <service id="vich_uploader.property_mapping_factory" class="Vich\UploaderBundle\Mapping\PropertyMappingFactory" public="false">
+      <argument type="service" id="service_container"/>
+      <argument type="service">
+        <service class="Vich\UploaderBundle\Metadata\MetadataReader" public="false">
+          <argument type="service">
+            <service class="Metadata\MetadataFactory" public="false">
+              <argument type="service">
+                <service class="Vich\UploaderBundle\Metadata\Driver\ChainDriver" public="false">
+                  <argument type="collection">
+                    <argument type="service">
+                      <service class="Vich\UploaderBundle\Metadata\Driver\AnnotationDriver" public="false">
+                        <argument type="service" id="annotation_reader"/>
+                      </service>
+                    </argument>
+                    <argument type="service">
+                      <service class="Vich\UploaderBundle\Metadata\Driver\YamlDriver" public="false">
+                        <argument type="service">
+                          <service class="Vich\UploaderBundle\Metadata\Driver\FileLocator" public="false">
+                            <argument type="collection"/>
+                          </service>
+                        </argument>
+                      </service>
+                    </argument>
+                    <argument type="service">
+                      <service class="Vich\UploaderBundle\Metadata\Driver\XmlDriver" public="false">
+                        <argument type="service">
+                          <service class="Vich\UploaderBundle\Metadata\Driver\FileLocator" public="false">
+                            <argument type="collection"/>
+                          </service>
+                        </argument>
+                      </service>
+                    </argument>
+                  </argument>
+                </service>
+              </argument>
+              <call method="setCache">
+                <argument type="service">
+                  <service class="Metadata\Cache\FileCache" public="false">
+                    <argument>E:\Semester 5\SEP easyGrade\SEP\var\cache\dev/vich_uploader</argument>
+                  </service>
+                </argument>
+              </call>
+            </service>
+          </argument>
+        </service>
+      </argument>
+      <argument type="collection"/>
+      <argument>_name</argument>
+    </service>
+    <service id="vich_uploader.namer_uniqid" class="Vich\UploaderBundle\Naming\UniqidNamer"/>
+    <service id="vich_uploader.namer_property" class="Vich\UploaderBundle\Naming\PropertyNamer"/>
+    <service id="vich_uploader.namer_origname" class="Vich\UploaderBundle\Naming\OrignameNamer"/>
+    <service id="vich_uploader.form.type.file" class="Vich\UploaderBundle\Form\Type\VichFileType">
+      <tag name="form.type" alias="vich_file"/>
+      <argument type="service" id="vich_uploader.storage"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+      <argument type="service" id="translator"/>
+    </service>
+    <service id="vich_uploader.form.type.image" class="Vich\UploaderBundle\Form\Type\VichImageType">
+      <tag name="form.type" alias="vich_image"/>
+      <argument type="service" id="vich_uploader.storage"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+      <argument type="service" id="translator"/>
+    </service>
+    <service id="vich_uploader.download_handler" class="Vich\UploaderBundle\Handler\DownloadHandler" lazy="true">
+      <argument type="service" id="vich_uploader.property_mapping_factory"/>
+      <argument type="service" id="vich_uploader.storage"/>
+    </service>
+    <service id="vich_uploader.upload_handler" class="Vich\UploaderBundle\Handler\UploadHandler" lazy="true">
+      <argument type="service" id="vich_uploader.property_mapping_factory"/>
+      <argument type="service" id="vich_uploader.storage"/>
+      <argument type="service">
+        <service class="Vich\UploaderBundle\Injector\FileInjector" public="false">
+          <argument type="service" id="vich_uploader.storage"/>
+        </service>
+      </argument>
+      <argument type="service" id="debug.event_dispatcher"/>
+    </service>
     <service id="data_collector.dump" class="Symfony\Component\HttpKernel\DataCollector\DumpDataCollector">
       <tag name="data_collector" id="dump" template="@Debug/Profiler/dump.html.twig" priority="240"/>
       <argument type="service" id="debug.stopwatch" on-invalid="ignore"/>
@@ -3216,6 +3320,10 @@
         <argument>FOSUser</argument>
       </call>
       <call method="addPath">
+        <argument>E:\Semester 5\SEP easyGrade\SEP\vendor\vich\uploader-bundle/Resources/views</argument>
+        <argument>VichUploader</argument>
+      </call>
+      <call method="addPath">
         <argument>E:\Semester 5\SEP easyGrade\SEP\vendor\symfony\symfony\src\Symfony\Bundle\DebugBundle/Resources/views</argument>
         <argument>Debug</argument>
       </call>
@@ -3337,6 +3445,9 @@
         </service>
       </argument>
       <argument>NSEPBundle\Entity\User</argument>
+    </service>
+    <service id="vich_uploader.storage" class="Vich\UploaderBundle\Storage\FileSystemStorage">
+      <argument type="service" id="vich_uploader.property_mapping_factory"/>
     </service>
     <service id="session.storage" alias="session.storage.native"/>
     <service id="event_dispatcher" alias="debug.event_dispatcher"/>
