@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block authenticatedUsername %}{{ include('@NSEP/Default/userid.html.twig') }}{% endblock authenticatedUsername %}
+{% block contentdetail %}
+    <h1>Submission list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Imagename</th>
+                <th>Updatedat</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for submission in submissions %}
+            <tr>
+                <td><a href="{{ path('submission_show', { 'id': submission.id }) }}">{{ submission.id }}</a></td>
+                <td>{{ submission.imageName }}</td>
+                <td>{% if submission.updatedAt %}{{ submission.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('submission_show', { 'id': submission.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('submission_edit', { 'id': submission.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('submission_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock contentdetail %}

@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block authenticatedUsername %}{{ include('@NSEP/Default/userid.html.twig') }}{% endblock authenticatedUsername %}
+{% block contentdetail %}
+    <h1>Assignment list</h1>
+
+    <!-- Zero Configuration Table -->
+    <div class="panel panel-default">
+        <div class="panel-heading">Your Assignment</div>
+        <div class="panel-body">
+            <table id="zctb" class="display table table-striped table-bordered table-hover" cellspacing="0" width="100%">
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Assignmentid</th>
+                    <th>Assignmentname</th>
+                    <th>Assignmentdescription</th>
+                    <th>Createddate</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for assignment in assignments %}
+                    <tr>
+                        <td><a href="{{ path('assignment_show', { 'id': assignment.id }) }}">{{ assignment.id }}</a></td>
+                        <td>{{ assignment.assignmentid }}</td>
+                        <td>{{ assignment.assignmentname }}</td>
+                        <td>{{ assignment.assignmentdescription }}</td>
+                        <td>{% if assignment.createddate %}{{ assignment.createddate|date('Y-m-d H:i:s') }}{% endif %}</td>
+                        <td>
+                            <ul>
+                                <li>
+                                    <a href="{{ path('assignment_show', { 'id': assignment.id }) }}">show</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('assignment_edit', { 'id': assignment.id }) }}">edit</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <ul>
+        <li>
+            <a href="{{ path('assignment_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock contentdetail %}

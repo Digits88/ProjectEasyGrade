@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block authenticatedUsername %}{{ include('@NSEP/Default/userid.html.twig') }}{% endblock authenticatedUsername %}
+{% block contentdetail %}
+    <h1>Submission</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ submission.id }}</td>
+            </tr>
+            <tr>
+                <th>Imagename</th>
+                <td>{{ submission.imageName }}</td>
+            </tr>
+            <tr>
+                <th>Updatedat</th>
+                <td>{% if submission.updatedAt %}{{ submission.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('submission_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('submission_edit', { 'id': submission.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock contentdetail%}

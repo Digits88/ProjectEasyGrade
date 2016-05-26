@@ -1,37 +1,41 @@
 {% extends 'base.html.twig' %}
 
+{% block authenticatedUsername %}{{ include('@NSEP/Default/userid.html.twig') }}{% endblock authenticatedUsername %}
 {% block contentdetail %}
     <h1>Course list</h1>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Courseid</th>
-                <th>Coursename</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for course in courses %}
-            <tr>
-                <td><a href="{{ path('course_show', { 'id': course.id }) }}">{{ course.id }}</a></td>
-                <td>{{ course.courseid }}</td>
-                <td>{{ course.coursename }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('course_show', { 'id': course.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('course_edit', { 'id': course.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    <!-- Zero Configuration Table -->
+    <div class="panel panel-default">
+    <div class="panel-heading">Your Courses</div>
+    <div class="panel-body">
+        <table id="zctb" class="display table table-striped table-bordered table-hover" cellspacing="0" width="100%">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Courseid</th>
+                    <th>Coursename</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for course in courses %}
+                <tr>
+                    <td>{{ course.id }}</td>
+                    <td>{{ course.courseid }}</td>
+                    <td><a href="{{ path('assignment_index', { 'id': course.id }) }}">{{ course.coursename }}</a></td>
+                    <td>
+                        <ul>
+                            <li>
+                                <a href="{{ path('course_show', { 'id': course.id }) }}" class="btn btn-primary">Edit or Delete</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    </div>
 
     <ul>
         <li>
