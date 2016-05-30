@@ -22,11 +22,11 @@
                 <tr>
                     <td>{{ course.id }}</td>
                     <td>{{ course.courseid }}</td>
-                    <td><a href="{{ path('assignment_index', { 'id': course.id }) }}">{{ course.coursename }}</a></td>
+                    <td><a href="{{ path('assignment_show', { 'id': course.id }) }}">{{ course.coursename }}</a></td>
                     <td>
                         <ul>
                             <li>
-                                <a href="{{ path('course_show', { 'id': course.id }) }}" class="btn btn-primary">Edit or Delete</a>
+                                <a href="{{ path('assignment_index', { 'id': course.id }) }}" class="btn btn-primary">Edit or Delete</a>
                             </li>
                         </ul>
                     </td>

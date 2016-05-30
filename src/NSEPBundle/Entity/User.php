@@ -41,4 +41,38 @@ class User extends BaseUser
         $this->lecturercourse = new \Doctrine\Common\Collections\ArrayCollection();
         // your own logic
     }
+
+    /**
+     * Add lecturercourse
+     *
+     * @param \NSEPBundle\Entity\Course $lecturercourse
+     *
+     * @return User
+     */
+    public function addLecturercourse(\NSEPBundle\Entity\Course $lecturercourse)
+    {
+        $this->lecturercourse[] = $lecturercourse;
+
+        return $this;
+    }
+
+    /**
+     * Remove lecturercourse
+     *
+     * @param \NSEPBundle\Entity\Course $lecturercourse
+     */
+    public function removeLecturercourse(\NSEPBundle\Entity\Course $lecturercourse)
+    {
+        $this->lecturercourse->removeElement($lecturercourse);
+    }
+
+    /**
+     * Get lecturercourse
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getLecturercourse()
+    {
+        return $this->lecturercourse;
+    }
 }

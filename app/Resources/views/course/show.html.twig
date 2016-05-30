@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}
+{% block authenticatedUsername %}{{ include('@NSEP/Default/userid.html.twig') }}{% endblock authenticatedUsername %}
+{% block contentdetail %}
     <h1>Course</h1>
 
     <table>
@@ -22,15 +23,15 @@
 
     <ul>
         <li>
-            <a href="{{ path('course_index') }}">Back to the list</a>
+            <a href="{{ path('course_index') }}" class="btn btn-primary">Back to the list</a>
         </li>
         <li>
-            <a href="{{ path('course_edit', { 'id': course.id }) }}">Edit</a>
+            <a href="{{ path('course_edit', { 'id': course.id }) }}" class="btn btn-primary">Edit</a>
         </li>
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <input type="submit" value="Delete" class="btn btn-primary">
             {{ form_end(delete_form) }}
         </li>
     </ul>
-{% endblock %}
+{% endblock contentdetail %}

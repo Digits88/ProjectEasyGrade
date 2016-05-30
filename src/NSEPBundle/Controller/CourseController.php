@@ -2,12 +2,16 @@
 
 namespace NSEPBundle\Controller;
 
+use Doctrine\ORM\Query\ResultSetMapping;
+use Symfony\Component\Console\Logger\ConsoleLogger;
+use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use NSEPBundle\Entity\Course;
 use NSEPBundle\Form\CourseType;
+use Doctrine\ORM\Query;
 
 /**
  * Course controller.
@@ -24,9 +28,48 @@ class CourseController extends Controller
      */
     public function indexAction()
     {
+        /*$em = $this->getDoctrine()->getManager();
+
+        $result = $this->getDoctrine()->getEntityManager()->getConnection()->query('SELECT * FROM courselecturers_course WHERE user_id = 1');
+
+        //echo "len:" . sizeof($courses);
+
+        $courses = [];
+
+        while ($row = $result->fetch()) {
+            //$course = $this->getDoctrine()->getEntityManager()->getConnection()->query('SELECT * FROM course WHERE courseid = ' . $row['course_id']);
+
+
+            $query = $em->createQuery(
+            'SELECT p
+    FROM NSEPBundle:Course p
+    WHERE p.courseid = :price'
+        )->setParameter('price', 'CS2010');
+
+            $cou = $query->getResult();
+
+            //echo $row['course_id'];
+            //echo $cou[0];
+
+            //echo array_values($cou);
+            //array_push($courses, $cou);
+        }
+
+
+        echo sizeof($courses);*/
+
+
+        /*$category = $this->getDoctrine()
+            ->getRepository('NSEPBundle:Course')
+            ->find(1);
+
+        $courses = $category->getCourseid();*/
+
         $em = $this->getDoctrine()->getManager();
 
         $courses = $em->getRepository('NSEPBundle:Course')->findAll();
+
+
 
         return $this->render('course/index.html.twig', array(
             'courses' => $courses,
@@ -134,7 +177,6 @@ class CourseController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('course_delete', array('id' => $course->getId())))
             ->setMethod('DELETE')
-            ->getForm()
-        ;
+            ->getForm();
     }
 }

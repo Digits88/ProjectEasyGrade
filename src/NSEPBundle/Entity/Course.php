@@ -51,15 +51,14 @@ class Course
     private $studentid;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Assignment", inversedBy="courseid")
-     * @ORM\JoinTable(name="course_assignment")
+     * @ORM\OneToMany(targetEntity="Assignment", mappedBy="course")
      */
-    private $assignmentid;
+    private $assignments;
 
 
     public function __construct() {
         $this->studentid = new ArrayCollection();
-        $this->assignmentid = new ArrayCollection();
+        $this->assignments = new ArrayCollection();
         $this->courselecturers = new ArrayCollection();
     }
 
@@ -122,5 +121,108 @@ class Course
     {
         return $this->coursename;
     }
-}
 
+    /**
+     * Add courselecturer
+     *
+     * @param \NSEPBundle\Entity\User $courselecturer
+     *
+     * @return Course
+     */
+    public function addCourselecturer(\NSEPBundle\Entity\User $courselecturer)
+    {
+        $this->courselecturers[] = $courselecturer;
+
+        return $this;
+    }
+
+    /**
+     * Remove courselecturer
+     *
+     * @param \NSEPBundle\Entity\User $courselecturer
+     */
+    public function removeCourselecturer(\NSEPBundle\Entity\User $courselecturer)
+    {
+        $this->courselecturers->removeElement($courselecturer);
+    }
+
+    /**
+     * Get courselecturers
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getCourselecturers()
+    {
+        return $this->courselecturers;
+    }
+
+    /**
+     * Add studentid
+     *
+     * @param \NSEPBundle\Entity\Student $studentid
+     *
+     * @return Course
+     */
+    public function addStudentid(\NSEPBundle\Entity\Student $studentid)
+    {
+        $this->studentid[] = $studentid;
+
+        return $this;
+    }
+
+    /**
+     * Remove studentid
+     *
+     * @param \NSEPBundle\Entity\Student $studentid
+     */
+    public function removeStudentid(\NSEPBundle\Entity\Student $studentid)
+    {
+        $this->studentid->removeElement($studentid);
+    }
+
+    /**
+     * Get studentid
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getStudentid()
+    {
+        return $this->studentid;
+    }
+
+
+
+    /**
+     * Add assignment
+     *
+     * @param \NSEPBundle\Entity\Assignment $assignment
+     *
+     * @return Course
+     */
+    public function addAssignment(\NSEPBundle\Entity\Assignment $assignment)
+    {
+        $this->assignments[] = $assignment;
+
+        return $this;
+    }
+
+    /**
+     * Remove assignment
+     *
+     * @param \NSEPBundle\Entity\Assignment $assignment
+     */
+    public function removeAssignment(\NSEPBundle\Entity\Assignment $assignment)
+    {
+        $this->assignments->removeElement($assignment);
+    }
+
+    /**
+     * Get assignments
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getAssignments()
+    {
+        return $this->assignments;
+    }
+}

@@ -52,9 +52,10 @@ class Assignment
 
 
     /**
-     * @ORM\ManyToMany(targetEntity="Course", mappedBy="assignmentid")
+     * @ORM\ManyToOne(targetEntity="Course", inversedBy="assignments")
+     * @ORM\JoinColumn(name="course_id", referencedColumnName="id")
      */
-    private $courseid;
+    private $course;
 
     /**
      * @ORM\ManyToMany(targetEntity="Student", mappedBy="assignmentid")
@@ -176,7 +177,63 @@ class Assignment
         $this->courseid = new ArrayCollection();
         $this->studentid = new ArrayCollection();
     }
+
+
+    /**
+     * Add studentid
+     *
+     * @param \NSEPBundle\Entity\Student $studentid
+     *
+     * @return Assignment
+     */
+    public function addStudentid(\NSEPBundle\Entity\Student $studentid)
+    {
+        $this->studentid[] = $studentid;
+
+        return $this;
+    }
+
+    /**
+     * Remove studentid
+     *
+     * @param \NSEPBundle\Entity\Student $studentid
+     */
+    public function removeStudentid(\NSEPBundle\Entity\Student $studentid)
+    {
+        $this->studentid->removeElement($studentid);
+    }
+
+    /**
+     * Get studentid
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getStudentid()
+    {
+        return $this->studentid;
+    }
+
+    /**
+     * Set course
+     *
+     * @param \NSEPBundle\Entity\Course $course
+     *
+     * @return Assignment
+     */
+    public function setCourse(\NSEPBundle\Entity\Course $course = null)
+    {
+        $this->course = $course;
+
+        return $this;
+    }
+
+    /**
+     * Get course
+     *
+     * @return \NSEPBundle\Entity\Course
+     */
+    public function getCourse()
+    {
+        return $this->course;
+    }
 }
-
-
-
