@@ -63,6 +63,12 @@ class Assignment
     private $studentid;
 
 
+    /**
+     * @ORM\OneToMany(targetEntity="Submission", mappedBy="assignment")
+     */
+    private $submissions;
+
+
 
     /**
      * Get id

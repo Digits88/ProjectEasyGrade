@@ -64,10 +64,10 @@ class Course extends \NSEPBundle\Entity\Course implements \Doctrine\ORM\Proxy\Pr
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'NSEPBundle\\Entity\\Course' . "\0" . 'id', '' . "\0" . 'NSEPBundle\\Entity\\Course' . "\0" . 'courseid', '' . "\0" . 'NSEPBundle\\Entity\\Course' . "\0" . 'coursename', '' . "\0" . 'NSEPBundle\\Entity\\Course' . "\0" . 'courselecturers', '' . "\0" . 'NSEPBundle\\Entity\\Course' . "\0" . 'studentid', '' . "\0" . 'NSEPBundle\\Entity\\Course' . "\0" . 'assignments'];
+            return ['__isInitialized__', '' . "\0" . 'NSEPBundle\\Entity\\Course' . "\0" . 'id', '' . "\0" . 'NSEPBundle\\Entity\\Course' . "\0" . 'courseid', '' . "\0" . 'NSEPBundle\\Entity\\Course' . "\0" . 'coursename', '' . "\0" . 'NSEPBundle\\Entity\\Course' . "\0" . 'users', '' . "\0" . 'NSEPBundle\\Entity\\Course' . "\0" . 'studentid', '' . "\0" . 'NSEPBundle\\Entity\\Course' . "\0" . 'assignments'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'NSEPBundle\\Entity\\Course' . "\0" . 'id', '' . "\0" . 'NSEPBundle\\Entity\\Course' . "\0" . 'courseid', '' . "\0" . 'NSEPBundle\\Entity\\Course' . "\0" . 'coursename', '' . "\0" . 'NSEPBundle\\Entity\\Course' . "\0" . 'courselecturers', '' . "\0" . 'NSEPBundle\\Entity\\Course' . "\0" . 'studentid', '' . "\0" . 'NSEPBundle\\Entity\\Course' . "\0" . 'assignments'];
+        return ['__isInitialized__', '' . "\0" . 'NSEPBundle\\Entity\\Course' . "\0" . 'id', '' . "\0" . 'NSEPBundle\\Entity\\Course' . "\0" . 'courseid', '' . "\0" . 'NSEPBundle\\Entity\\Course' . "\0" . 'coursename', '' . "\0" . 'NSEPBundle\\Entity\\Course' . "\0" . 'users', '' . "\0" . 'NSEPBundle\\Entity\\Course' . "\0" . 'studentid', '' . "\0" . 'NSEPBundle\\Entity\\Course' . "\0" . 'assignments'];
     }
 
     /**

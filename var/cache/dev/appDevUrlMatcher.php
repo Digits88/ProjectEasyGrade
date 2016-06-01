@@ -295,6 +295,31 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        if (0 === strpos($pathinfo, '/test')) {
+            // test_courseshow
+            if (0 === strpos($pathinfo, '/test/testing') && preg_match('#^/test/testing/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_test_courseshow;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'test_courseshow')), array (  '_controller' => 'NSEPBundle\\Controller\\TestingController::showcourseAction',));
+            }
+            not_test_courseshow:
+
+            // test_show
+            if (0 === strpos($pathinfo, '/test/submission') && preg_match('#^/test/submission/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_test_show;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'test_show')), array (  '_controller' => 'NSEPBundle\\Controller\\TestingController::showassignmentAction',));
+            }
+            not_test_show:
+
+        }
+
         if (0 === strpos($pathinfo, '/user')) {
             // user_index
             if (rtrim($pathinfo, '/') === '/user') {

@@ -25,7 +25,7 @@
                     <tr>
                         <td><a href="{{ path('assignment_show', { 'id': assignment.id }) }}">{{ assignment.id }}</a></td>
                         <td>{{ assignment.assignmentid }}</td>
-                        <td>{{ assignment.assignmentname }}</td>
+                        <td><a href="{{ path('course_show', { 'id': assignment.id }) }}">{{ assignment.assignmentname }}</a></td>
                         <td>{{ assignment.assignmentdescription }}</td>
                         <td>{% if assignment.createddate %}{{ assignment.createddate|date('Y-m-d H:i:s') }}{% endif %}</td>
                         <td>

@@ -39,9 +39,9 @@ class Course
 
 
     /**
-     * @ORM\ManyToMany(targetEntity="User", mappedBy="lecturercourse")
+     * @ORM\ManyToMany(targetEntity="User", mappedBy="courses")
      */
-    private $courselecturers;
+    private $users;
 
 
     /**
@@ -59,7 +59,7 @@ class Course
     public function __construct() {
         $this->studentid = new ArrayCollection();
         $this->assignments = new ArrayCollection();
-        $this->courselecturers = new ArrayCollection();
+        $this->users = new ArrayCollection();
     }
 
 

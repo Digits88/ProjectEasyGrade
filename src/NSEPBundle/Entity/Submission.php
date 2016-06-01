@@ -44,6 +44,17 @@ class Submission
      */
     private $updatedAt;
 
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Assignment", inversedBy="submissions")
+     * @ORM\JoinColumn(name="assignment_id", referencedColumnName="id")
+     */
+    private $assignment;
+
+
+
+
+
     /**
      * If manually uploading a file (i.e. not using Symfony Form) ensure an instance
      * of 'UploadedFile' is injected into this setter to trigger the  update. If this

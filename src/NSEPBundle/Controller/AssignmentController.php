@@ -22,18 +22,16 @@ class AssignmentController extends Controller
      * @Route("/", name="assignment_index")
      * @Method("GET")
      */
-    public function indexAction(Assignment $assignment)
+    public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
 
         $assignments = $em->getRepository('NSEPBundle:Assignment')->findAll();
 
-
-
-
         return $this->render('assignment/index.html.twig', array(
             'assignments' => $assignments,
         ));
+
 
 
 
@@ -79,6 +77,8 @@ class AssignmentController extends Controller
             'assignment' => $assignment,
             'delete_form' => $deleteForm->createView(),
         ));
+
+
 
 
 
@@ -147,4 +147,10 @@ class AssignmentController extends Controller
             ->getForm()
         ;
     }
-}
+
+
+    }
+
+
+
+
