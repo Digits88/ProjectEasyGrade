@@ -114,9 +114,28 @@ class TestingController extends Controller
     public function gradeAction(Submission $submission)
     {
 
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, 'http://4a1a254e.compilers.sphere-engine.com/api/v3/languages?access_token=9af50a60bc23e532ace4043c0895b024');
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, "");
+        $result = curl_exec($ch);
 
 
-        return $this->redirectToRoute('course_index');
+        $response = json_decode($result);
+        print_r($result);
+        //print_r($response);
+
+        /*$ret = file_get_contents('http://4a1a254e.compilers.sphere-engine.com/api/v3/languages?access_token=9af50a60bc23e532ace4043c0895b024');
+        var_dump($ret);*/
+
+
+        curl_close($ch);
+
+
+        //echo file_get_contents("submissions/HelloWorld.java");
+
+        //var_dump();
+        //return $this->redirectToRoute('course_index');
     }
 
 
