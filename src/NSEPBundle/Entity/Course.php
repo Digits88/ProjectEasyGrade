@@ -225,4 +225,38 @@ class Course
     {
         return $this->assignments;
     }
+
+    /**
+     * Add user
+     *
+     * @param \NSEPBundle\Entity\User $user
+     *
+     * @return Course
+     */
+    public function addUser(\NSEPBundle\Entity\User $user)
+    {
+        $this->users[] = $user;
+
+        return $this;
+    }
+
+    /**
+     * Remove user
+     *
+     * @param \NSEPBundle\Entity\User $user
+     */
+    public function removeUser(\NSEPBundle\Entity\User $user)
+    {
+        $this->users->removeElement($user);
+    }
+
+    /**
+     * Get users
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getUsers()
+    {
+        return $this->users;
+    }
 }

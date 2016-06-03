@@ -235,14 +235,10 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         if (0 === strpos($pathinfo, '/submission')) {
             // submission_index
-            if (rtrim($pathinfo, '/') === '/submission') {
+            if ($pathinfo === '/submission/index') {
                 if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
                     $allow = array_merge($allow, array('GET', 'HEAD'));
                     goto not_submission_index;
-                }
-
-                if (substr($pathinfo, -1) !== '/') {
-                    return $this->redirect($pathinfo.'/', 'submission_index');
                 }
 
                 return array (  '_controller' => 'NSEPBundle\\Controller\\SubmissionController::indexAction',  '_route' => 'submission_index',);
@@ -293,11 +289,33 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             }
             not_submission_delete:
 
+            // submissions_all
+            if (0 === strpos($pathinfo, '/submission/all') && preg_match('#^/submission/all/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_submissions_all;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'submissions_all')), array (  '_controller' => 'NSEPBundle\\Controller\\SubmissionController::showsubmissionsAction',));
+            }
+            not_submissions_all:
+
         }
 
-        if (0 === strpos($pathinfo, '/test')) {
+        if (0 === strpos($pathinfo, '/test/assignment')) {
+            // test_show
+            if (0 === strpos($pathinfo, '/test/assignment/') && preg_match('#^/test/assignment//(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_test_show;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'test_show')), array (  '_controller' => 'NSEPBundle\\Controller\\TestingController::showAction',));
+            }
+            not_test_show:
+
             // test_courseshow
-            if (0 === strpos($pathinfo, '/test/testing') && preg_match('#^/test/testing/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            if (0 === strpos($pathinfo, '/test/assignment//testing') && preg_match('#^/test/assignment//testing/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
                 if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
                     $allow = array_merge($allow, array('GET', 'HEAD'));
                     goto not_test_courseshow;
@@ -307,16 +325,27 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             }
             not_test_courseshow:
 
-            // test_show
-            if (0 === strpos($pathinfo, '/test/submission') && preg_match('#^/test/submission/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            // test_showass
+            if (0 === strpos($pathinfo, '/test/assignment//submission') && preg_match('#^/test/assignment//submission/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
                 if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
                     $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_test_show;
+                    goto not_test_showass;
                 }
 
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'test_show')), array (  '_controller' => 'NSEPBundle\\Controller\\TestingController::showassignmentAction',));
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'test_showass')), array (  '_controller' => 'NSEPBundle\\Controller\\TestingController::showassignmentAction',));
             }
-            not_test_show:
+            not_test_showass:
+
+            // test_grade
+            if (0 === strpos($pathinfo, '/test/assignment//grade') && preg_match('#^/test/assignment//grade/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_test_grade;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'test_grade')), array (  '_controller' => 'NSEPBundle\\Controller\\TestingController::gradeAction',));
+            }
+            not_test_grade:
 
         }
 

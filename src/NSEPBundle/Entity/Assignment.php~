@@ -63,6 +63,12 @@ class Assignment
     private $studentid;
 
 
+    /**
+     * @ORM\OneToMany(targetEntity="Submission", mappedBy="assignment")
+     */
+    private $submissions;
+
+
 
     /**
      * Get id
@@ -211,5 +217,29 @@ class Assignment
     public function getStudentid()
     {
         return $this->studentid;
+    }
+
+    /**
+     * Set course
+     *
+     * @param \NSEPBundle\Entity\Course $course
+     *
+     * @return Assignment
+     */
+    public function setCourse(\NSEPBundle\Entity\Course $course = null)
+    {
+        $this->course = $course;
+
+        return $this;
+    }
+
+    /**
+     * Get course
+     *
+     * @return \NSEPBundle\Entity\Course
+     */
+    public function getCourse()
+    {
+        return $this->course;
     }
 }

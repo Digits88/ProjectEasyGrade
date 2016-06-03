@@ -7,9 +7,12 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use NSEPBundle\Entity\Submission;
+use NSEPBundle\Entity\Assignment;
 use NSEPBundle\Form\SubmissionType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+
+
 /**
  * Submission controller.
  *
@@ -20,7 +23,7 @@ class SubmissionController extends Controller
     /**
      * Lists all Submission entities.
      *
-     * @Route("/", name="submission_index")
+     * @Route("/index", name="submission_index")
      * @Method("GET")
      */
     public function indexAction()
@@ -147,4 +150,31 @@ class SubmissionController extends Controller
             ->getForm()
         ;
     }
+
+    /**
+     * Finds and displays a Submission entity.
+     *
+     * @Route("/all/{id}", name="submissions_all")
+     * @Method("GET")
+     */
+    public function showsubmissionsAction(Assignment $assignment)
+    {
+
+
+        $em = $this->getDoctrine()->getManager();
+        //$cid=2;
+        $query = $em->createQuery(
+            "SELECT a FROM NSEPBundle\Entity\Submission a JOIN a.assignment c WHERE c.id=:cid"
+        )->setParameter('cid', $assignment);
+
+        $products = $query->getResult();
+        return $this->render('submission/index.html.twig', array(
+            'submissions' => $products,
+        ));
+
+        //var_dump($products);
+
+    }
+
+
 }

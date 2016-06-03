@@ -4,35 +4,46 @@
 {% block contentdetail %}
     <h1>Submission list</h1>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Imagename</th>
-                <th>Updatedat</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for submission in submissions %}
-            <tr>
-                <td><a href="{{ path('submission_show', { 'id': submission.id }) }}">{{ submission.id }}</a></td>
-                <td>{{ submission.imageName }}</td>
-                <td>{% if submission.updatedAt %}{{ submission.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('submission_show', { 'id': submission.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('submission_edit', { 'id': submission.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    <!-- Zero Configuration Table -->
+    <div class="panel panel-default">
+        <div class="panel-heading">Your Assignment</div>
+        <div class="panel-body">
+            <table id="zctb" class="display table table-striped table-bordered table-hover" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Submission</th>
+                        <th>Uploaded</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for submission in submissions %}
+                <tr>
+                    <td><a href="{{ path('submission_show', { 'id': submission.id }) }}">{{ submission.id }}</a></td>
+                    <td>{{ submission.imageName }}</td>
+                    <td>{% if submission.updatedAt %}{{ submission.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                    <td>{{ submission.status }}</td>
+                    <td>
+                        <ul>
+                            <li>
+                                <a href="{{ path('submission_show', { 'id': submission.id }) }}" class="btn btn-primary">show</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('submission_edit', { 'id': submission.id }) }}" class="btn btn-primary">edit</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('test_grade', { 'id': submission.id }) }}" class="btn btn-primary">Grade</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
 
     <ul>
         <li>

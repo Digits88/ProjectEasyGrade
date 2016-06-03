@@ -39,9 +39,9 @@ class Course
 
 
     /**
-     * @ORM\ManyToMany(targetEntity="User", mappedBy="lecturercourse")
+     * @ORM\ManyToMany(targetEntity="User", mappedBy="courses")
      */
-    private $courselecturers;
+    private $users;
 
 
     /**
@@ -59,7 +59,7 @@ class Course
     public function __construct() {
         $this->studentid = new ArrayCollection();
         $this->assignments = new ArrayCollection();
-        $this->courselecturers = new ArrayCollection();
+        $this->users = new ArrayCollection();
     }
 
 
@@ -191,4 +191,38 @@ class Course
     }
 
 
+
+    /**
+     * Add assignment
+     *
+     * @param \NSEPBundle\Entity\Assignment $assignment
+     *
+     * @return Course
+     */
+    public function addAssignment(\NSEPBundle\Entity\Assignment $assignment)
+    {
+        $this->assignments[] = $assignment;
+
+        return $this;
+    }
+
+    /**
+     * Remove assignment
+     *
+     * @param \NSEPBundle\Entity\Assignment $assignment
+     */
+    public function removeAssignment(\NSEPBundle\Entity\Assignment $assignment)
+    {
+        $this->assignments->removeElement($assignment);
+    }
+
+    /**
+     * Get assignments
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getAssignments()
+    {
+        return $this->assignments;
+    }
 }

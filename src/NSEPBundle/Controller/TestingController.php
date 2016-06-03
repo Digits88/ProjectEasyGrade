@@ -18,13 +18,14 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use NSEPBundle\Entity\Course;
 use NSEPBundle\Entity\User;
 use NSEPBundle\Entity\Assignment;
+use NSEPBundle\Entity\Submission;
 use NSEPBundle\Form\CourseType;
 use Doctrine\ORM\Query;
 
 /**
  * Course controller.
  *
- * @Route("/test")
+ * @Route("/test/assignment/")
  */
 
 
@@ -82,11 +83,13 @@ class TestingController extends Controller
     /**
      * Finds and displays a Course entity.
      *
-     * @Route("/submission/{id}", name="test_show")
+     * @Route("/submission/{id}", name="test_showass")
      * @Method("GET")
      */
     public function showassignmentAction(Assignment $assignment)
     {
+
+
         $em = $this->getDoctrine()->getManager();
         //$cid=2;
         $query = $em->createQuery(
@@ -94,13 +97,28 @@ class TestingController extends Controller
         )->setParameter('cid', $assignment);
 
         $products = $query->getResult();
-        /*return $this->render('assignment/index.html.twig', array(
-            'assignments' => $products,
-        ));*/
+        return $this->render('submission/index.html.twig', array(
+            'submissions' => $products,
+        ));
 
-        var_dump($products);
+        //var_dump($products);
 
     }
+
+    /**
+     * Grade all Submission entities.
+     *
+     * @Route("/grade/{id}", name="test_grade")
+     * @Method("GET")
+     */
+    public function gradeAction(Submission $submission)
+    {
+
+
+
+        return $this->redirectToRoute('course_index');
+    }
+
 
 
 }
