@@ -11,7 +11,7 @@ use NSEPBundle\Entity\Assignment;
 use NSEPBundle\Form\SubmissionType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 /**
  * Submission controller.
@@ -23,7 +23,7 @@ class SubmissionController extends Controller
     /**
      * Lists all Submission entities.
      *
-     * @Route("/index", name="submission_index")
+     * @Route("/", name="submission_index")
      * @Method("GET")
      */
     public function indexAction()
@@ -54,6 +54,7 @@ class SubmissionController extends Controller
                 'data_class' => 'Symfony\Component\HttpFoundation\File\File',
                 'attr' => array('class' => 'sonata-medium-file')
             ))
+            ->add('status', TextType::class,['attr'=>['class'=>'abc ghj hhh']])
             ->getForm();
 
         $form->handleRequest($request);

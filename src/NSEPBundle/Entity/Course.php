@@ -122,39 +122,6 @@ class Course
         return $this->coursename;
     }
 
-    /**
-     * Add courselecturer
-     *
-     * @param \NSEPBundle\Entity\User $courselecturer
-     *
-     * @return Course
-     */
-    public function addCourselecturer(\NSEPBundle\Entity\User $courselecturer)
-    {
-        $this->courselecturers[] = $courselecturer;
-
-        return $this;
-    }
-
-    /**
-     * Remove courselecturer
-     *
-     * @param \NSEPBundle\Entity\User $courselecturer
-     */
-    public function removeCourselecturer(\NSEPBundle\Entity\User $courselecturer)
-    {
-        $this->courselecturers->removeElement($courselecturer);
-    }
-
-    /**
-     * Get courselecturers
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getCourselecturers()
-    {
-        return $this->courselecturers;
-    }
 
     /**
      * Add studentid

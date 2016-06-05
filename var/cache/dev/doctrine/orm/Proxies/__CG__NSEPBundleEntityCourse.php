@@ -235,39 +235,6 @@ class Course extends \NSEPBundle\Entity\Course implements \Doctrine\ORM\Proxy\Pr
     /**
      * {@inheritDoc}
      */
-    public function addCourselecturer(\NSEPBundle\Entity\User $courselecturer)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addCourselecturer', [$courselecturer]);
-
-        return parent::addCourselecturer($courselecturer);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function removeCourselecturer(\NSEPBundle\Entity\User $courselecturer)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeCourselecturer', [$courselecturer]);
-
-        return parent::removeCourselecturer($courselecturer);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getCourselecturers()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getCourselecturers', []);
-
-        return parent::getCourselecturers();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
     public function addStudentid(\NSEPBundle\Entity\Student $studentid)
     {
 

@@ -49,7 +49,7 @@ class UserController extends Controller
         //$form = $this->createForm('NSEPBundle\Form\UserType', $user);
 
         $form = $this->createFormBuilder($user)
-            ->add('username', TextType::class,['attr'=>['class'=>'abc ghj hhh']])
+            ->add('username', TextType::class,['attr'=>['class'=>' form-control']])
             ->add('email', EmailType::class)
             ->add('plainPassword', PasswordType::class)
             ->add('save', SubmitType::class, array('label' => 'Create User'))

@@ -82,3 +82,9 @@ vich_uploader:
         submission_image:
             uri_prefix:         /submissions
             upload_destination: %kernel.root_dir%/../web/submissions
+
+circle_rest_client:
+    curl:
+      defaults:
+        CURLOPT_HTTPHEADER:     [ 'Content-Type: application/json' ]
+        CURLOPT_FOLLOWLOCATION: true

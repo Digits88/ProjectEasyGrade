@@ -7,6 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use NSEPBundle\Entity\Assignment;
+use NSEPBundle\Entity\Course;
 use NSEPBundle\Form\AssignmentType;
 
 /**
@@ -54,7 +55,7 @@ class AssignmentController extends Controller
             $em->persist($assignment);
             $em->flush();
 
-            return $this->redirectToRoute('assignment_show', array('id' => $assignment->getId()));
+            return $this->redirectToRoute('assignment_index', array('id' => $assignment->getId()));
         }
 
         return $this->render('assignment/new.html.twig', array(

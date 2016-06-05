@@ -3,6 +3,7 @@
 namespace NSEPBundle\Controller;
 
 use Doctrine\ORM\Query\ResultSetMapping;
+use NSEPBundle\Entity\User;
 use Symfony\Component\Console\Logger\ConsoleLogger;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -89,16 +90,20 @@ class CourseController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+
             $em = $this->getDoctrine()->getManager();
             $em->persist($course);
             $em->flush();
 
-            return $this->redirectToRoute('course_show', array('id' => $course->getId()));
+            return $this->redirectToRoute('course_index', array('id' => $course->getId()));
         }
 
         return $this->render('course/new.html.twig', array(
             'course' => $course,
             'form' => $form->createView(),
+
+
         ));
     }
 

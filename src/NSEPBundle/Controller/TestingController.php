@@ -25,7 +25,7 @@ use Doctrine\ORM\Query;
 /**
  * Course controller.
  *
- * @Route("/test/assignment/")
+ * @Route("/test/assignment")
  */
 
 
@@ -115,14 +115,20 @@ class TestingController extends Controller
     {
 
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, 'http://4a1a254e.compilers.sphere-engine.com/api/v3/languages?access_token=9af50a60bc23e532ace4043c0895b024');
+
+        $sub=file_get_contents("submissions/hellloworld.py");
+
+        $lang=4;
+
+        curl_setopt($ch, CURLOPT_URL, 'http://4a1a254e.compilers.sphere-engine.com/api/v3/submissions?access_token=9af50a60bc23e532ace4043c0895b024');
         curl_setopt($ch, CURLOPT_POST, 1);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, "");
+        //curl_setopt($ch, CURLOPT_POSTFIELDS, "4");
+        curl_setopt($ch, CURLOPT_POSTFIELDS,"submission=$sub&language=$lang");
         $result = curl_exec($ch);
 
 
         $response = json_decode($result);
-        print_r($result);
+        //print_r($result);
         //print_r($response);
 
         /*$ret = file_get_contents('http://4a1a254e.compilers.sphere-engine.com/api/v3/languages?access_token=9af50a60bc23e532ace4043c0895b024');
@@ -133,6 +139,31 @@ class TestingController extends Controller
 
 
         //echo file_get_contents("submissions/HelloWorld.java");
+
+        //var_dump();
+        //return $this->redirectToRoute('course_index');
+    }
+
+    /**
+     * Fetch status of  Submission entities.
+     *
+     * @Route("/grade/status/{id}", name="test_status")
+     * @Method("GET")
+     */
+    public function statusAction(Submission $submission)
+    {
+
+        $ch = curl_init();
+
+
+        $subid=47083353;
+
+        curl_setopt($ch, CURLOPT_URL, 'http://4a1a254e.compilers.sphere-engine.com/api/v3/submissions/47083353?access_token=9af50a60bc23e532ace4043c0895b024');
+        curl_setopt($ch, CURLOPT_POST, 1);
+        //curl_setopt($ch, CURLOPT_POSTFIELDS,"subid=$subid");
+        $result = curl_exec($ch);
+        $response = json_decode($result);
+        curl_close($ch);
 
         //var_dump();
         //return $this->redirectToRoute('course_index');

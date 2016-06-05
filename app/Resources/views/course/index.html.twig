@@ -4,6 +4,13 @@
 {% block contentdetail %}
     <h1>Course list</h1>
 
+    <ul>
+        <li>
+            <a href="{{ path('course_new') }}" class="btn btn-warning">Create a new entry</a>
+        </li>
+    </ul>
+
+    <br>
     <!-- Zero Configuration Table -->
     <div class="panel panel-default">
     <div class="panel-heading">Your Courses</div>
@@ -37,9 +44,4 @@
     </div>
     </div>
 
-    <ul>
-        <li>
-            <a href="{{ path('course_new') }}">Create a new entry</a>
-        </li>
-    </ul>
 {% endblock contentdetail %}

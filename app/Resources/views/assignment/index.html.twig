@@ -4,8 +4,14 @@
 {% block contentdetail %}
     <h1>Assignment list</h1>
 
+    <ul>
+        <li>
+            <a href="{{ path('assignment_new') }}" class="btn btn-warning">Create a new Assignment</a>
+        </li>
+    </ul>
+
     <!-- Zero Configuration Table -->
-    <div class="panel panel-default">
+    <br><div class="panel panel-default">
         <div class="panel-heading">Your Assignment</div>
         <div class="panel-body">
             <table id="zctb" class="display table table-striped table-bordered table-hover" cellspacing="0" width="100%">
@@ -45,9 +51,5 @@
         </div>
     </div>
 
-    <ul>
-        <li>
-            <a href="{{ path('assignment_new') }}">Create a new entry</a>
-        </li>
-    </ul>
+
 {% endblock contentdetail %}
