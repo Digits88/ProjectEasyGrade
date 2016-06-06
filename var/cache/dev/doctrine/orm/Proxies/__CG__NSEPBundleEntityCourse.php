@@ -331,4 +331,15 @@ class Course extends \NSEPBundle\Entity\Course implements \Doctrine\ORM\Proxy\Pr
         return parent::getUsers();
     }
 
+    /**
+     * {@inheritDoc}
+     */
+    public function setUsers($users)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setUsers', [$users]);
+
+        return parent::setUsers($users);
+    }
+
 }

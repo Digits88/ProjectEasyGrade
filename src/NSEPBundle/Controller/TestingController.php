@@ -21,6 +21,7 @@ use NSEPBundle\Entity\Assignment;
 use NSEPBundle\Entity\Submission;
 use NSEPBundle\Form\CourseType;
 use Doctrine\ORM\Query;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Course controller.
@@ -35,7 +36,7 @@ class TestingController extends Controller
     /**
      * Finds and displays a Course entity.
      *
-     * @Route("/{id}", name="test_show")
+     * @Route("/qwerty/{id}", name="test_show")
      * @Method("GET")
      */
     public function showAction(Course $course)
@@ -108,12 +109,12 @@ class TestingController extends Controller
     /**
      * Grade all Submission entities.
      *
-     * @Route("/grade/{id}", name="test_grade")
-     * @Method("GET")
+     * @Route("/grade", name="test_grade")
      */
-    public function gradeAction(Submission $submission)
+    public function gradeAction(Request $request)
     {
-
+        $id=$request->request->get('id');
+        $state = "FAIL:".$id;
         $ch = curl_init();
 
         $sub=file_get_contents("submissions/hellloworld.py");
@@ -142,6 +143,7 @@ class TestingController extends Controller
 
         //var_dump();
         //return $this->redirectToRoute('course_index');
+        return new Response($state);
     }
 
     /**
@@ -168,6 +170,34 @@ class TestingController extends Controller
         //var_dump();
         //return $this->redirectToRoute('course_index');
     }
+
+    /**
+     * Finds and displays a Course entity.
+     *
+     * @Route("/test/m2m", name="test_co")
+     */
+    public function m2mAction()
+    {
+        //$user = $this->container->get('security.context')->getToken()->getUser();
+        $cid=$this->getUser()->getId();
+
+
+        $em = $this->getDoctrine()->getManager();
+
+        $query = $em->createQuery(
+            "SELECT a FROM NSEPBundle\Entity\Course a JOIN a.users u WHERE u.id=$cid"
+        );
+
+        $products = $query->getResult();
+        return $this->render('course/index.html.twig', array(
+            'courses' => $products,
+        ));
+
+        //var_dump($products);
+
+    }
+
+
 
 
 

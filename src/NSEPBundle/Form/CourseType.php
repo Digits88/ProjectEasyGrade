@@ -22,7 +22,7 @@ class CourseType extends AbstractType
         $builder
             ->add('courseid',TextType::class,array('label' => 'Course ID', 'attr' => array('placeholder'=>'Course ID','class' => 'form-control col-sm-2')))
             ->add('coursename',TextType::class,array('label' => 'Course Name', 'attr' => array('placeholder'=>'Course Name','class' => 'form-control col-sm-2')))
-            ->add('users',null,array('label' => 'Lecturers', 'attr' => array('class' => 'form-control')))
+            ->add('users',null,array('class' => 'NSEPBundle:User','label' => 'Lecturers', 'attr' => array('class' => 'form-control')))
         ;
     }
     

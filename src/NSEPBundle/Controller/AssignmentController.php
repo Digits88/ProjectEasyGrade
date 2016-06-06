@@ -13,7 +13,7 @@ use NSEPBundle\Form\AssignmentType;
 /**
  * Assignment controller.
  *
- * @Route("/assignment")
+ * @Route("/user/courselist/assignment")
  */
 class AssignmentController extends Controller
 {
@@ -37,6 +37,33 @@ class AssignmentController extends Controller
 
 
     }
+
+
+    /**
+     * Finds and displays a Course entity.
+     *
+     * @Route("/assignmentlist", name="course_assignments")
+     */
+    public function courseassignmentAction(Request $request)
+    {
+
+        $cid=1;
+
+
+        $em = $this->getDoctrine()->getManager();
+
+        $query = $em->createQuery(
+            "SELECT a FROM NSEPBundle\Entity\Assignment a JOIN a.course c WHERE c.id=$cid"
+        );
+
+        $assignments = $query->getResult();
+        return $this->render('assignment/index.html.twig', array(
+            'assignments' => $assignments,
+        ));
+
+
+    }
+
 
     /**
      * Creates a new Assignment entity.

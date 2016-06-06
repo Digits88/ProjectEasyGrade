@@ -10,4 +10,5 @@ namespace NSEPBundle\Repository;
  */
 class CourseRepository extends \Doctrine\ORM\EntityRepository
 {
+
 }

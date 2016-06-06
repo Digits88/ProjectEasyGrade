@@ -59,8 +59,12 @@ class Submission
      */
     private $status="Not Graded";
 
-
-
+    /**
+     * @ORM\Column(type="string", length=255)
+     *
+     * @var string
+     */
+    private $sphereengineid="";
 
     /**
      * If manually uploading a file (i.e. not using Symfony Form) ensure an instance

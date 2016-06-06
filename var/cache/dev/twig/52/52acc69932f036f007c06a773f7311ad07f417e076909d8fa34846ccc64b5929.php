@@ -22,32 +22,32 @@ class __TwigTemplate_318e95a903402ce697127718325f8095919d2f1bf0fe7b4ada28f502c34
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_787e7c82f2784f9d4e1f09f0809c53c289fea328f341eb71e05a02a232ef3082 = $this->env->getExtension("native_profiler");
-        $__internal_787e7c82f2784f9d4e1f09f0809c53c289fea328f341eb71e05a02a232ef3082->enter($__internal_787e7c82f2784f9d4e1f09f0809c53c289fea328f341eb71e05a02a232ef3082_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "course/index.html.twig"));
+        $__internal_34dbf4b08b22726ac731f4d2ee5741c712e2d6c5e6e626694ebdb730821f0ef7 = $this->env->getExtension("native_profiler");
+        $__internal_34dbf4b08b22726ac731f4d2ee5741c712e2d6c5e6e626694ebdb730821f0ef7->enter($__internal_34dbf4b08b22726ac731f4d2ee5741c712e2d6c5e6e626694ebdb730821f0ef7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "course/index.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_787e7c82f2784f9d4e1f09f0809c53c289fea328f341eb71e05a02a232ef3082->leave($__internal_787e7c82f2784f9d4e1f09f0809c53c289fea328f341eb71e05a02a232ef3082_prof);
+        $__internal_34dbf4b08b22726ac731f4d2ee5741c712e2d6c5e6e626694ebdb730821f0ef7->leave($__internal_34dbf4b08b22726ac731f4d2ee5741c712e2d6c5e6e626694ebdb730821f0ef7_prof);
 
     }
 
     // line 3
     public function block_authenticatedUsername($context, array $blocks = array())
     {
-        $__internal_1f9e6c805f9fe1eebaa1a5538ee2a1310d15d58a11fa834461ffa8d158e678f2 = $this->env->getExtension("native_profiler");
-        $__internal_1f9e6c805f9fe1eebaa1a5538ee2a1310d15d58a11fa834461ffa8d158e678f2->enter($__internal_1f9e6c805f9fe1eebaa1a5538ee2a1310d15d58a11fa834461ffa8d158e678f2_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "authenticatedUsername"));
+        $__internal_f1b9482e9db936df533190949785be9213954b4d9998acbe554779aef9d74eb6 = $this->env->getExtension("native_profiler");
+        $__internal_f1b9482e9db936df533190949785be9213954b4d9998acbe554779aef9d74eb6->enter($__internal_f1b9482e9db936df533190949785be9213954b4d9998acbe554779aef9d74eb6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "authenticatedUsername"));
 
         echo twig_include($this->env, $context, "@NSEP/Default/userid.html.twig");
         
-        $__internal_1f9e6c805f9fe1eebaa1a5538ee2a1310d15d58a11fa834461ffa8d158e678f2->leave($__internal_1f9e6c805f9fe1eebaa1a5538ee2a1310d15d58a11fa834461ffa8d158e678f2_prof);
+        $__internal_f1b9482e9db936df533190949785be9213954b4d9998acbe554779aef9d74eb6->leave($__internal_f1b9482e9db936df533190949785be9213954b4d9998acbe554779aef9d74eb6_prof);
 
     }
 
     // line 4
     public function block_contentdetail($context, array $blocks = array())
     {
-        $__internal_3864427d0133acbb27eeca9ec86d7ea268f07ad61b1e9068aa4e3b199399ee1c = $this->env->getExtension("native_profiler");
-        $__internal_3864427d0133acbb27eeca9ec86d7ea268f07ad61b1e9068aa4e3b199399ee1c->enter($__internal_3864427d0133acbb27eeca9ec86d7ea268f07ad61b1e9068aa4e3b199399ee1c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "contentdetail"));
+        $__internal_0f6b8f69a649e1866abf4bee151588b168f2f6d9277d336c7931360a8fe78633 = $this->env->getExtension("native_profiler");
+        $__internal_0f6b8f69a649e1866abf4bee151588b168f2f6d9277d336c7931360a8fe78633->enter($__internal_0f6b8f69a649e1866abf4bee151588b168f2f6d9277d336c7931360a8fe78633_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "contentdetail"));
 
         // line 5
         echo "    <h1>Course list</h1>
@@ -93,7 +93,7 @@ class __TwigTemplate_318e95a903402ce697127718325f8095919d2f1bf0fe7b4ada28f502c34
             echo "</td>
                     <td><a href=\"";
             // line 32
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("assignment_index", array("id" => $this->getAttribute($context["course"], "id", array()))), "html", null, true);
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("course_assignments", array("id" => $this->getAttribute($context["course"], "id", array()))), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, $this->getAttribute($context["course"], "coursename", array()), "html", null, true);
             echo "</a></td>
@@ -121,7 +121,7 @@ class __TwigTemplate_318e95a903402ce697127718325f8095919d2f1bf0fe7b4ada28f502c34
 
 ";
         
-        $__internal_3864427d0133acbb27eeca9ec86d7ea268f07ad61b1e9068aa4e3b199399ee1c->leave($__internal_3864427d0133acbb27eeca9ec86d7ea268f07ad61b1e9068aa4e3b199399ee1c_prof);
+        $__internal_0f6b8f69a649e1866abf4bee151588b168f2f6d9277d336c7931360a8fe78633->leave($__internal_0f6b8f69a649e1866abf4bee151588b168f2f6d9277d336c7931360a8fe78633_prof);
 
     }
 
@@ -171,7 +171,7 @@ class __TwigTemplate_318e95a903402ce697127718325f8095919d2f1bf0fe7b4ada28f502c34
 /*                 <tr>*/
 /*                     <td>{{ course.id }}</td>*/
 /*                     <td>{{ course.courseid }}</td>*/
-/*                     <td><a href="{{ path('assignment_index', { 'id': course.id }) }}">{{ course.coursename }}</a></td>*/
+/*                     <td><a href="{{ path('course_assignments', { 'id': course.id }) }}">{{ course.coursename }}</a></td>*/
 /*                     <td>*/
 /*                         <ul>*/
 /*                             <li>*/

@@ -7,6 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use NSEPBundle\Entity\User;
+use NSEPBundle\Entity\Course;
 use NSEPBundle\Form\UserType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -36,6 +37,33 @@ class UserController extends Controller
             'users' => $users,
         ));
     }
+
+
+    /**
+     * Finds and displays a Course entity.
+     *
+     * @Route("/courselist", name="user_courses")
+     */
+    public function usercourseAction()
+    {
+
+        $cid=$this->getUser()->getId();
+
+
+        $em = $this->getDoctrine()->getManager();
+
+        $query = $em->createQuery(
+            "SELECT a FROM NSEPBundle\Entity\Course a JOIN a.users u WHERE u.id=$cid"
+        );
+
+        $courses = $query->getResult();
+        return $this->render('course/index.html.twig', array(
+            'courses' => $courses,
+        ));
+
+
+    }
+
 
     /**
      * Creates a new User entity.
@@ -150,6 +178,7 @@ class UserController extends Controller
             ->getForm()
         ;
     }
+
 
 
 }

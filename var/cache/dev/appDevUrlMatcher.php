@@ -100,9 +100,9 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        if (0 === strpos($pathinfo, '/assignment')) {
+        if (0 === strpos($pathinfo, '/user/courselist/assignment')) {
             // assignment_index
-            if (rtrim($pathinfo, '/') === '/assignment') {
+            if (rtrim($pathinfo, '/') === '/user/courselist/assignment') {
                 if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
                     $allow = array_merge($allow, array('GET', 'HEAD'));
                     goto not_assignment_index;
@@ -116,8 +116,13 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             }
             not_assignment_index:
 
+            // course_assignments
+            if ($pathinfo === '/user/courselist/assignment/assignmentlist') {
+                return array (  '_controller' => 'NSEPBundle\\Controller\\AssignmentController::courseassignmentAction',  '_route' => 'course_assignments',);
+            }
+
             // assignment_new
-            if ($pathinfo === '/assignment/new') {
+            if ($pathinfo === '/user/courselist/assignment/new') {
                 if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
                     $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
                     goto not_assignment_new;
@@ -128,7 +133,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             not_assignment_new:
 
             // assignment_show
-            if (preg_match('#^/assignment/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            if (preg_match('#^/user/courselist/assignment/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
                 if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
                     $allow = array_merge($allow, array('GET', 'HEAD'));
                     goto not_assignment_show;
@@ -139,7 +144,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             not_assignment_show:
 
             // assignment_edit
-            if (preg_match('#^/assignment/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+            if (preg_match('#^/user/courselist/assignment/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
                 if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
                     $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
                     goto not_assignment_edit;
@@ -150,7 +155,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             not_assignment_edit:
 
             // assignment_delete
-            if (preg_match('#^/assignment/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            if (preg_match('#^/user/courselist/assignment/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
                 if ($this->context->getMethod() != 'DELETE') {
                     $allow[] = 'DELETE';
                     goto not_assignment_delete;
@@ -308,7 +313,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         if (0 === strpos($pathinfo, '/test/assignment')) {
             // test_show
-            if (preg_match('#^/test/assignment/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            if (0 === strpos($pathinfo, '/test/assignment/qwerty') && preg_match('#^/test/assignment/qwerty/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
                 if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
                     $allow = array_merge($allow, array('GET', 'HEAD'));
                     goto not_test_show;
@@ -342,15 +347,9 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
             if (0 === strpos($pathinfo, '/test/assignment/grade')) {
                 // test_grade
-                if (preg_match('#^/test/assignment/grade/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                        $allow = array_merge($allow, array('GET', 'HEAD'));
-                        goto not_test_grade;
-                    }
-
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'test_grade')), array (  '_controller' => 'NSEPBundle\\Controller\\TestingController::gradeAction',));
+                if ($pathinfo === '/test/assignment/grade') {
+                    return array (  '_controller' => 'NSEPBundle\\Controller\\TestingController::gradeAction',  '_route' => 'test_grade',);
                 }
-                not_test_grade:
 
                 // test_status
                 if (0 === strpos($pathinfo, '/test/assignment/grade/status') && preg_match('#^/test/assignment/grade/status/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
@@ -363,6 +362,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 }
                 not_test_status:
 
+            }
+
+            // test_co
+            if ($pathinfo === '/test/assignment/test/m2m') {
+                return array (  '_controller' => 'NSEPBundle\\Controller\\TestingController::m2mAction',  '_route' => 'test_co',);
             }
 
         }
@@ -382,6 +386,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return array (  '_controller' => 'NSEPBundle\\Controller\\UserController::indexAction',  '_route' => 'user_index',);
             }
             not_user_index:
+
+            // user_courses
+            if ($pathinfo === '/user/courselist') {
+                return array (  '_controller' => 'NSEPBundle\\Controller\\UserController::usercourseAction',  '_route' => 'user_courses',);
+            }
 
             // user_new
             if ($pathinfo === '/user/new') {

@@ -11,6 +11,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use NSEPBundle\Entity\Course;
+use NSEPBundle\Entity\Assignment;
+use NSEPBundle\Entity\Submission;
 use NSEPBundle\Form\CourseType;
 use Doctrine\ORM\Query;
 
@@ -77,6 +79,11 @@ class CourseController extends Controller
         ));
     }
 
+
+
+
+
+
     /**
      * Creates a new Course entity.
      *
@@ -91,12 +98,12 @@ class CourseController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
 
-
+            var_dump($course);
             $em = $this->getDoctrine()->getManager();
             $em->persist($course);
             $em->flush();
 
-            return $this->redirectToRoute('course_index', array('id' => $course->getId()));
+            //return $this->redirectToRoute('course_index', array('id' => $course->getId()));
         }
 
         return $this->render('course/new.html.twig', array(
@@ -184,6 +191,7 @@ class CourseController extends Controller
             ->setMethod('DELETE')
             ->getForm();
     }
+
 
 
 
