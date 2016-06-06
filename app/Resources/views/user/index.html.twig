@@ -3,6 +3,15 @@
 {% block authenticatedUsername %}{{ include('@NSEP/Default/userid.html.twig') }}{% endblock authenticatedUsername %}
 {% block contentdetail %}
 
+    <h1>User Accounts</h1>
+
+    <ul>
+        <li>
+            <a href="{{ path('user_new') }}" class="btn btn-warning">Create a new user</a>
+        </li>
+    </ul>
+
+    <br>
 
     <!-- Zero Configuration Table -->
     <div class="panel panel-default">
@@ -28,7 +37,7 @@
                         <td>
                             <ul>
                                 <li>
-                                    <a href="{{ path('user_edit', { 'id': user.id }) }}">Edit or Delete</a>
+                                    <a href="{{ path('user_show', { 'id': user.id }) }}" class="btn btn-primary">View</a>
                                 </li>
                             </ul>
                         </td>
@@ -43,10 +52,6 @@
         </div>
     </div>
 
-    <ul>
-        <li>
-            <a href="{{ path('user_new') }}">Create a new entry</a>
-        </li>
-    </ul>
+
 
 {% endblock %}

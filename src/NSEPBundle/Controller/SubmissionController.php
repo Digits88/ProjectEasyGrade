@@ -50,11 +50,10 @@ class SubmissionController extends Controller
 
 
         $form = $this->createFormBuilder($submission)
-            ->add('imageFile', FileType::class, array(
+            ->add('imageFile', FileType::class, array('label' => 'Choose File',
                 'data_class' => 'Symfony\Component\HttpFoundation\File\File',
                 'attr' => array('class' => 'sonata-medium-file')
             ))
-            ->add('status', TextType::class,['attr'=>['class'=>'abc ghj hhh']])
             ->getForm();
 
         $form->handleRequest($request);

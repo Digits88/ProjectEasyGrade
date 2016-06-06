@@ -22,32 +22,32 @@ class __TwigTemplate_63381a52628d9846f209c40b6aa77534eefcb6a994825a5d773c45b4739
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_8da5fda3abbc67b578efbbc8997aed203bd6aab51cb61ade5909c63f415732b5 = $this->env->getExtension("native_profiler");
-        $__internal_8da5fda3abbc67b578efbbc8997aed203bd6aab51cb61ade5909c63f415732b5->enter($__internal_8da5fda3abbc67b578efbbc8997aed203bd6aab51cb61ade5909c63f415732b5_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "user/new.html.twig"));
+        $__internal_726feb7f0f23172826759e5d1b272072effe1bdec1f83e9a1b7a9523f4922e50 = $this->env->getExtension("native_profiler");
+        $__internal_726feb7f0f23172826759e5d1b272072effe1bdec1f83e9a1b7a9523f4922e50->enter($__internal_726feb7f0f23172826759e5d1b272072effe1bdec1f83e9a1b7a9523f4922e50_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "user/new.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_8da5fda3abbc67b578efbbc8997aed203bd6aab51cb61ade5909c63f415732b5->leave($__internal_8da5fda3abbc67b578efbbc8997aed203bd6aab51cb61ade5909c63f415732b5_prof);
+        $__internal_726feb7f0f23172826759e5d1b272072effe1bdec1f83e9a1b7a9523f4922e50->leave($__internal_726feb7f0f23172826759e5d1b272072effe1bdec1f83e9a1b7a9523f4922e50_prof);
 
     }
 
     // line 4
     public function block_authenticatedUsername($context, array $blocks = array())
     {
-        $__internal_0e0a4fecd74dbe21e3f3a624102b2b50bc2c8ae544be5d327b9c10eff4e34434 = $this->env->getExtension("native_profiler");
-        $__internal_0e0a4fecd74dbe21e3f3a624102b2b50bc2c8ae544be5d327b9c10eff4e34434->enter($__internal_0e0a4fecd74dbe21e3f3a624102b2b50bc2c8ae544be5d327b9c10eff4e34434_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "authenticatedUsername"));
+        $__internal_215d6359353e9e77bfee116e09678e4b457720cb02ba83d54ae343ccc51cac8d = $this->env->getExtension("native_profiler");
+        $__internal_215d6359353e9e77bfee116e09678e4b457720cb02ba83d54ae343ccc51cac8d->enter($__internal_215d6359353e9e77bfee116e09678e4b457720cb02ba83d54ae343ccc51cac8d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "authenticatedUsername"));
 
         echo twig_include($this->env, $context, "@NSEP/Default/userid.html.twig");
         
-        $__internal_0e0a4fecd74dbe21e3f3a624102b2b50bc2c8ae544be5d327b9c10eff4e34434->leave($__internal_0e0a4fecd74dbe21e3f3a624102b2b50bc2c8ae544be5d327b9c10eff4e34434_prof);
+        $__internal_215d6359353e9e77bfee116e09678e4b457720cb02ba83d54ae343ccc51cac8d->leave($__internal_215d6359353e9e77bfee116e09678e4b457720cb02ba83d54ae343ccc51cac8d_prof);
 
     }
 
     // line 5
     public function block_contentdetail($context, array $blocks = array())
     {
-        $__internal_91ded755a8308b64c5f0414d1aa9277339a0b2232f508c53328b8cee9c51a767 = $this->env->getExtension("native_profiler");
-        $__internal_91ded755a8308b64c5f0414d1aa9277339a0b2232f508c53328b8cee9c51a767->enter($__internal_91ded755a8308b64c5f0414d1aa9277339a0b2232f508c53328b8cee9c51a767_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "contentdetail"));
+        $__internal_8fde9572f51335d3ef325158e7c92bef16836781503f9aaacbe75e82dfc4a71f = $this->env->getExtension("native_profiler");
+        $__internal_8fde9572f51335d3ef325158e7c92bef16836781503f9aaacbe75e82dfc4a71f->enter($__internal_8fde9572f51335d3ef325158e7c92bef16836781503f9aaacbe75e82dfc4a71f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "contentdetail"));
 
         // line 6
         echo "    <h1>User creation</h1>
@@ -60,7 +60,7 @@ class __TwigTemplate_63381a52628d9846f209c40b6aa77534eefcb6a994825a5d773c45b4739
         // line 9
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'widget');
         echo "
-        <input type=\"submit\" value=\"Create\" />
+        <br><input class=\"btn btn-success\" type=\"submit\" value=\"Create\" />
     ";
         // line 11
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_end');
@@ -68,15 +68,15 @@ class __TwigTemplate_63381a52628d9846f209c40b6aa77534eefcb6a994825a5d773c45b4739
 
     <ul>
         <li>
-            <a href=\"";
+            <br><a href=\"";
         // line 15
         echo $this->env->getExtension('routing')->getPath("user_index");
-        echo "\">Back to the list</a>
+        echo "\" class=\"btn btn-primary\">Back to the list</a>
         </li>
     </ul>
 ";
         
-        $__internal_91ded755a8308b64c5f0414d1aa9277339a0b2232f508c53328b8cee9c51a767->leave($__internal_91ded755a8308b64c5f0414d1aa9277339a0b2232f508c53328b8cee9c51a767_prof);
+        $__internal_8fde9572f51335d3ef325158e7c92bef16836781503f9aaacbe75e82dfc4a71f->leave($__internal_8fde9572f51335d3ef325158e7c92bef16836781503f9aaacbe75e82dfc4a71f_prof);
 
     }
 
@@ -104,12 +104,12 @@ class __TwigTemplate_63381a52628d9846f209c40b6aa77534eefcb6a994825a5d773c45b4739
 /* */
 /*     {{ form_start(form) }}*/
 /*         {{ form_widget(form) }}*/
-/*         <input type="submit" value="Create" />*/
+/*         <br><input class="btn btn-success" type="submit" value="Create" />*/
 /*     {{ form_end(form) }}*/
 /* */
 /*     <ul>*/
 /*         <li>*/
-/*             <a href="{{ path('user_index') }}">Back to the list</a>*/
+/*             <br><a href="{{ path('user_index') }}" class="btn btn-primary">Back to the list</a>*/
 /*         </li>*/
 /*     </ul>*/
 /* {% endblock contentdetail %}*/

@@ -57,7 +57,7 @@ class Submission
      *
      * @var string
      */
-    private $status;
+    private $status="Not Graded";
 
 
 

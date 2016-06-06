@@ -4,34 +4,39 @@
 {% block contentdetail %}
     <h1>Course</h1>
 
-    <table>
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ course.id }}</td>
-            </tr>
-            <tr>
-                <th>Courseid</th>
-                <td>{{ course.courseid }}</td>
-            </tr>
-            <tr>
-                <th>Coursename</th>
-                <td>{{ course.coursename }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <!-- Zero Configuration Table -->
+    <div class="panel panel-default">
+        <div class="panel-heading">Your Courses</div>
+        <div class="panel-body">
 
-    <ul>
-        <li>
-            <a href="{{ path('course_index') }}" class="btn btn-primary">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('course_edit', { 'id': course.id }) }}" class="btn btn-primary">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete" class="btn btn-primary">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+            <table id="zctb" class="display table table-striped table-bordered table-hover" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Courseid</th>
+                        <th>Coursename</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ course.id }}</td>
+                        <td>{{ course.courseid }}</td>
+                        <td>{{ course.coursename }}</td>
+                        <td>
+                            <ul>
+                                <li>
+                                    <a href="{{ path('course_index') }}" class="btn btn-primary">Back to the list</a>
+                                    <a href="{{ path('course_edit', { 'id': course.id }) }}" class="btn btn-primary">Edit</a>
+                                </li>
+
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
 {% endblock contentdetail %}

@@ -4,26 +4,51 @@
 {% block contentdetail %}
     <h1>User</h1>
 
-    <table>
-        <tbody>
-        <tr>
-            <th>Id</th>
-            <td>{{ user.id }}</td>
-        </tr>
-        </tbody>
-    </table>
+    <!-- Zero Configuration Table -->
+    <div class="panel panel-default">
+        <div class="panel-heading">Your Courses</div>
+        <div class="panel-body">
 
-    <ul>
-        <li>
-            <a href="{{ path('user_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('user_edit', { 'id': user.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-            <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+
+            <table id="zctb" class="display table table-striped table-bordered table-hover" cellspacing="0" width="100%">
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>{{ user.id }}</td>
+                        <td>{{ user.username }}</td>
+                        <td>{{ user.email }}</td>
+                        <td>{{ user.password }}</td>
+                        <td>
+
+                            <ul>
+                                <li>
+                                    <a href="{{ path('user_index') }}"class="btn btn-primary">Back to the list</a>
+                                    <a href="{{ path('user_edit', { 'id': user.id }) }}" class="btn btn-success">Edit</a>
+                                    {{ form_start(delete_form) }}
+                                    <input type="submit" value="Delete" class="btn btn-warning">
+                                    {{ form_end(delete_form) }}
+                                </li>
+                            </ul>
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+
+
+
+
 {% endblock contentdetail%}

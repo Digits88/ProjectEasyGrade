@@ -46,7 +46,10 @@ class AssignmentController extends Controller
      */
     public function newAction(Request $request)
     {
+
+
         $assignment = new Assignment();
+
         $form = $this->createForm('NSEPBundle\Form\AssignmentType', $assignment);
         $form->handleRequest($request);
 

@@ -23,7 +23,7 @@ class AssignmentType extends AbstractType
             ->add('assignmentid',TextType::class,array('label' => 'Assignment ID', 'attr' => array('placeholder'=>'Assignment ID','class' => 'form-control col-sm-2')))
             ->add('assignmentname',TextType::class,array('label' => 'Assignment Name', 'attr' => array('placeholder'=>'Assignment Nam','class' => 'form-control col-sm-2')))
             ->add('assignmentdescription',TextType::class,array('label' => 'Assignment Description', 'attr' => array('placeholder'=>'Assignment Description','class' => 'form-control col-sm-2')))
-            ->add('createddate', DateType::class)
+            ->add('createddate', DateType::class,array('label' => 'Created Date','attr' =>array('disabled' =>'true','class'=>'form-control')))
             ->add('courseid',null,array('label' => 'Course', 'attr' => array('class' => 'form-control')))
         ;
     }
