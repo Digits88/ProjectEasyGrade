@@ -242,4 +242,38 @@ class Assignment
     {
         return $this->course;
     }
+
+    /**
+     * Add submission
+     *
+     * @param \NSEPBundle\Entity\Submission $submission
+     *
+     * @return Assignment
+     */
+    public function addSubmission(\NSEPBundle\Entity\Submission $submission)
+    {
+        $this->submissions[] = $submission;
+
+        return $this;
+    }
+
+    /**
+     * Remove submission
+     *
+     * @param \NSEPBundle\Entity\Submission $submission
+     */
+    public function removeSubmission(\NSEPBundle\Entity\Submission $submission)
+    {
+        $this->submissions->removeElement($submission);
+    }
+
+    /**
+     * Get submissions
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getSubmissions()
+    {
+        return $this->submissions;
+    }
 }

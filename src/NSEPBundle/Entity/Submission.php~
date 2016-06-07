@@ -57,10 +57,14 @@ class Submission
      *
      * @var string
      */
-    private $status;
+    private $status="Not Graded";
 
-
-
+    /**
+     * @ORM\Column(type="string", length=255)
+     *
+     * @var string
+     */
+    private $sphereengineid="";
 
     /**
      * If manually uploading a file (i.e. not using Symfony Form) ensure an instance
@@ -148,5 +152,53 @@ class Submission
         $this->updatedAt = $updatedAt;
 
         return $this;
+    }
+
+    /**
+     * Set status
+     *
+     * @param string $status
+     *
+     * @return Submission
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+
+        return $this;
+    }
+
+    /**
+     * Get status
+     *
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * Set assignment
+     *
+     * @param \NSEPBundle\Entity\Assignment $assignment
+     *
+     * @return Submission
+     */
+    public function setAssignment(\NSEPBundle\Entity\Assignment $assignment = null)
+    {
+        $this->assignment = $assignment;
+
+        return $this;
+    }
+
+    /**
+     * Get assignment
+     *
+     * @return \NSEPBundle\Entity\Assignment
+     */
+    public function getAssignment()
+    {
+        return $this->assignment;
     }
 }

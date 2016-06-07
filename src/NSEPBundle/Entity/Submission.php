@@ -201,4 +201,28 @@ class Submission
     {
         return $this->assignment;
     }
+
+    /**
+     * Set sphereengineid
+     *
+     * @param string $sphereengineid
+     *
+     * @return Submission
+     */
+    public function setSphereengineid($sphereengineid)
+    {
+        $this->sphereengineid = $sphereengineid;
+
+        return $this;
+    }
+
+    /**
+     * Get sphereengineid
+     *
+     * @return string
+     */
+    public function getSphereengineid()
+    {
+        return $this->sphereengineid;
+    }
 }

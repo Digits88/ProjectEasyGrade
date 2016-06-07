@@ -226,4 +226,9 @@ class Course
     {
         return $this->users;
     }
+
+    public function setUsers($users)
+    {
+        $this->users=$users;
+    }
 }

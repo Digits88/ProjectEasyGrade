@@ -37,7 +37,7 @@
                             <li>
                                 <a href="{{ path('submission_show', { 'id': submission.id }) }}" class="btn btn-primary">show</a>
                                 <a href="{{ path('submission_edit', { 'id': submission.id }) }}" class="btn btn-primary">edit</a>
-                                <a href="#" class="btn btn-primary grade">Grade</a>
+                                <a href="{{ path('test_grade',{'id': submission.id }) }}" class="btn btn-primary grade">{{ submission.status }}</a>
                             </li>
                         </ul>
                     </td>
@@ -61,10 +61,7 @@
                                 data: {id:the_id},
                                 url: "{{ path('test_grade') }}",
                                 success: function(data){
-                                    //data will contain the vote count echoed by the controller i.e.
-                                    "yourVoteCount"
-                                    //then append the result where ever you want like
-                                    $("span#votes_number").html(data); //data will be containing the vote count which you have echoed from the controller
+                                    //$("span#votes_number").html(data); //data will be containing the vote count which you have echoed from the controller
                                     var d=data.split(':')[0];
                                     var id=data.split(':')[1];
                                     var state="Error occurred.";

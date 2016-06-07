@@ -23,32 +23,32 @@ class __TwigTemplate_d555d86742044ffe6c9949b7f97701478d6a0bbe2d2e51c46f27a43f5c5
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_2f740cdf5cf0a4330708fb346d635d23d324dc3b8a8dea6ea6cb4eeb058282d4 = $this->env->getExtension("native_profiler");
-        $__internal_2f740cdf5cf0a4330708fb346d635d23d324dc3b8a8dea6ea6cb4eeb058282d4->enter($__internal_2f740cdf5cf0a4330708fb346d635d23d324dc3b8a8dea6ea6cb4eeb058282d4_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "submission/index.html.twig"));
+        $__internal_74aa588d1c6e000b6a078cddbad41996b63bc0a41079616d938bfb665d6a96b2 = $this->env->getExtension("native_profiler");
+        $__internal_74aa588d1c6e000b6a078cddbad41996b63bc0a41079616d938bfb665d6a96b2->enter($__internal_74aa588d1c6e000b6a078cddbad41996b63bc0a41079616d938bfb665d6a96b2_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "submission/index.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_2f740cdf5cf0a4330708fb346d635d23d324dc3b8a8dea6ea6cb4eeb058282d4->leave($__internal_2f740cdf5cf0a4330708fb346d635d23d324dc3b8a8dea6ea6cb4eeb058282d4_prof);
+        $__internal_74aa588d1c6e000b6a078cddbad41996b63bc0a41079616d938bfb665d6a96b2->leave($__internal_74aa588d1c6e000b6a078cddbad41996b63bc0a41079616d938bfb665d6a96b2_prof);
 
     }
 
     // line 3
     public function block_authenticatedUsername($context, array $blocks = array())
     {
-        $__internal_0c4f5af1269faac1a189fffbf1f823c76ef4c37d38e3b07c7144b2141c7020e5 = $this->env->getExtension("native_profiler");
-        $__internal_0c4f5af1269faac1a189fffbf1f823c76ef4c37d38e3b07c7144b2141c7020e5->enter($__internal_0c4f5af1269faac1a189fffbf1f823c76ef4c37d38e3b07c7144b2141c7020e5_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "authenticatedUsername"));
+        $__internal_a6390127621fdaf7515980b5d6f6adacec03ece15de38ff89853219628500d40 = $this->env->getExtension("native_profiler");
+        $__internal_a6390127621fdaf7515980b5d6f6adacec03ece15de38ff89853219628500d40->enter($__internal_a6390127621fdaf7515980b5d6f6adacec03ece15de38ff89853219628500d40_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "authenticatedUsername"));
 
         echo twig_include($this->env, $context, "@NSEP/Default/userid.html.twig");
         
-        $__internal_0c4f5af1269faac1a189fffbf1f823c76ef4c37d38e3b07c7144b2141c7020e5->leave($__internal_0c4f5af1269faac1a189fffbf1f823c76ef4c37d38e3b07c7144b2141c7020e5_prof);
+        $__internal_a6390127621fdaf7515980b5d6f6adacec03ece15de38ff89853219628500d40->leave($__internal_a6390127621fdaf7515980b5d6f6adacec03ece15de38ff89853219628500d40_prof);
 
     }
 
     // line 4
     public function block_contentdetail($context, array $blocks = array())
     {
-        $__internal_c8de96608498cd03e0d29aa94697e226c60babdb7538fbba289a874b5c8ade3e = $this->env->getExtension("native_profiler");
-        $__internal_c8de96608498cd03e0d29aa94697e226c60babdb7538fbba289a874b5c8ade3e->enter($__internal_c8de96608498cd03e0d29aa94697e226c60babdb7538fbba289a874b5c8ade3e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "contentdetail"));
+        $__internal_f2addfe3314a9efb96e4b1b50a96877b33358ee2f2c3185da69000819438248e = $this->env->getExtension("native_profiler");
+        $__internal_f2addfe3314a9efb96e4b1b50a96877b33358ee2f2c3185da69000819438248e->enter($__internal_f2addfe3314a9efb96e4b1b50a96877b33358ee2f2c3185da69000819438248e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "contentdetail"));
 
         // line 5
         echo "    <h1>Submission list</h1>
@@ -116,7 +116,12 @@ class __TwigTemplate_d555d86742044ffe6c9949b7f97701478d6a0bbe2d2e51c46f27a43f5c5
             // line 39
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("submission_edit", array("id" => $this->getAttribute($context["submission"], "id", array()))), "html", null, true);
             echo "\" class=\"btn btn-primary\">edit</a>
-                                <a href=\"#\" class=\"btn btn-primary grade\">Grade</a>
+                                <a href=\"";
+            // line 40
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("test_grade", array("id" => $this->getAttribute($context["submission"], "id", array()))), "html", null, true);
+            echo "\" class=\"btn btn-primary grade\">";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["submission"], "status", array()), "html", null, true);
+            echo "</a>
                             </li>
                         </ul>
                     </td>
@@ -135,15 +140,15 @@ class __TwigTemplate_d555d86742044ffe6c9949b7f97701478d6a0bbe2d2e51c46f27a43f5c5
 
 ";
         
-        $__internal_c8de96608498cd03e0d29aa94697e226c60babdb7538fbba289a874b5c8ade3e->leave($__internal_c8de96608498cd03e0d29aa94697e226c60babdb7538fbba289a874b5c8ade3e_prof);
+        $__internal_f2addfe3314a9efb96e4b1b50a96877b33358ee2f2c3185da69000819438248e->leave($__internal_f2addfe3314a9efb96e4b1b50a96877b33358ee2f2c3185da69000819438248e_prof);
 
     }
 
     // line 53
     public function block_cumstomScript($context, array $blocks = array())
     {
-        $__internal_9753068fc8abe9ad1cbb9fbb296770058e65d645fa88115d3e8f5748fb2b6cc5 = $this->env->getExtension("native_profiler");
-        $__internal_9753068fc8abe9ad1cbb9fbb296770058e65d645fa88115d3e8f5748fb2b6cc5->enter($__internal_9753068fc8abe9ad1cbb9fbb296770058e65d645fa88115d3e8f5748fb2b6cc5_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "cumstomScript"));
+        $__internal_a4df91ea043374d74fd598eb7501688da781b0c7df78f10ec20e03858be4c4fc = $this->env->getExtension("native_profiler");
+        $__internal_a4df91ea043374d74fd598eb7501688da781b0c7df78f10ec20e03858be4c4fc->enter($__internal_a4df91ea043374d74fd598eb7501688da781b0c7df78f10ec20e03858be4c4fc_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "cumstomScript"));
 
         // line 54
         echo "    <script type=\"application/javascript\">
@@ -159,10 +164,7 @@ class __TwigTemplate_d555d86742044ffe6c9949b7f97701478d6a0bbe2d2e51c46f27a43f5c5
         echo $this->env->getExtension('routing')->getPath("test_grade");
         echo "\",
                                 success: function(data){
-                                    //data will contain the vote count echoed by the controller i.e.
-                                    \"yourVoteCount\"
-                                    //then append the result where ever you want like
-                                    \$(\"span#votes_number\").html(data); //data will be containing the vote count which you have echoed from the controller
+                                    //\$(\"span#votes_number\").html(data); //data will be containing the vote count which you have echoed from the controller
                                     var d=data.split(':')[0];
                                     var id=data.split(':')[1];
                                     var state=\"Error occurred.\";
@@ -191,7 +193,7 @@ class __TwigTemplate_d555d86742044ffe6c9949b7f97701478d6a0bbe2d2e51c46f27a43f5c5
     </script>
 ";
         
-        $__internal_9753068fc8abe9ad1cbb9fbb296770058e65d645fa88115d3e8f5748fb2b6cc5->leave($__internal_9753068fc8abe9ad1cbb9fbb296770058e65d645fa88115d3e8f5748fb2b6cc5_prof);
+        $__internal_a4df91ea043374d74fd598eb7501688da781b0c7df78f10ec20e03858be4c4fc->leave($__internal_a4df91ea043374d74fd598eb7501688da781b0c7df78f10ec20e03858be4c4fc_prof);
 
     }
 
@@ -207,7 +209,7 @@ class __TwigTemplate_d555d86742044ffe6c9949b7f97701478d6a0bbe2d2e51c46f27a43f5c5
 
     public function getDebugInfo()
     {
-        return array (  159 => 62,  149 => 54,  143 => 53,  130 => 46,  117 => 39,  113 => 38,  106 => 34,  100 => 33,  96 => 32,  90 => 31,  87 => 30,  83 => 29,  60 => 9,  54 => 5,  48 => 4,  36 => 3,  11 => 1,);
+        return array (  164 => 62,  154 => 54,  148 => 53,  135 => 46,  121 => 40,  117 => 39,  113 => 38,  106 => 34,  100 => 33,  96 => 32,  90 => 31,  87 => 30,  83 => 29,  60 => 9,  54 => 5,  48 => 4,  36 => 3,  11 => 1,);
     }
 }
 /* {% extends 'base.html.twig' %}*/
@@ -249,7 +251,7 @@ class __TwigTemplate_d555d86742044ffe6c9949b7f97701478d6a0bbe2d2e51c46f27a43f5c5
 /*                             <li>*/
 /*                                 <a href="{{ path('submission_show', { 'id': submission.id }) }}" class="btn btn-primary">show</a>*/
 /*                                 <a href="{{ path('submission_edit', { 'id': submission.id }) }}" class="btn btn-primary">edit</a>*/
-/*                                 <a href="#" class="btn btn-primary grade">Grade</a>*/
+/*                                 <a href="{{ path('test_grade',{'id': submission.id }) }}" class="btn btn-primary grade">{{ submission.status }}</a>*/
 /*                             </li>*/
 /*                         </ul>*/
 /*                     </td>*/
@@ -273,10 +275,7 @@ class __TwigTemplate_d555d86742044ffe6c9949b7f97701478d6a0bbe2d2e51c46f27a43f5c5
 /*                                 data: {id:the_id},*/
 /*                                 url: "{{ path('test_grade') }}",*/
 /*                                 success: function(data){*/
-/*                                     //data will contain the vote count echoed by the controller i.e.*/
-/*                                     "yourVoteCount"*/
-/*                                     //then append the result where ever you want like*/
-/*                                     $("span#votes_number").html(data); //data will be containing the vote count which you have echoed from the controller*/
+/*                                     //$("span#votes_number").html(data); //data will be containing the vote count which you have echoed from the controller*/
 /*                                     var d=data.split(':')[0];*/
 /*                                     var id=data.split(':')[1];*/
 /*                                     var state="Error occurred.";*/
