@@ -29,8 +29,7 @@ class User extends BaseUser
     protected $id;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Course", inversedBy="users")
-     * @ORM\JoinTable(name="users_courses")
+     * @ORM\ManyToMany(targetEntity="Course", mappedBy="users")
      */
     private $courses;
 
@@ -44,6 +43,8 @@ class User extends BaseUser
     }
 
     
+
+
     /**
      * Add course
      *

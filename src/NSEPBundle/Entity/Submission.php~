@@ -265,4 +265,28 @@ class Submission
     }
 
 
+
+    /**
+     * Set language
+     *
+     * @param integer $language
+     *
+     * @return Submission
+     */
+    public function setLanguage($language)
+    {
+        $this->language = $language;
+
+        return $this;
+    }
+
+    /**
+     * Get language
+     *
+     * @return integer
+     */
+    public function getLanguage()
+    {
+        return $this->language;
+    }
 }

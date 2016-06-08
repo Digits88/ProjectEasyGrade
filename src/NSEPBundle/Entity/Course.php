@@ -5,12 +5,14 @@ namespace NSEPBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use NSEPBundle\Entity\User;
 use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * Course
  *
  * @ORM\Table(name="course")
  * @ORM\Entity(repositoryClass="NSEPBundle\Repository\CourseRepository")
+ * @UniqueEntity("courseid")
  */
 class Course
 {
@@ -26,7 +28,7 @@ class Course
     /**
      * @var string
      *
-     * @ORM\Column(name="courseid", type="string", length=255)
+     * @ORM\Column(name="courseid", type="string", length=255, unique=true)
      */
     private $courseid;
 
@@ -39,7 +41,8 @@ class Course
 
 
     /**
-     * @ORM\ManyToMany(targetEntity="User", mappedBy="courses")
+     * @ORM\ManyToMany(targetEntity="User", inversedBy="courses")
+     * @ORM\JoinTable(name="users_courses")
      */
     private $users;
 
@@ -48,18 +51,19 @@ class Course
      * @ORM\ManyToMany(targetEntity="Student", inversedBy="courseid")
      * @ORM\JoinTable(name="course_student")
      */
-    private $studentid;
+    private $studentid="";
 
     /**
      * @ORM\OneToMany(targetEntity="Assignment", mappedBy="course")
      */
-    private $assignments;
+    private $assignments="";
 
 
     public function __construct() {
         $this->studentid = new ArrayCollection();
         $this->assignments = new ArrayCollection();
         $this->users = new ArrayCollection();
+
     }
 
 
@@ -193,6 +197,9 @@ class Course
         return $this->assignments;
     }
 
+
+
+
     /**
      * Add user
      *
@@ -225,10 +232,5 @@ class Course
     public function getUsers()
     {
         return $this->users;
-    }
-
-    public function setUsers($users)
-    {
-        $this->users=$users;
     }
 }
