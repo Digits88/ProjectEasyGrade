@@ -18,4 +18,5 @@ return array(
     'Doctrine\\Common\\Collections\\' => array($vendorDir . '/doctrine/collections/lib'),
     'Doctrine\\Common\\Annotations\\' => array($vendorDir . '/doctrine/annotations/lib'),
     'Circle\\RestClientBundle' => array($vendorDir . '/ci/restclientbundle'),
+    'CMEN\\GoogleChartsBundle' => array($vendorDir . '/cmen/google-charts-bundle'),
 );

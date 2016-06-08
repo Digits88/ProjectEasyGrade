@@ -88,3 +88,7 @@ circle_rest_client:
       defaults:
         CURLOPT_HTTPHEADER:     [ 'Content-Type: application/json' ]
         CURLOPT_FOLLOWLOCATION: true
+
+
+cmen_google_charts:
+    version: "1.1"
