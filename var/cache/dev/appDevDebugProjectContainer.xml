@@ -20,6 +20,7 @@
       <parameter key="FOSUserBundle">FOS\UserBundle\FOSUserBundle</parameter>
       <parameter key="VichUploaderBundle">Vich\UploaderBundle\VichUploaderBundle</parameter>
       <parameter key="CircleRestClientBundle">Circle\RestClientBundle\CircleRestClientBundle</parameter>
+      <parameter key="ObHighchartsBundle">Ob\HighchartsBundle\ObHighchartsBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
@@ -379,6 +380,7 @@
       <parameter key="52">true</parameter>
     </parameter>
     <parameter key="circle.restclient.class">Circle\RestClientBundle\Services\RestClient</parameter>
+    <parameter key="ob_highcharts.twig_extension.class">Ob\HighchartsBundle\Twig\HighchartsExtension</parameter>
     <parameter key="web_profiler.debug_toolbar.position">bottom</parameter>
     <parameter key="web_profiler.debug_toolbar.intercept_redirects">false</parameter>
     <parameter key="web_profiler.debug_toolbar.mode">2</parameter>
@@ -1947,7 +1949,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>5755b5126089a7.59693620</argument>
+            <argument>5757e6bcd55bb3.74784495</argument>
           </service>
         </argument>
       </argument>
@@ -2199,7 +2201,7 @@
                   <argument type="collection">
                     <argument key="login_path">/login</argument>
                     <argument key="always_use_default_target_path">false</argument>
-                    <argument key="default_target_path">/user/courselist</argument>
+                    <argument key="default_target_path">/user/course/mycourses</argument>
                     <argument key="target_path_parameter">_target_path</argument>
                     <argument key="use_referer">false</argument>
                   </argument>
@@ -2248,7 +2250,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>5755b5126089a7.59693620</argument>
+            <argument>5757e6bcd55bb3.74784495</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -2504,6 +2506,9 @@
             <argument type="service" id="vich_uploader.templating.helper.uploader_helper"/>
           </service>
         </argument>
+      </call>
+      <call method="addExtension">
+        <argument type="service" id="ob_highcharts.twig.highcharts_extension"/>
       </call>
       <call method="addExtension">
         <argument type="service">
@@ -3073,6 +3078,9 @@
         </argument>
         <argument key="52">true</argument>
       </argument>
+    </service>
+    <service id="ob_highcharts.twig.highcharts_extension" class="Ob\HighchartsBundle\Twig\HighchartsExtension">
+      <tag name="twig.extension"/>
     </service>
     <service id="data_collector.dump" class="Symfony\Component\HttpKernel\DataCollector\DumpDataCollector">
       <tag name="data_collector" id="dump" template="@Debug/Profiler/dump.html.twig" priority="240"/>

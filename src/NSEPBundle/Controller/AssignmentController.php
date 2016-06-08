@@ -13,7 +13,7 @@ use NSEPBundle\Form\AssignmentType;
 /**
  * Assignment controller.
  *
- * @Route("/user/courselist/assignment")
+ * @Route("/user/course/mycourses/assignments")
  */
 class AssignmentController extends Controller
 {
@@ -40,15 +40,15 @@ class AssignmentController extends Controller
 
 
     /**
-     * Finds and displays a Course entity.
+     * Finds and displays a Assignment entity.
      *
      * @Route("/assignmentlist", name="course_assignments")
      */
     public function courseassignmentAction(Request $request)
     {
 
-        $cid=1;
-
+        //$cid=$request->request->get('id');
+        $cid=$request->query->get('id');
 
         $em = $this->getDoctrine()->getManager();
 

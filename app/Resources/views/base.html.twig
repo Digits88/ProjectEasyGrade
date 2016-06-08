@@ -44,7 +44,7 @@
                 <a href="#"><img src="{{ asset('bundles/nsep/images/ts-avatar.jpg') }}" class="ts-avatar hidden-side" alt=""> {% block authenticatedUsername %}{% endblock %} <i class="fa fa-angle-down hidden-side"></i></a>
                 <ul>
                     <li><a href="#">My Account</a></li>
-                    <li><a href="#">Edit Account</a></li>
+                    <li><a href="{{ path('fos_user_profile_edit') }}">Edit Account</a></li>
                     <li><a href="{{ path('fos_user_security_logout') }}">Logout</a></li>
                 </ul>
             </li>

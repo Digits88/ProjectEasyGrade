@@ -113,43 +113,97 @@ class TestingController extends Controller
      */
     public function gradeAction(Request $request)
     {
-        //$id=$request->request->get('id');
-        $id=1;
+        $id=$request->query->get('id'); //this is used for GET requests
+        //$id = $request->request->get('id');   //this is used for POST requests
+        //$id=1;
+
 
         $state = "FAIL:".$id;
-        $ch = curl_init();
-
-        $sub=file_get_contents("submissions/hellloworld.py");
-        $lang=4;
-
-        curl_setopt($ch, CURLOPT_URL, 'http://4a1a254e.compilers.sphere-engine.com/api/v3/submissions?access_token=0bb470cbea77cab6f0a128bb0eead774');
-        curl_setopt($ch, CURLOPT_POST, 1);
-        curl_setopt($ch,  CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-        curl_setopt($ch, CURLOPT_POSTFIELDS,"language=$lang&submission=$sub");
-        curl_setopt($ch, CURLOPT_HEADER, false);
-        $result = curl_exec($ch);
-
-        curl_close($ch);
-        $response=json_decode($result,true);
-        //print_r($response['id']);
-        $sphereengineID = $response['id'];
 
         $em = $this->getDoctrine()->getManager();
         $submission = $em->getRepository('NSEPBundle:Submission')->find($id);
 
-        if (!$submission) {
-            throw $this->createNotFoundException(
-                'No product found for id '.$id
-            );
+        if($submission->getStatus()=='Pending'){
+
+            $spid = $submission->getSphereengineid();
+
+            //print_r($spid);
+            $ch = curl_init();
+
+
+            //var_dump('test');
+            curl_setopt($ch, CURLOPT_URL, 'http://4a1a254e.compilers.sphere-engine.com/api/v3/submissions/47250420?access_token=0bb470cbea77cab6f0a128bb0eead774');
+            curl_setopt($ch, CURLOPT_POST, 1);
+            curl_setopt($ch,  CURLOPT_RETURNTRANSFER, 1);
+            curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+            curl_setopt($ch, CURLOPT_POSTFIELDS,"withOutput=true&withInput=true&withStderr=true&withCmpinfo=true");
+            curl_setopt($ch, CURLOPT_HEADER, false);
+            $result = curl_exec($ch);
+
+            curl_close($ch);
+            var_dump($result);
+            $response=json_decode($result,true);
+            //print_r($response['id']);
+            //$sphereengineID = $response['id'];
+            print_r($response);
+
+            /*$em = $this->getDoctrine()->getManager();
+            $submission = $em->getRepository('NSEPBundle:Submission')->find($id);*/
+
+            if (!$submission) {
+                throw $this->createNotFoundException(
+                    'No product found for id '.$id
+                );
+            }
+
+
+            //$submission->setStatus("Pending");
+
         }
 
-        $submission->setSphereengineid($sphereengineID);
-        $submission->setStatus("Pending");
+        else if($submission->getStatus()=='Not Graded'){
+            $ch = curl_init();
+
+            $sub = file_get_contents("submissions/test13.c");
+            $lang = 11;
+
+            //$lg = $submission->getLanguage();
+
+            curl_setopt($ch, CURLOPT_URL, 'http://4a1a254e.compilers.sphere-engine.com/api/v3/submissions?access_token=9af50a60bc23e532ace4043c0895b024');
+            curl_setopt($ch, CURLOPT_POST, 1);
+            curl_setopt($ch,  CURLOPT_RETURNTRANSFER, 1);
+            curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+            curl_setopt($ch, CURLOPT_POSTFIELDS,"sourceCode=$sub&language=$lang");
+            curl_setopt($ch, CURLOPT_HEADER, false);
+            $result = curl_exec($ch);
+
+            curl_close($ch);
+            $response=json_decode($result,true);
+            //print_r($response['id']);
+            $sphereengineID = $response['id'];
+
+            $em = $this->getDoctrine()->getManager();
+            $submission = $em->getRepository('NSEPBundle:Submission')->find($id);
+
+            if (!$submission) {
+                throw $this->createNotFoundException(
+                    'No product found for id '.$id
+                );
+            }
+
+            $submission->setSphereengineid($sphereengineID);
+            $submission->setStatus("Pending");
+        }
+
+
+
+
+
+
         $em->flush();
 
 
-        return $this->redirectToRoute('submission_index');
+        //return $this->redirectToRoute('submission_index');
         //return new Response($state);
     }
 

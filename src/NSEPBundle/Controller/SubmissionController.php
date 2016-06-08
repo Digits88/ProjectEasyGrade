@@ -10,6 +10,7 @@ use NSEPBundle\Entity\Submission;
 use NSEPBundle\Entity\Assignment;
 use NSEPBundle\Form\SubmissionType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 
@@ -37,6 +38,34 @@ class SubmissionController extends Controller
         ));
     }
 
+
+
+    /**
+     * Finds and displays a Submission entity.
+     *
+     * @Route("/all", name="submissions_all")
+     * @Method("GET")
+     */
+    public function showsubmissionsAction(Request $request)
+    {
+
+        $sid = $request->query->get('id');
+
+        $em = $this->getDoctrine()->getManager();
+        $query = $em->createQuery(
+            "SELECT a FROM NSEPBundle\Entity\Submission a JOIN a.assignment c WHERE c.id=:cid"
+        )->setParameter('cid', $sid);
+
+        $products = $query->getResult();
+        return $this->render('submission/index.html.twig', array(
+            'submissions' => $products,
+        ));
+
+        //var_dump($products);
+
+    }
+
+
     /**
      * Creates a new Submission entity.
      *
@@ -54,6 +83,10 @@ class SubmissionController extends Controller
                 'data_class' => 'Symfony\Component\HttpFoundation\File\File',
                 'attr' => array('class' => 'sonata-medium-file')
             ))
+            ->add('language',ChoiceType::class,array('choices'  => array(
+                'Java' => 10,
+                'Python' => 4,
+                'Java7' => 55,)))
             ->getForm();
 
         $form->handleRequest($request);
@@ -151,30 +184,6 @@ class SubmissionController extends Controller
         ;
     }
 
-    /**
-     * Finds and displays a Submission entity.
-     *
-     * @Route("/all/{id}", name="submissions_all")
-     * @Method("GET")
-     */
-    public function showsubmissionsAction(Assignment $assignment)
-    {
-
-
-        $em = $this->getDoctrine()->getManager();
-        //$cid=2;
-        $query = $em->createQuery(
-            "SELECT a FROM NSEPBundle\Entity\Submission a JOIN a.assignment c WHERE c.id=:cid"
-        )->setParameter('cid', $assignment);
-
-        $products = $query->getResult();
-        return $this->render('submission/index.html.twig', array(
-            'submissions' => $products,
-        ));
-
-        //var_dump($products);
-
-    }
 
 
 

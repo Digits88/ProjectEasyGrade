@@ -100,91 +100,92 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        if (0 === strpos($pathinfo, '/user/courselist/assignment')) {
-            // assignment_index
-            if (rtrim($pathinfo, '/') === '/user/courselist/assignment') {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_assignment_index;
+        if (0 === strpos($pathinfo, '/user/course')) {
+            if (0 === strpos($pathinfo, '/user/course/mycourses/assignments')) {
+                // assignment_index
+                if (rtrim($pathinfo, '/') === '/user/course/mycourses/assignments') {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_assignment_index;
+                    }
+
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($pathinfo.'/', 'assignment_index');
+                    }
+
+                    return array (  '_controller' => 'NSEPBundle\\Controller\\AssignmentController::indexAction',  '_route' => 'assignment_index',);
+                }
+                not_assignment_index:
+
+                // course_assignments
+                if ($pathinfo === '/user/course/mycourses/assignments/assignmentlist') {
+                    return array (  '_controller' => 'NSEPBundle\\Controller\\AssignmentController::courseassignmentAction',  '_route' => 'course_assignments',);
                 }
 
-                if (substr($pathinfo, -1) !== '/') {
-                    return $this->redirect($pathinfo.'/', 'assignment_index');
+                // assignment_new
+                if ($pathinfo === '/user/course/mycourses/assignments/new') {
+                    if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                        goto not_assignment_new;
+                    }
+
+                    return array (  '_controller' => 'NSEPBundle\\Controller\\AssignmentController::newAction',  '_route' => 'assignment_new',);
                 }
+                not_assignment_new:
 
-                return array (  '_controller' => 'NSEPBundle\\Controller\\AssignmentController::indexAction',  '_route' => 'assignment_index',);
-            }
-            not_assignment_index:
+                // assignment_show
+                if (preg_match('#^/user/course/mycourses/assignments/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_assignment_show;
+                    }
 
-            // course_assignments
-            if ($pathinfo === '/user/courselist/assignment/assignmentlist') {
-                return array (  '_controller' => 'NSEPBundle\\Controller\\AssignmentController::courseassignmentAction',  '_route' => 'course_assignments',);
-            }
-
-            // assignment_new
-            if ($pathinfo === '/user/courselist/assignment/new') {
-                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
-                    goto not_assignment_new;
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'assignment_show')), array (  '_controller' => 'NSEPBundle\\Controller\\AssignmentController::showAction',));
                 }
+                not_assignment_show:
 
-                return array (  '_controller' => 'NSEPBundle\\Controller\\AssignmentController::newAction',  '_route' => 'assignment_new',);
-            }
-            not_assignment_new:
+                // assignment_edit
+                if (preg_match('#^/user/course/mycourses/assignments/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                        goto not_assignment_edit;
+                    }
 
-            // assignment_show
-            if (preg_match('#^/user/courselist/assignment/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_assignment_show;
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'assignment_edit')), array (  '_controller' => 'NSEPBundle\\Controller\\AssignmentController::editAction',));
                 }
+                not_assignment_edit:
 
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'assignment_show')), array (  '_controller' => 'NSEPBundle\\Controller\\AssignmentController::showAction',));
-            }
-            not_assignment_show:
+                // assignment_delete
+                if (preg_match('#^/user/course/mycourses/assignments/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    if ($this->context->getMethod() != 'DELETE') {
+                        $allow[] = 'DELETE';
+                        goto not_assignment_delete;
+                    }
 
-            // assignment_edit
-            if (preg_match('#^/user/courselist/assignment/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
-                    goto not_assignment_edit;
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'assignment_delete')), array (  '_controller' => 'NSEPBundle\\Controller\\AssignmentController::deleteAction',));
                 }
+                not_assignment_delete:
 
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'assignment_edit')), array (  '_controller' => 'NSEPBundle\\Controller\\AssignmentController::editAction',));
             }
-            not_assignment_edit:
 
-            // assignment_delete
-            if (preg_match('#^/user/courselist/assignment/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                if ($this->context->getMethod() != 'DELETE') {
-                    $allow[] = 'DELETE';
-                    goto not_assignment_delete;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'assignment_delete')), array (  '_controller' => 'NSEPBundle\\Controller\\AssignmentController::deleteAction',));
-            }
-            not_assignment_delete:
-
-        }
-
-        if (0 === strpos($pathinfo, '/course')) {
             // course_index
-            if (rtrim($pathinfo, '/') === '/course') {
+            if ($pathinfo === '/user/course/admin/allcourses') {
                 if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
                     $allow = array_merge($allow, array('GET', 'HEAD'));
                     goto not_course_index;
-                }
-
-                if (substr($pathinfo, -1) !== '/') {
-                    return $this->redirect($pathinfo.'/', 'course_index');
                 }
 
                 return array (  '_controller' => 'NSEPBundle\\Controller\\CourseController::indexAction',  '_route' => 'course_index',);
             }
             not_course_index:
 
+            // user_courses
+            if ($pathinfo === '/user/course/mycourses') {
+                return array (  '_controller' => 'NSEPBundle\\Controller\\CourseController::usercourseAction',  '_route' => 'user_courses',);
+            }
+
             // course_new
-            if ($pathinfo === '/course/new') {
+            if ($pathinfo === '/user/course/new') {
                 if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
                     $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
                     goto not_course_new;
@@ -195,7 +196,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             not_course_new:
 
             // course_show
-            if (preg_match('#^/course/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            if (preg_match('#^/user/course/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
                 if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
                     $allow = array_merge($allow, array('GET', 'HEAD'));
                     goto not_course_show;
@@ -206,7 +207,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             not_course_show:
 
             // course_edit
-            if (preg_match('#^/course/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+            if (preg_match('#^/user/course/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
                 if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
                     $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
                     goto not_course_edit;
@@ -217,7 +218,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             not_course_edit:
 
             // course_delete
-            if (preg_match('#^/course/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            if (preg_match('#^/user/course/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
                 if ($this->context->getMethod() != 'DELETE') {
                     $allow[] = 'DELETE';
                     goto not_course_delete;
@@ -253,6 +254,17 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return array (  '_controller' => 'NSEPBundle\\Controller\\SubmissionController::indexAction',  '_route' => 'submission_index',);
             }
             not_submission_index:
+
+            // submissions_all
+            if ($pathinfo === '/submission/all') {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_submissions_all;
+                }
+
+                return array (  '_controller' => 'NSEPBundle\\Controller\\SubmissionController::showsubmissionsAction',  '_route' => 'submissions_all',);
+            }
+            not_submissions_all:
 
             // submission_new
             if ($pathinfo === '/submission/new') {
@@ -297,17 +309,6 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'submission_delete')), array (  '_controller' => 'NSEPBundle\\Controller\\SubmissionController::deleteAction',));
             }
             not_submission_delete:
-
-            // submissions_all
-            if (0 === strpos($pathinfo, '/submission/all') && preg_match('#^/submission/all/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_submissions_all;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'submissions_all')), array (  '_controller' => 'NSEPBundle\\Controller\\SubmissionController::showsubmissionsAction',));
-            }
-            not_submissions_all:
 
         }
 
@@ -373,24 +374,26 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         if (0 === strpos($pathinfo, '/user')) {
             // user_index
-            if (rtrim($pathinfo, '/') === '/user') {
+            if ($pathinfo === '/user/admin/allusers') {
                 if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
                     $allow = array_merge($allow, array('GET', 'HEAD'));
                     goto not_user_index;
-                }
-
-                if (substr($pathinfo, -1) !== '/') {
-                    return $this->redirect($pathinfo.'/', 'user_index');
                 }
 
                 return array (  '_controller' => 'NSEPBundle\\Controller\\UserController::indexAction',  '_route' => 'user_index',);
             }
             not_user_index:
 
-            // user_courses
-            if ($pathinfo === '/user/courselist') {
-                return array (  '_controller' => 'NSEPBundle\\Controller\\UserController::usercourseAction',  '_route' => 'user_courses',);
+            // own_account
+            if ($pathinfo === '/user/ownaccount') {
+                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                    goto not_own_account;
+                }
+
+                return array (  '_controller' => 'NSEPBundle\\Controller\\UserController::owneditAction',  '_route' => 'own_account',);
             }
+            not_own_account:
 
             // user_new
             if ($pathinfo === '/user/new') {

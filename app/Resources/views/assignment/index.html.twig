@@ -29,9 +29,9 @@
 
                 {% for assignment in assignments %}
                     <tr>
-                        <td><a href="{{ path('assignment_show', { 'id': assignment.id }) }}">{{ assignment.id }}</a></td>
+                        <td>{{ assignment.id }}</td>
                         <td>{{ assignment.assignmentid }}</td>
-                        <td><a href="{{ path('course_show', { 'id': assignment.id }) }}">{{ assignment.assignmentname }}</a></td>
+                        <td><a href="{{ path('submissions_all', { 'id': assignment.id }) }}">{{ assignment.assignmentname }}</a></td>
                         <td>{{ assignment.assignmentdescription }}</td>
                         <td>{% if assignment.createddate %}{{ assignment.createddate|date('Y-m-d H:i:s') }}{% endif %}</td>
                         <td>

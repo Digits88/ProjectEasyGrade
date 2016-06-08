@@ -24,7 +24,7 @@ class UserController extends Controller
     /**
      * Lists all User entities.
      *
-     * @Route("/", name="user_index")
+     * @Route("/admin/allusers", name="user_index")
      * @Method("GET")
      */
     public function indexAction()
@@ -39,30 +39,36 @@ class UserController extends Controller
     }
 
 
+
     /**
-     * Finds and displays a Course entity.
+     * Displays a form to edit an existing User entity.
      *
-     * @Route("/courselist", name="user_courses")
+     * @Route("/ownaccount", name="own_account")
+     * @Method({"GET", "POST"})
      */
-    public function usercourseAction()
+    public function owneditAction(Request $request)
     {
+        $user = $this->getUser();
 
-        $cid=$this->getUser()->getId();
+        $deleteForm = $this->createDeleteForm($user);
+        $editForm = $this->createForm('NSEPBundle\Form\UserType', $user);
+        $editForm->handleRequest($request);
 
+        if ($editForm->isSubmitted() && $editForm->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($user);
+            $em->flush();
 
-        $em = $this->getDoctrine()->getManager();
+            return $this->redirectToRoute('user_edit', array('id' => $user->getId()));
+        }
 
-        $query = $em->createQuery(
-            "SELECT a FROM NSEPBundle\Entity\Course a JOIN a.users u WHERE u.id=$cid"
-        );
-
-        $courses = $query->getResult();
-        return $this->render('course/index.html.twig', array(
-            'courses' => $courses,
+        return $this->render('user/edit.html.twig', array(
+            'user' => $user,
+            'edit_form' => $editForm->createView(),
+            'delete_form' => $deleteForm->createView(),
         ));
-
-
     }
+
 
 
     /**

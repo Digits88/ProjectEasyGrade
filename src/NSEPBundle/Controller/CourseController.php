@@ -19,14 +19,14 @@ use Doctrine\ORM\Query;
 /**
  * Course controller.
  *
- * @Route("/course")
+ * @Route("/user/course")
  */
 class CourseController extends Controller
 {
     /**
      * Lists all Course entities.
      *
-     * @Route("/", name="course_index")
+     * @Route("/admin/allcourses", name="course_index")
      * @Method("GET")
      */
     public function indexAction()
@@ -78,6 +78,34 @@ class CourseController extends Controller
             'courses' => $courses,
         ));
     }
+
+
+    /**
+     * Finds and displays a Course entity.
+     *
+     * @Route("/mycourses", name="user_courses")
+     */
+    public function usercourseAction()
+    {
+
+        $cid=$this->getUser()->getId();
+
+
+        $em = $this->getDoctrine()->getManager();
+
+        $query = $em->createQuery(
+            "SELECT a FROM NSEPBundle\Entity\Course a JOIN a.users u WHERE u.id=$cid"
+        );
+
+        $courses = $query->getResult();
+        return $this->render('course/index.html.twig', array(
+            'courses' => $courses,
+        ));
+
+
+    }
+
+
 
 
 

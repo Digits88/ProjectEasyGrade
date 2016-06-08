@@ -64,7 +64,21 @@ class Submission
      *
      * @var string
      */
-    private $sphereengineid="";
+    private $sphereengineid="Null";
+
+    /**
+     * @ORM\Column(type="integer", length=255)
+     *
+     * @var int
+     */
+    private $language=0;
+
+    /**
+     * @ORM\Column(type="integer", length=255)
+     *
+     * @var int
+     */
+    private $submissionmarks=0;
 
     /**
      * If manually uploading a file (i.e. not using Symfony Form) ensure an instance
@@ -224,5 +238,55 @@ class Submission
     public function getSphereengineid()
     {
         return $this->sphereengineid;
+    }
+
+    /**
+     * Set submissionmarks
+     *
+     * @param integer $submissionmarks
+     *
+     * @return Submission
+     */
+    public function setSubmissionmarks($submissionmarks)
+    {
+        $this->submissionmarks = $submissionmarks;
+
+        return $this;
+    }
+
+    /**
+     * Get submissionmarks
+     *
+     * @return integer
+     */
+    public function getSubmissionmarks()
+    {
+        return $this->submissionmarks;
+    }
+
+
+
+    /**
+     * Set language
+     *
+     * @param integer $language
+     *
+     * @return Submission
+     */
+    public function setLanguage($language)
+    {
+        $this->language = $language;
+
+        return $this;
+    }
+
+    /**
+     * Get language
+     *
+     * @return integer
+     */
+    public function getLanguage()
+    {
+        return $this->language;
     }
 }

@@ -42,7 +42,7 @@ security:
 
                 # login success redirecting options (read further below)
                 always_use_default_target_path: false
-                default_target_path:            /user/courselist
+                default_target_path:            /user/course/mycourses
                 target_path_parameter:          _target_path
                 use_referer:                    false
 
