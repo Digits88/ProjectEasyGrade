@@ -126,7 +126,7 @@ class CourseController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
 
-            var_dump($course);
+            //var_dump($course);
             $em = $this->getDoctrine()->getManager();
             $em->persist($course);
             $em->flush();
