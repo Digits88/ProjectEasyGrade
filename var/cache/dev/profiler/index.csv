@@ -29,3 +29,8 @@ efbda7,127.0.0.1,GET,http://localhost:8000/bundles/lecturer/css/bootsrap.min.css
 f2e4c2,127.0.0.1,GET,http://localhost:8000/submission/,1465460225,,200
 6a1b95,127.0.0.1,GET,http://localhost:8000/bundles/lecturer/css/bootsrap.min.css,1465460231,33d117,200
 33d117,127.0.0.1,GET,http://localhost:8000/bundles/lecturer/css/bootsrap.min.css,1465460231,,404
+5da996,127.0.0.1,GET,http://localhost:8000/,1465462302,,302
+b71e87,127.0.0.1,GET,http://localhost:8000/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DNSEPBundle%253ADefault%253Ausername,1465462305,acfe14,200
+acfe14,127.0.0.1,GET,http://localhost:8000/user/course/mycourses,1465462305,,200
+3fc362,127.0.0.1,GET,http://localhost:8000/bundles/lecturer/css/bootsrap.min.css,1465462309,dbd680,200
+dbd680,127.0.0.1,GET,http://localhost:8000/bundles/lecturer/css/bootsrap.min.css,1465462309,,404
