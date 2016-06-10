@@ -43,7 +43,7 @@ class UserController extends Controller
     /**
      * Displays a form to edit an existing User entity.
      *
-     * @Route("/ownaccount", name="own_account")
+     * @Route("/myaccount/edit", name="own_account")
      * @Method({"GET", "POST"})
      */
     public function owneditAction(Request $request)

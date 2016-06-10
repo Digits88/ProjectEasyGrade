@@ -390,7 +390,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             not_user_index:
 
             // own_account
-            if ($pathinfo === '/user/ownaccount') {
+            if ($pathinfo === '/user/myaccount/edit') {
                 if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
                     $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
                     goto not_own_account;
