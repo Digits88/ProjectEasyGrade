@@ -1,10 +1,10 @@
 # This file is auto-generated during the composer install
 parameters:
-    database_host: 127.0.0.1
-    database_port: null
-    database_name: easygrade
-    database_user: root
-    database_password: qwerty
+    database_host: ap-cdbr-azure-southeast-b.cloudapp.net
+    database_port: 3306
+    database_name: easyg
+    database_user: bb8826725765fd
+    database_password: 327c999d
     mailer_transport: smtp
     mailer_host: 127.0.0.1
     mailer_user: null
