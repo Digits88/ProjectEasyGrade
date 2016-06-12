@@ -28,8 +28,6 @@ use Symfony\Component\HttpFoundation\Response;
  *
  * @Route("/test/assignment")
  */
-
-
 class TestingController extends Controller
 {
 
@@ -65,7 +63,7 @@ class TestingController extends Controller
     public function showcourseAction(User $user)
     {
         $em = $this->getDoctrine()->getManager();
-        $cid=2;
+        $cid = 2;
         $query = $em->createQuery(
             "SELECT a FROM NSEPBundle\Entity\Course a JOIN a.user c WHERE c.id=:cid"
         )->setParameter('cid', $cid);
@@ -78,7 +76,6 @@ class TestingController extends Controller
         var_dump($products);
 
     }
-
 
 
     /**
@@ -113,72 +110,89 @@ class TestingController extends Controller
      */
     public function gradeAction(Request $request)
     {
-        $id=$request->query->get('id'); //this is used for GET requests
+        $id = $request->query->get('id'); //this is used for GET requests
         //$id = $request->request->get('id');   //this is used for POST requests
         //$id=1;
 
 
-        $state = "FAIL:".$id;
+        $state = "FAIL:" . $id;
 
         $em = $this->getDoctrine()->getManager();
         $submission = $em->getRepository('NSEPBundle:Submission')->find($id);
 
-        if($submission->getStatus()=='Pending'){
+        if ($submission->getStatus() == 'Pending') {
 
             $spid = $submission->getSphereengineid();
 
             //print_r($spid);
-            $ch = curl_init();
+            //$ch = curl_init();
+
+            //var_dump(file_get_contents("http://4a1a254e.compilers.sphere-engine.com/api/v3/submissions/47367287?access_token=0bb470cbea77cab6f0a128bb0eead774&withcmpinfo=true&withSource=true&withOutput=true"));
+
+            $responsedata = Json_decode(file_get_contents("http://4a1a254e.compilers.sphere-engine.com/api/v3/submissions/47367287?access_token=0bb470cbea77cab6f0a128bb0eead774&withcmpinfo=true&withSource=true&withOutput=true"));
+            //$hbchd = json_decode($re);
+            //print_r(gettype($re));
+            /*print_r($hbchd->time);
+            print_r($hbchd->result);
+            print_r($hbchd->output);*/
+
+
 
 
             //var_dump('test');
-            curl_setopt($ch, CURLOPT_URL, 'http://4a1a254e.compilers.sphere-engine.com/api/v3/submissions/47250420?access_token=0bb470cbea77cab6f0a128bb0eead774');
-            curl_setopt($ch, CURLOPT_POST, 1);
+            /*curl_setopt($ch, CURLOPT_URL, 'http://4a1a254e.compilers.sphere-engine.com/api/v3/submissions/47250420?access_token=0bb470cbea77cab6f0a128bb0eead774');
+
+
+            // curl_setopt($ch, CURLOPT_GET, 1);
             curl_setopt($ch,  CURLOPT_RETURNTRANSFER, 1);
             curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
             curl_setopt($ch, CURLOPT_POSTFIELDS,"withOutput=true&withInput=true&withStderr=true&withCmpinfo=true");
-            curl_setopt($ch, CURLOPT_HEADER, false);
-            $result = curl_exec($ch);
+            curl_setopt($ch, CURLOPT_HEADER, false);*/
+            //$result = curl_exec($ch);
 
-            curl_close($ch);
-            var_dump($result);
-            $response=json_decode($result,true);
+            //curl_close($ch);
+            //var_dump($result);
+            //$response=json_decode($result,true);
             //print_r($response['id']);
             //$sphereengineID = $response['id'];
-            print_r($response);
+            //print_r($response);
 
-            /*$em = $this->getDoctrine()->getManager();
-            $submission = $em->getRepository('NSEPBundle:Submission')->find($id);*/
+            $em = $this->getDoctrine()->getManager();
+            $submission = $em->getRepository('NSEPBundle:Submission')->find($id);
 
             if (!$submission) {
                 throw $this->createNotFoundException(
-                    'No product found for id '.$id
+                    'No product found for id ' . $id
                 );
             }
+
+            $submission->setResult($responsedata->result);
+            $submission->setSpstatus($responsedata->status);
+            $submission->setTime($responsedata->time);
+            $submission->setMemory($responsedata->memory);
+            $submission->setOutput($responsedata->output);
 
 
             //$submission->setStatus("Pending");
 
-        }
-
-        else if($submission->getStatus()=='Not Graded'){
+        } else if ($submission->getStatus() == 'Not Graded') {
             $ch = curl_init();
 
-            $sub = file_get_contents("submissions/test13.c");
-            $lang = 11;
+            $sub = file_get_contents("submissions/test12.py");
+            $lang = 4;
 
             //$lg = $submission->getLanguage();
 
             curl_setopt($ch, CURLOPT_URL, 'http://4a1a254e.compilers.sphere-engine.com/api/v3/submissions?access_token=9af50a60bc23e532ace4043c0895b024');
             curl_setopt($ch, CURLOPT_POST, 1);
-            curl_setopt($ch,  CURLOPT_RETURNTRANSFER, 1);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
             curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-            curl_setopt($ch, CURLOPT_POSTFIELDS,"sourceCode=$sub&language=$lang");
+            curl_setopt($ch, CURLOPT_POSTFIELDS, "sourceCode=$sub&language=$lang");
             curl_setopt($ch, CURLOPT_HEADER, false);
             $result = curl_exec($ch);
 
             curl_close($ch);
-            $response=json_decode($result,true);
+            $response = json_decode($result, true);
             //print_r($response['id']);
             $sphereengineID = $response['id'];
 
@@ -187,17 +201,13 @@ class TestingController extends Controller
 
             if (!$submission) {
                 throw $this->createNotFoundException(
-                    'No product found for id '.$id
+                    'No product found for id ' . $id
                 );
             }
 
             $submission->setSphereengineid($sphereengineID);
             $submission->setStatus("Pending");
         }
-
-
-
-
 
 
         $em->flush();
@@ -219,7 +229,7 @@ class TestingController extends Controller
         $ch = curl_init();
 
 
-        $subid=47083353;
+        $subid = 47083353;
 
         curl_setopt($ch, CURLOPT_URL, 'http://4a1a254e.compilers.sphere-engine.com/api/v3/submissions/47083353?access_token=9af50a60bc23e532ace4043c0895b024');
         curl_setopt($ch, CURLOPT_POST, 1);
@@ -240,7 +250,7 @@ class TestingController extends Controller
     public function m2mAction()
     {
         //$user = $this->container->get('security.context')->getToken()->getUser();
-        $cid=$this->getUser()->getId();
+        $cid = $this->getUser()->getId();
 
 
         $em = $this->getDoctrine()->getManager();
@@ -257,9 +267,6 @@ class TestingController extends Controller
         //var_dump($products);
 
     }
-
-
-
 
 
 }

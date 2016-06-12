@@ -81,6 +81,46 @@ class Submission
     private $submissionmarks=0;
 
     /**
+     * @ORM\Column(type="integer", length=255)
+     * used to store the variable of result which containing the status of compilation
+     *
+     * @var int
+     */
+    private $result=0;
+
+    /**
+     * @ORM\Column(type="integer", length=255)
+     * used to keep the status variable sent by sphere engine
+     *
+     * @var int
+     */
+    private $spstatus=0;
+
+    /**
+     * @ORM\Column(type="decimal", length=255)
+     * used to keep the status variable sent by sphere engine
+     *
+     * @var decimal
+     */
+    private $time=0;
+
+    /**
+     * @ORM\Column(type="integer", length=255)
+     * used to keep the memory variable sent by sphere engine
+     *
+     * @var int
+     */
+    private $memory=0;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     *
+     * @var string
+     */
+    private $output="Null";
+
+
+    /**
      * If manually uploading a file (i.e. not using Symfony Form) ensure an instance
      * of 'UploadedFile' is injected into this setter to trigger the  update. If this
      * bundle's configuration parameter 'inject_on_load' is set to 'true' this setter
@@ -288,5 +328,125 @@ class Submission
     public function getLanguage()
     {
         return $this->language;
+    }
+
+    /**
+     * Set result
+     *
+     * @param integer $result
+     *
+     * @return Submission
+     */
+    public function setResult($result)
+    {
+        $this->result = $result;
+
+        return $this;
+    }
+
+    /**
+     * Get result
+     *
+     * @return integer
+     */
+    public function getResult()
+    {
+        return $this->result;
+    }
+
+    /**
+     * Set spstatus
+     *
+     * @param integer $spstatus
+     *
+     * @return Submission
+     */
+    public function setSpstatus($spstatus)
+    {
+        $this->spstatus = $spstatus;
+
+        return $this;
+    }
+
+    /**
+     * Get spstatus
+     *
+     * @return integer
+     */
+    public function getSpstatus()
+    {
+        return $this->spstatus;
+    }
+
+    /**
+     * Set time
+     *
+     * @param string $time
+     *
+     * @return Submission
+     */
+    public function setTime($time)
+    {
+        $this->time = $time;
+
+        return $this;
+    }
+
+    /**
+     * Get time
+     *
+     * @return string
+     */
+    public function getTime()
+    {
+        return $this->time;
+    }
+
+    /**
+     * Set memory
+     *
+     * @param integer $memory
+     *
+     * @return Submission
+     */
+    public function setMemory($memory)
+    {
+        $this->memory = $memory;
+
+        return $this;
+    }
+
+    /**
+     * Get memory
+     *
+     * @return integer
+     */
+    public function getMemory()
+    {
+        return $this->memory;
+    }
+
+    /**
+     * Set output
+     *
+     * @param string $output
+     *
+     * @return Submission
+     */
+    public function setOutput($output)
+    {
+        $this->output = $output;
+
+        return $this;
+    }
+
+    /**
+     * Get output
+     *
+     * @return string
+     */
+    public function getOutput()
+    {
+        return $this->output;
     }
 }
