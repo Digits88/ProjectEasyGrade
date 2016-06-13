@@ -329,4 +329,124 @@ class Submission
     {
         return $this->language;
     }
+
+    /**
+     * Set result
+     *
+     * @param integer $result
+     *
+     * @return Submission
+     */
+    public function setResult($result)
+    {
+        $this->result = $result;
+
+        return $this;
+    }
+
+    /**
+     * Get result
+     *
+     * @return integer
+     */
+    public function getResult()
+    {
+        return $this->result;
+    }
+
+    /**
+     * Set spstatus
+     *
+     * @param integer $spstatus
+     *
+     * @return Submission
+     */
+    public function setSpstatus($spstatus)
+    {
+        $this->spstatus = $spstatus;
+
+        return $this;
+    }
+
+    /**
+     * Get spstatus
+     *
+     * @return integer
+     */
+    public function getSpstatus()
+    {
+        return $this->spstatus;
+    }
+
+    /**
+     * Set time
+     *
+     * @param string $time
+     *
+     * @return Submission
+     */
+    public function setTime($time)
+    {
+        $this->time = $time;
+
+        return $this;
+    }
+
+    /**
+     * Get time
+     *
+     * @return string
+     */
+    public function getTime()
+    {
+        return $this->time;
+    }
+
+    /**
+     * Set memory
+     *
+     * @param integer $memory
+     *
+     * @return Submission
+     */
+    public function setMemory($memory)
+    {
+        $this->memory = $memory;
+
+        return $this;
+    }
+
+    /**
+     * Get memory
+     *
+     * @return integer
+     */
+    public function getMemory()
+    {
+        return $this->memory;
+    }
+
+    /**
+     * Set output
+     *
+     * @param string $output
+     *
+     * @return Submission
+     */
+    public function setOutput($output)
+    {
+        $this->output = $output;
+
+        return $this;
+    }
+
+    /**
+     * Get output
+     *
+     * @return string
+     */
+    public function getOutput()
+    {
+        return $this->output;
+    }
 }

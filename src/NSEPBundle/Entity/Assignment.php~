@@ -4,12 +4,14 @@ namespace NSEPBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * Assignment
  *
  * @ORM\Table(name="assignment")
  * @ORM\Entity(repositoryClass="NSEPBundle\Repository\AssignmentRepository")
+ * @Vich\Uploadable
  */
 class Assignment
 {
@@ -67,6 +69,24 @@ class Assignment
      * @ORM\OneToMany(targetEntity="Submission", mappedBy="assignment")
      */
     private $submissions;
+
+
+    /**
+     * NOTE: This is not a mapped field of entity metadata, just a simple property.
+     *
+     * @Vich\UploadableField(mapping="submission_image", fileNameProperty="imageName")
+     *
+     * @var File
+     */
+    private $imageFile;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     *
+     * @var string
+     */
+    private $imageName;
+
 
 
 

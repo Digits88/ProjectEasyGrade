@@ -4,6 +4,8 @@ namespace NSEPBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * Assignment
@@ -43,12 +45,7 @@ class Assignment
      */
     private $assignmentdescription;
 
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="createddate", type="datetime")
-     */
-    private $createddate;
+
 
 
     /**
@@ -154,31 +151,6 @@ class Assignment
     }
 
 
-
-    /**
-     * Set createddate
-     *
-     * @param \DateTime $createddate
-     *
-     * @return Assignment
-     */
-    public function setCreateddate($createddate)
-    {
-        $this->createddate = $createddate;
-
-        return $this;
-    }
-
-    /**
-     * Get createddate
-     *
-     * @return \DateTime
-     */
-    public function getCreateddate()
-    {
-        return $this->createddate;
-    }
-
     public function __construct() {
         $this->courseid = new ArrayCollection();
         $this->studentid = new ArrayCollection();
@@ -228,7 +200,8 @@ class Assignment
      */
     public function setCourse(\NSEPBundle\Entity\Course $course = null)
     {
-        $this->course = $course;
+        //$this->course = $course;
+        $this->course =$course->getId();
 
         return $this;
     }

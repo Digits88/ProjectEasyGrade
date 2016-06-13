@@ -64,10 +64,10 @@ class Assignment extends \NSEPBundle\Entity\Assignment implements \Doctrine\ORM\
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'id', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'assignmentid', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'assignmentname', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'assignmentdescription', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'createddate', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'course', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'studentid', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'submissions'];
+            return ['__isInitialized__', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'id', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'assignmentid', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'assignmentname', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'assignmentdescription', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'course', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'studentid', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'submissions', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'imageFile', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'imageName', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'updatedAt'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'id', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'assignmentid', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'assignmentname', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'assignmentdescription', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'createddate', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'course', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'studentid', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'submissions'];
+        return ['__isInitialized__', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'id', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'assignmentid', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'assignmentname', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'assignmentdescription', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'course', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'studentid', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'submissions', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'imageFile', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'imageName', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'updatedAt'];
     }
 
     /**
@@ -176,6 +176,50 @@ class Assignment extends \NSEPBundle\Entity\Assignment implements \Doctrine\ORM\
     /**
      * {@inheritDoc}
      */
+    public function setImageFile(\Symfony\Component\HttpFoundation\File\File $image = NULL)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setImageFile', [$image]);
+
+        return parent::setImageFile($image);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getImageFile()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getImageFile', []);
+
+        return parent::getImageFile();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setImageName($imageName)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setImageName', [$imageName]);
+
+        return parent::setImageName($imageName);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getImageName()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getImageName', []);
+
+        return parent::getImageName();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     public function getId()
     {
         if ($this->__isInitialized__ === false) {
@@ -252,28 +296,6 @@ class Assignment extends \NSEPBundle\Entity\Assignment implements \Doctrine\ORM\
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getAssignmentdescription', []);
 
         return parent::getAssignmentdescription();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function setCreateddate($createddate)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setCreateddate', [$createddate]);
-
-        return parent::setCreateddate($createddate);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getCreateddate()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getCreateddate', []);
-
-        return parent::getCreateddate();
     }
 
     /**
@@ -362,6 +384,28 @@ class Assignment extends \NSEPBundle\Entity\Assignment implements \Doctrine\ORM\
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getSubmissions', []);
 
         return parent::getSubmissions();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getUpdatedAt()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getUpdatedAt', []);
+
+        return parent::getUpdatedAt();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setUpdatedAt', [$updatedAt]);
+
+        return parent::setUpdatedAt($updatedAt);
     }
 
 }

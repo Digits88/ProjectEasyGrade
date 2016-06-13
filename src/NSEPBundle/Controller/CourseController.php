@@ -131,7 +131,7 @@ class CourseController extends Controller
             $em->persist($course);
             $em->flush();
 
-            return $this->redirectToRoute('course_index', array('id' => $course->getId()));
+            return $this->redirectToRoute('user_courses', array('id' => $course->getId()));
         }
 
         return $this->render('course/new.html.twig', array(

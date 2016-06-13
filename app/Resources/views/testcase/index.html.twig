@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>TestCase list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Imagename</th>
+                <th>Updatedat</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for testCase in testCases %}
+            <tr>
+                <td><a href="{{ path('testcase_show', { 'id': testCase.id }) }}">{{ testCase.id }}</a></td>
+                <td>{{ testCase.imageName }}</td>
+                <td>{% if testCase.updatedAt %}{{ testCase.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('testcase_show', { 'id': testCase.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('testcase_edit', { 'id': testCase.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('testcase_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -4,37 +4,90 @@
 {% block contentdetail %}
     <h1>Submission</h1>
 
-    <table>
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ submission.id }}</td>
-            </tr>
-            <tr>
-                <th>Imagename</th>
-                <td>{{ submission.imageName }}</td>
-            </tr>
-            <tr>
-                <th>Updatedat</th>
-                <td>{% if submission.updatedAt %}{{ submission.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
-            </tr>
-        </tbody>
-    </table>
+<!-- Zero Configuration Table -->
+    <div class="panel panel-default">
+        <div class="panel-heading">Your Submissions</div>
+        <div class="panel-body">
+            <table id="zctb" class="display table table-striped table-bordered table-hover" cellspacing="0" width="100%">
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>File Name</th>
+                    <th>Uploaded at</th>
+                    <th>Code</th>
+                    <th>Status</th>
+                    <th>Execution Status</th>
+                    <th>Output</th>
+                    <th>Memory</th>
+                    <th>Time</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>{{ submission.id }}</td>
+                        <td>{{ submission.imageName }}</td>
+                        <td>{% if submission.updatedAt %}{{ submission.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                        <td>{{ submission.imageName }}</td>
+                        <td><button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">View Code</button></td>
+                        <td>
+                            {% if submission.result == 15 %}Successful
+                            {% elseif submission.result == 11 %}Compilation Error
+                            {% elseif submission.result == 12 %}Runtime Error
+                            {% elseif submission.result == 13 %}Time Limit Exceeded
+                            {% elseif submission.result == 17 %}Memory Limit Exceeded
+                            {% elseif submission.result == 19 %}Illegal System Call
+                            {% elseif submission.result == 20 %}Internal Error
+                            {% elseif submission.result == 20 %}Internal Error
+                            {% else %}Not Yet Executed
+                            {% endif %}
+
+
+                        </td>
+                        <td>{{ submission.output }}</td>
+                        <td>{{ submission.memory }}</td>
+                        <td>{{ submission.time }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
 
     <ul>
         <li>
-            <a href="{{ path('submission_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('submission_edit', { 'id': submission.id }) }}">Edit</a>
-        </li>
-        <li>
-            <a href="{{ path('submission_new') }}">New</a>
+            <a href="{{ path('submission_index') }}" class="btn btn-primary">Back to the list</a>
         </li>
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+            <input type="submit" value="Delete" class="btn btn-warning">
             {{ form_end(delete_form) }}
         </li>
     </ul>
+
+
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Modal Header</h4>
+                </div>
+                <div class="modal-body">
+                    <p>code should go here</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
 {% endblock contentdetail%}
+
+

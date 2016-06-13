@@ -9,6 +9,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use NSEPBundle\Entity\Assignment;
 use NSEPBundle\Entity\Course;
 use NSEPBundle\Form\AssignmentType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 
 /**
  * Assignment controller.
@@ -77,7 +79,12 @@ class AssignmentController extends Controller
 
         $assignment = new Assignment();
 
-        $form = $this->createForm('NSEPBundle\Form\AssignmentType', $assignment);
+        //$form = $this->createForm('NSEPBundle\Form\AssignmentType', $assignment);
+        $form = $this->createFormBuilder($assignment)
+            ->add('assignmentid',TextType::class,array('label' => 'Assignment ID', 'attr' => array('placeholder'=>'Assignment ID','class' => 'form-control col-sm-2')))
+            ->add('assignmentname',TextType::class,array('label' => 'Assignment Name', 'attr' => array('placeholder'=>'Assignment Nam','class' => 'form-control col-sm-2')))
+            ->add('assignmentdescription',TextType::class,array('label' => 'Assignment Description', 'attr' => array('placeholder'=>'Assignment Description','class' => 'form-control col-sm-2')))
+            ->getForm();
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

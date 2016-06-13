@@ -10,6 +10,7 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 
 class AssignmentType extends AbstractType
 {
@@ -19,12 +20,22 @@ class AssignmentType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder
+        /*$builder
             ->add('assignmentid',TextType::class,array('label' => 'Assignment ID', 'attr' => array('placeholder'=>'Assignment ID','class' => 'form-control col-sm-2')))
             ->add('assignmentname',TextType::class,array('label' => 'Assignment Name', 'attr' => array('placeholder'=>'Assignment Nam','class' => 'form-control col-sm-2')))
             ->add('assignmentdescription',TextType::class,array('label' => 'Assignment Description', 'attr' => array('placeholder'=>'Assignment Description','class' => 'form-control col-sm-2')))
-            ->add('createddate', DateType::class,array('label' => 'Created Date','attr' =>array('disabled' =>'true','class'=>'form-control')))
-            ->add('courseid',null,array('label' => 'Course', 'attr' => array('class' => 'form-control')))
+            ->add('image_file', FileType::class, array('label' => 'Choose File',
+                'data_class' => 'Symfony\Component\HttpFoundation\File\File',
+                'attr' => array('class' => 'sonata-medium-file')
+            ))
+            ->getForm();
+
+
+        ;*/
+
+        $builder
+            ->add('imageName')
+            ->add('updatedAt', 'datetime')
         ;
     }
     

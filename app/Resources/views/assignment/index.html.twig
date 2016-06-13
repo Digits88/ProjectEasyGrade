@@ -22,7 +22,6 @@
                     <th>Assignmentid</th>
                     <th>Assignmentname</th>
                     <th>Assignmentdescription</th>
-                    <th>Createddate</th>
                     <th>Actions</th>
                 </tr>
                 </thead>
@@ -34,7 +33,6 @@
                         <td>{{ assignment.assignmentid }}</td>
                         <td><a href="{{ path('submissions_all', { 'id': assignment.id }) }}">{{ assignment.assignmentname }}</a></td>
                         <td>{{ assignment.assignmentdescription }}</td>
-                        <td>{% if assignment.createddate %}{{ assignment.createddate|date('Y-m-d H:i:s') }}{% endif %}</td>
                         <td>
                             <ul>
                                 <li>
