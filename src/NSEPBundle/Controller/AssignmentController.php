@@ -10,7 +10,8 @@ use NSEPBundle\Entity\Assignment;
 use NSEPBundle\Entity\Course;
 use NSEPBundle\Form\AssignmentType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 /**
  * Assignment controller.
@@ -77,14 +78,25 @@ class AssignmentController extends Controller
     {
 
 
+        //$id = $request->query->get('id');
         $assignment = new Assignment();
 
+
+
         //$form = $this->createForm('NSEPBundle\Form\AssignmentType', $assignment);
+
         $form = $this->createFormBuilder($assignment)
             ->add('assignmentid',TextType::class,array('label' => 'Assignment ID', 'attr' => array('placeholder'=>'Assignment ID','class' => 'form-control col-sm-2')))
             ->add('assignmentname',TextType::class,array('label' => 'Assignment Name', 'attr' => array('placeholder'=>'Assignment Nam','class' => 'form-control col-sm-2')))
             ->add('assignmentdescription',TextType::class,array('label' => 'Assignment Description', 'attr' => array('placeholder'=>'Assignment Description','class' => 'form-control col-sm-2')))
+            ->add('testinputone',TextareaType::class,array('label' => 'Test Input one','data' => 'null', 'attr' => array('placeholder'=>'Test Input one','class' => 'form-control col-sm-2')))
+            ->add('testoutputone',TextareaType::class,array('label' => 'Test Output One', 'attr' => array('placeholder'=>'Test Output One','class' => 'form-control col-sm-2')))
+            ->add('type',ChoiceType::class,array('choices'  => array(
+                'String' => 'string',
+                'Integer' => 'integer',)))
             ->getForm();
+
+
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -92,7 +104,7 @@ class AssignmentController extends Controller
             $em->persist($assignment);
             $em->flush();
 
-            return $this->redirectToRoute('assignment_index', array('id' => $assignment->getId()));
+            return $this->redirectToRoute('course_assignments', array('id' => $assignment->getId()));
         }
 
         return $this->render('assignment/new.html.twig', array(

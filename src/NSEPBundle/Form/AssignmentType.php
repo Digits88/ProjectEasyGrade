@@ -20,23 +20,18 @@ class AssignmentType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        /*$builder
+        $builder
             ->add('assignmentid',TextType::class,array('label' => 'Assignment ID', 'attr' => array('placeholder'=>'Assignment ID','class' => 'form-control col-sm-2')))
             ->add('assignmentname',TextType::class,array('label' => 'Assignment Name', 'attr' => array('placeholder'=>'Assignment Nam','class' => 'form-control col-sm-2')))
             ->add('assignmentdescription',TextType::class,array('label' => 'Assignment Description', 'attr' => array('placeholder'=>'Assignment Description','class' => 'form-control col-sm-2')))
-            ->add('image_file', FileType::class, array('label' => 'Choose File',
-                'data_class' => 'Symfony\Component\HttpFoundation\File\File',
-                'attr' => array('class' => 'sonata-medium-file')
-            ))
+            ->add('testinputone',TextareaType::class,array('label' => 'Test Input one', 'attr' => array('placeholder'=>'Test Input one','class' => 'form-control col-sm-2')))
+            ->add('testoutputone',TextareaType::class,array('label' => 'Test Output One', 'attr' => array('placeholder'=>'Test Output One','class' => 'form-control col-sm-2')))
             ->getForm();
 
 
-        ;*/
-
-        $builder
-            ->add('imageName')
-            ->add('updatedAt', 'datetime')
         ;
+
+
     }
     
     /**

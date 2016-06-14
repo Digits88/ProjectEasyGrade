@@ -4,6 +4,7 @@ namespace NSEPBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
@@ -11,7 +12,6 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
  *
  * @ORM\Table(name="assignment")
  * @ORM\Entity(repositoryClass="NSEPBundle\Repository\AssignmentRepository")
- * @Vich\Uploadable
  */
 class Assignment
 {
@@ -45,12 +45,7 @@ class Assignment
      */
     private $assignmentdescription;
 
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="createddate", type="datetime")
-     */
-    private $createddate;
+
 
 
     /**
@@ -72,20 +67,42 @@ class Assignment
 
 
     /**
-     * NOTE: This is not a mapped field of entity metadata, just a simple property.
+     * @var string
      *
-     * @Vich\UploadableField(mapping="submission_image", fileNameProperty="imageName")
-     *
-     * @var File
+     * @ORM\Column(name="testinputone", type="string", length=255)
      */
-    private $imageFile;
+    private $testinputone;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     *
      * @var string
+     *
+     * @ORM\Column(name="type", type="string", length=255)
      */
-    private $imageName;
+    private $type='';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="testinputtwo", type="string", length=255)
+     */
+    private $testinputtwo;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="testoutputone", type="string", length=255)
+     */
+    private $testoutputone;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="testoutputtwo", type="string", length=255)
+     */
+    private $testoutputtwo;
+
+
+
 
 
 
@@ -174,34 +191,10 @@ class Assignment
     }
 
 
-
-    /**
-     * Set createddate
-     *
-     * @param \DateTime $createddate
-     *
-     * @return Assignment
-     */
-    public function setCreateddate($createddate)
-    {
-        $this->createddate = $createddate;
-
-        return $this;
-    }
-
-    /**
-     * Get createddate
-     *
-     * @return \DateTime
-     */
-    public function getCreateddate()
-    {
-        return $this->createddate;
-    }
-
     public function __construct() {
         $this->courseid = new ArrayCollection();
         $this->studentid = new ArrayCollection();
+
     }
 
 
@@ -248,7 +241,8 @@ class Assignment
      */
     public function setCourse(\NSEPBundle\Entity\Course $course = null)
     {
-        $this->course = $course;
+        //$this->course = $course;
+        $this->course =$course->getId();
 
         return $this;
     }
@@ -295,5 +289,102 @@ class Assignment
     public function getSubmissions()
     {
         return $this->submissions;
+    }
+
+
+    /**
+     * Set testinputone
+     *
+     * @param string $testinputone
+     *
+     * @return Assignment
+     */
+    public function setTestinputone($testinputone)
+    {
+        $this->testinputone = $testinputone;
+
+        return $this;
+    }
+
+    /**
+     * Get testinputone
+     *
+     * @return string
+     */
+    public function getTestinputone()
+    {
+        return $this->testinputone;
+    }
+
+    /**
+     * Set testinputtwo
+     *
+     * @param string $testinputtwo
+     *
+     * @return Assignment
+     */
+    public function setTestinputtwo($testinputtwo)
+    {
+        $this->testinputtwo = $testinputtwo;
+
+        return $this;
+    }
+
+    /**
+     * Get testinputtwo
+     *
+     * @return string
+     */
+    public function getTestinputtwo()
+    {
+        return $this->testinputtwo;
+    }
+
+    /**
+     * Set testoutputone
+     *
+     * @param string $testoutputone
+     *
+     * @return Assignment
+     */
+    public function setTestoutputone($testoutputone)
+    {
+        $this->testoutputone = $testoutputone;
+
+        return $this;
+    }
+
+    /**
+     * Get testoutputone
+     *
+     * @return string
+     */
+    public function getTestoutputone()
+    {
+        return $this->testoutputone;
+    }
+
+    /**
+     * Set testoutputtwo
+     *
+     * @param string $testoutputtwo
+     *
+     * @return Assignment
+     */
+    public function setTestoutputtwo($testoutputtwo)
+    {
+        $this->testoutputtwo = $testoutputtwo;
+
+        return $this;
+    }
+
+    /**
+     * Get testoutputtwo
+     *
+     * @return string
+     */
+    public function getTestoutputtwo()
+    {
+        return $this->testoutputtwo;
     }
 }

@@ -22,106 +22,114 @@ class __TwigTemplate_947d544a7b242abb495e76d8c165b0c453258cb3049478a768067e39264
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_d06af41a5c5c0cb6a7c5569d13edded5e1de28568da0e8c77dab07abd3fb8108 = $this->env->getExtension("native_profiler");
-        $__internal_d06af41a5c5c0cb6a7c5569d13edded5e1de28568da0e8c77dab07abd3fb8108->enter($__internal_d06af41a5c5c0cb6a7c5569d13edded5e1de28568da0e8c77dab07abd3fb8108_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "assignment/show.html.twig"));
+        $__internal_3a2f45fa4f81b377a0b854ec0ea5333a5242e38043654c79541fd505896a5ce7 = $this->env->getExtension("native_profiler");
+        $__internal_3a2f45fa4f81b377a0b854ec0ea5333a5242e38043654c79541fd505896a5ce7->enter($__internal_3a2f45fa4f81b377a0b854ec0ea5333a5242e38043654c79541fd505896a5ce7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "assignment/show.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_d06af41a5c5c0cb6a7c5569d13edded5e1de28568da0e8c77dab07abd3fb8108->leave($__internal_d06af41a5c5c0cb6a7c5569d13edded5e1de28568da0e8c77dab07abd3fb8108_prof);
+        $__internal_3a2f45fa4f81b377a0b854ec0ea5333a5242e38043654c79541fd505896a5ce7->leave($__internal_3a2f45fa4f81b377a0b854ec0ea5333a5242e38043654c79541fd505896a5ce7_prof);
 
     }
 
     // line 3
     public function block_authenticatedUsername($context, array $blocks = array())
     {
-        $__internal_8e7db6bcd3bc486ae0fc624743eb0d56fa95f910462e6c8d74254cc0d7a2adea = $this->env->getExtension("native_profiler");
-        $__internal_8e7db6bcd3bc486ae0fc624743eb0d56fa95f910462e6c8d74254cc0d7a2adea->enter($__internal_8e7db6bcd3bc486ae0fc624743eb0d56fa95f910462e6c8d74254cc0d7a2adea_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "authenticatedUsername"));
+        $__internal_ccc2c2c0a64a88692d4cec99206a24dfa4898befb59dbd6f663c1099b603bb09 = $this->env->getExtension("native_profiler");
+        $__internal_ccc2c2c0a64a88692d4cec99206a24dfa4898befb59dbd6f663c1099b603bb09->enter($__internal_ccc2c2c0a64a88692d4cec99206a24dfa4898befb59dbd6f663c1099b603bb09_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "authenticatedUsername"));
 
         echo twig_include($this->env, $context, "@NSEP/Default/userid.html.twig");
         
-        $__internal_8e7db6bcd3bc486ae0fc624743eb0d56fa95f910462e6c8d74254cc0d7a2adea->leave($__internal_8e7db6bcd3bc486ae0fc624743eb0d56fa95f910462e6c8d74254cc0d7a2adea_prof);
+        $__internal_ccc2c2c0a64a88692d4cec99206a24dfa4898befb59dbd6f663c1099b603bb09->leave($__internal_ccc2c2c0a64a88692d4cec99206a24dfa4898befb59dbd6f663c1099b603bb09_prof);
 
     }
 
     // line 4
     public function block_contentdetail($context, array $blocks = array())
     {
-        $__internal_8882b7ffa3cd9a7d8574de004020285ac7c81986a98c175b078b1fb5ff977510 = $this->env->getExtension("native_profiler");
-        $__internal_8882b7ffa3cd9a7d8574de004020285ac7c81986a98c175b078b1fb5ff977510->enter($__internal_8882b7ffa3cd9a7d8574de004020285ac7c81986a98c175b078b1fb5ff977510_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "contentdetail"));
+        $__internal_11844717980dde8bb3e28b3dd508711bc529f29c225581a63cf274555bc104ec = $this->env->getExtension("native_profiler");
+        $__internal_11844717980dde8bb3e28b3dd508711bc529f29c225581a63cf274555bc104ec->enter($__internal_11844717980dde8bb3e28b3dd508711bc529f29c225581a63cf274555bc104ec_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "contentdetail"));
 
         // line 5
         echo "    <h1>Assignment</h1>
 
-    <table>
+    <!-- Zero Configuration Table -->
+    <div class=\"panel panel-default\">
+        <div class=\"panel-heading\">Your Assignment</div>
+        <div class=\"panel-body\">
+            <table id=\"zctb\" class=\"display table table-striped table-bordered table-hover\" cellspacing=\"0\" width=\"100%\">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Assignmentid</th>
+                        <th>Assignmentname</th>
+                        <th>Assignmentdescription</th>
+                        <th>Test Input One</th>
+                        <th>Test Output One</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
         <tbody>
             <tr>
-                <th>Id</th>
                 <td>";
-        // line 11
+        // line 25
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["assignment"]) ? $context["assignment"] : $this->getContext($context, "assignment")), "id", array()), "html", null, true);
         echo "</td>
-            </tr>
-            <tr>
-                <th>Assignmentid</th>
                 <td>";
-        // line 15
+        // line 26
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["assignment"]) ? $context["assignment"] : $this->getContext($context, "assignment")), "assignmentid", array()), "html", null, true);
         echo "</td>
-            </tr>
-            <tr>
-                <th>Assignmentname</th>
-                <td>";
-        // line 19
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["assignment"]) ? $context["assignment"] : $this->getContext($context, "assignment")), "assignmentname", array()), "html", null, true);
-        echo "</td>
-            </tr>
-            <tr>
-                <th>Assignmentdescription</th>
-                <td>";
-        // line 23
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["assignment"]) ? $context["assignment"] : $this->getContext($context, "assignment")), "assignmentdescription", array()), "html", null, true);
-        echo "</td>
-            </tr>
-            <tr>
-                <th>Createddate</th>
                 <td>";
         // line 27
-        if ($this->getAttribute((isset($context["assignment"]) ? $context["assignment"] : $this->getContext($context, "assignment")), "createddate", array())) {
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["assignment"]) ? $context["assignment"] : $this->getContext($context, "assignment")), "createddate", array()), "Y-m-d H:i:s"), "html", null, true);
-        }
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["assignment"]) ? $context["assignment"] : $this->getContext($context, "assignment")), "assignmentname", array()), "html", null, true);
         echo "</td>
+                <td>";
+        // line 28
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["assignment"]) ? $context["assignment"] : $this->getContext($context, "assignment")), "assignmentdescription", array()), "html", null, true);
+        echo "</td>
+                <td>";
+        // line 29
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["assignment"]) ? $context["assignment"] : $this->getContext($context, "assignment")), "testinputone", array()), "html", null, true);
+        echo "</td>
+                <td>";
+        // line 30
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["assignment"]) ? $context["assignment"] : $this->getContext($context, "assignment")), "testoutputone", array()), "html", null, true);
+        echo "</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href=\"";
+        // line 34
+        echo $this->env->getExtension('routing')->getPath("course_assignments");
+        echo "\" class=\"btn btn-warning\">Back to the list</a>
+                            <a href=\"";
+        // line 35
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("assignment_edit", array("id" => $this->getAttribute((isset($context["assignment"]) ? $context["assignment"] : $this->getContext($context, "assignment")), "id", array()))), "html", null, true);
+        echo "\" class=\"btn btn-primary\">Edit</a>
+                            ";
+        // line 36
+        echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'form_start');
+        echo "
+                            <input type=\"submit\" value=\"Delete\" class=\"btn btn-success\">
+                            ";
+        // line 38
+        echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'form_end');
+        echo "
+                        </li>
+
+                    </ul>
+                </td>
             </tr>
+
+
+
+
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href=\"";
-        // line 34
-        echo $this->env->getExtension('routing')->getPath("assignment_index");
-        echo "\" class=\"btn btn-warning\">Back to the list</a>
-        </li>
-        <li>
-            <a href=\"";
-        // line 37
-        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("assignment_edit", array("id" => $this->getAttribute((isset($context["assignment"]) ? $context["assignment"] : $this->getContext($context, "assignment")), "id", array()))), "html", null, true);
-        echo "\" class=\"btn btn-primary\">Edit</a>
-        </li>
-        <li>
-            ";
-        // line 40
-        echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'form_start');
-        echo "
-                <input type=\"submit\" value=\"Delete\" class=\"btn btn-success\">
-            ";
-        // line 42
-        echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'form_end');
-        echo "
-        </li>
-    </ul>
+
 ";
         
-        $__internal_8882b7ffa3cd9a7d8574de004020285ac7c81986a98c175b078b1fb5ff977510->leave($__internal_8882b7ffa3cd9a7d8574de004020285ac7c81986a98c175b078b1fb5ff977510_prof);
+        $__internal_11844717980dde8bb3e28b3dd508711bc529f29c225581a63cf274555bc104ec->leave($__internal_11844717980dde8bb3e28b3dd508711bc529f29c225581a63cf274555bc104ec_prof);
 
     }
 
@@ -137,7 +145,7 @@ class __TwigTemplate_947d544a7b242abb495e76d8c165b0c453258cb3049478a768067e39264
 
     public function getDebugInfo()
     {
-        return array (  118 => 42,  113 => 40,  107 => 37,  101 => 34,  89 => 27,  82 => 23,  75 => 19,  68 => 15,  61 => 11,  53 => 5,  47 => 4,  35 => 3,  11 => 1,);
+        return array (  115 => 38,  110 => 36,  106 => 35,  102 => 34,  95 => 30,  91 => 29,  87 => 28,  83 => 27,  79 => 26,  75 => 25,  53 => 5,  47 => 4,  35 => 3,  11 => 1,);
     }
 }
 /* {% extends 'base.html.twig' %}*/
@@ -146,43 +154,50 @@ class __TwigTemplate_947d544a7b242abb495e76d8c165b0c453258cb3049478a768067e39264
 /* {% block contentdetail %}*/
 /*     <h1>Assignment</h1>*/
 /* */
-/*     <table>*/
+/*     <!-- Zero Configuration Table -->*/
+/*     <div class="panel panel-default">*/
+/*         <div class="panel-heading">Your Assignment</div>*/
+/*         <div class="panel-body">*/
+/*             <table id="zctb" class="display table table-striped table-bordered table-hover" cellspacing="0" width="100%">*/
+/*                 <thead>*/
+/*                     <tr>*/
+/*                         <th>Id</th>*/
+/*                         <th>Assignmentid</th>*/
+/*                         <th>Assignmentname</th>*/
+/*                         <th>Assignmentdescription</th>*/
+/*                         <th>Test Input One</th>*/
+/*                         <th>Test Output One</th>*/
+/*                         <th>Actions</th>*/
+/*                     </tr>*/
+/*                 </thead>*/
 /*         <tbody>*/
 /*             <tr>*/
-/*                 <th>Id</th>*/
 /*                 <td>{{ assignment.id }}</td>*/
-/*             </tr>*/
-/*             <tr>*/
-/*                 <th>Assignmentid</th>*/
 /*                 <td>{{ assignment.assignmentid }}</td>*/
-/*             </tr>*/
-/*             <tr>*/
-/*                 <th>Assignmentname</th>*/
 /*                 <td>{{ assignment.assignmentname }}</td>*/
-/*             </tr>*/
-/*             <tr>*/
-/*                 <th>Assignmentdescription</th>*/
 /*                 <td>{{ assignment.assignmentdescription }}</td>*/
+/*                 <td>{{ assignment.testinputone }}</td>*/
+/*                 <td>{{ assignment.testoutputone }}</td>*/
+/*                 <td>*/
+/*                     <ul>*/
+/*                         <li>*/
+/*                             <a href="{{ path('course_assignments') }}" class="btn btn-warning">Back to the list</a>*/
+/*                             <a href="{{ path('assignment_edit', { 'id': assignment.id }) }}" class="btn btn-primary">Edit</a>*/
+/*                             {{ form_start(delete_form) }}*/
+/*                             <input type="submit" value="Delete" class="btn btn-success">*/
+/*                             {{ form_end(delete_form) }}*/
+/*                         </li>*/
+/* */
+/*                     </ul>*/
+/*                 </td>*/
 /*             </tr>*/
-/*             <tr>*/
-/*                 <th>Createddate</th>*/
-/*                 <td>{% if assignment.createddate %}{{ assignment.createddate|date('Y-m-d H:i:s') }}{% endif %}</td>*/
-/*             </tr>*/
+/* */
+/* */
+/* */
+/* */
 /*         </tbody>*/
 /*     </table>*/
 /* */
-/*     <ul>*/
-/*         <li>*/
-/*             <a href="{{ path('assignment_index') }}" class="btn btn-warning">Back to the list</a>*/
-/*         </li>*/
-/*         <li>*/
-/*             <a href="{{ path('assignment_edit', { 'id': assignment.id }) }}" class="btn btn-primary">Edit</a>*/
-/*         </li>*/
-/*         <li>*/
-/*             {{ form_start(delete_form) }}*/
-/*                 <input type="submit" value="Delete" class="btn btn-success">*/
-/*             {{ form_end(delete_form) }}*/
-/*         </li>*/
-/*     </ul>*/
+/* */
 /* {% endblock contentdetail %}*/
 /* */

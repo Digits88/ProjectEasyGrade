@@ -4,42 +4,49 @@
 {% block contentdetail %}
     <h1>Assignment</h1>
 
-    <table>
+    <!-- Zero Configuration Table -->
+    <div class="panel panel-default">
+        <div class="panel-heading">Your Assignment</div>
+        <div class="panel-body">
+            <table id="zctb" class="display table table-striped table-bordered table-hover" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Assignmentid</th>
+                        <th>Assignmentname</th>
+                        <th>Assignmentdescription</th>
+                        <th>Test Input One</th>
+                        <th>Test Output One</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
         <tbody>
             <tr>
-                <th>Id</th>
                 <td>{{ assignment.id }}</td>
-            </tr>
-            <tr>
-                <th>Assignmentid</th>
                 <td>{{ assignment.assignmentid }}</td>
-            </tr>
-            <tr>
-                <th>Assignmentname</th>
                 <td>{{ assignment.assignmentname }}</td>
-            </tr>
-            <tr>
-                <th>Assignmentdescription</th>
                 <td>{{ assignment.assignmentdescription }}</td>
+                <td>{{ assignment.testinputone }}</td>
+                <td>{{ assignment.testoutputone }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('course_assignments') }}" class="btn btn-warning">Back to the list</a>
+                            <a href="{{ path('assignment_edit', { 'id': assignment.id }) }}" class="btn btn-primary">Edit</a>
+                            {{ form_start(delete_form) }}
+                            <input type="submit" value="Delete" class="btn btn-success">
+                            {{ form_end(delete_form) }}
+                        </li>
+
+                    </ul>
+                </td>
             </tr>
-            <tr>
-                <th>Createddate</th>
-                <td>{% if assignment.createddate %}{{ assignment.createddate|date('Y-m-d H:i:s') }}{% endif %}</td>
-            </tr>
+
+
+
+
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('assignment_index') }}" class="btn btn-warning">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('assignment_edit', { 'id': assignment.id }) }}" class="btn btn-primary">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete" class="btn btn-success">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+
 {% endblock contentdetail %}

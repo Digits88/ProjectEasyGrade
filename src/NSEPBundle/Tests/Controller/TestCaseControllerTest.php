@@ -4,7 +4,7 @@ namespace NSEPBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class TestCaseControllerTest extends WebTestCase
+class TestcaseControllerTest extends WebTestCase
 {
     /*
     public function testCompleteScenario()

@@ -64,10 +64,10 @@ class Assignment extends \NSEPBundle\Entity\Assignment implements \Doctrine\ORM\
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'id', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'assignmentid', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'assignmentname', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'assignmentdescription', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'course', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'studentid', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'submissions', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'imageFile', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'imageName', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'updatedAt'];
+            return ['__isInitialized__', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'id', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'assignmentid', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'assignmentname', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'assignmentdescription', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'course', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'studentid', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'submissions', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'testinputone', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'type', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'testoutputone'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'id', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'assignmentid', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'assignmentname', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'assignmentdescription', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'course', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'studentid', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'submissions', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'imageFile', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'imageName', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'updatedAt'];
+        return ['__isInitialized__', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'id', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'assignmentid', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'assignmentname', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'assignmentdescription', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'course', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'studentid', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'submissions', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'testinputone', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'type', '' . "\0" . 'NSEPBundle\\Entity\\Assignment' . "\0" . 'testoutputone'];
     }
 
     /**
@@ -173,50 +173,6 @@ class Assignment extends \NSEPBundle\Entity\Assignment implements \Doctrine\ORM\
     }
 
     
-    /**
-     * {@inheritDoc}
-     */
-    public function setImageFile(\Symfony\Component\HttpFoundation\File\File $image = NULL)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setImageFile', [$image]);
-
-        return parent::setImageFile($image);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getImageFile()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getImageFile', []);
-
-        return parent::getImageFile();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function setImageName($imageName)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setImageName', [$imageName]);
-
-        return parent::setImageName($imageName);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getImageName()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getImageName', []);
-
-        return parent::getImageName();
-    }
-
     /**
      * {@inheritDoc}
      */
@@ -389,23 +345,67 @@ class Assignment extends \NSEPBundle\Entity\Assignment implements \Doctrine\ORM\
     /**
      * {@inheritDoc}
      */
-    public function getUpdatedAt()
+    public function setTestinputone($testinputone)
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getUpdatedAt', []);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setTestinputone', [$testinputone]);
 
-        return parent::getUpdatedAt();
+        return parent::setTestinputone($testinputone);
     }
 
     /**
      * {@inheritDoc}
      */
-    public function setUpdatedAt($updatedAt)
+    public function getTestinputone()
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setUpdatedAt', [$updatedAt]);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getTestinputone', []);
 
-        return parent::setUpdatedAt($updatedAt);
+        return parent::getTestinputone();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setTestoutputone($testoutputone)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setTestoutputone', [$testoutputone]);
+
+        return parent::setTestoutputone($testoutputone);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getTestoutputone()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getTestoutputone', []);
+
+        return parent::getTestoutputone();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setType($type)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setType', [$type]);
+
+        return parent::setType($type);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getType()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getType', []);
+
+        return parent::getType();
     }
 
 }

@@ -38,13 +38,10 @@
         <a href="index.html" class="logo"><img src="{{ asset('bundles/nsep/images/logo.jpg') }}" class="img-responsive" alt=""></a>
         <span class="menu-btn"><i class="fa fa-bars"></i></span>
         <ul class="ts-profile-nav">
-            <li><a href="#">Help</a></li>
-            <li><a href="#">Settings</a></li>
             <li class="ts-account">
                 <a href="#"><img src="{{ asset('bundles/nsep/images/ts-avatar.jpg') }}" class="ts-avatar hidden-side" alt=""> {% block authenticatedUsername %}{% endblock %} <i class="fa fa-angle-down hidden-side"></i></a>
                 <ul>
-                    <li><a href="#">My Account</a></li>
-                    <li><a href="{{ path('fos_user_profile_edit') }}">Edit Account</a></li>
+                    <li><a href="{{ path('own_account') }}">Edit Account</a></li>
                     <li><a href="{{ path('fos_user_security_logout') }}">Logout</a></li>
                 </ul>
             </li>

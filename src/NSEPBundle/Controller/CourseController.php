@@ -31,42 +31,6 @@ class CourseController extends Controller
      */
     public function indexAction()
     {
-        /*$em = $this->getDoctrine()->getManager();
-
-        $result = $this->getDoctrine()->getEntityManager()->getConnection()->query('SELECT * FROM courselecturers_course WHERE user_id = 1');
-
-        //echo "len:" . sizeof($courses);
-
-        $courses = [];
-
-        while ($row = $result->fetch()) {
-            //$course = $this->getDoctrine()->getEntityManager()->getConnection()->query('SELECT * FROM course WHERE courseid = ' . $row['course_id']);
-
-
-            $query = $em->createQuery(
-            'SELECT p
-    FROM NSEPBundle:Course p
-    WHERE p.courseid = :price'
-        )->setParameter('price', 'CS2010');
-
-            $cou = $query->getResult();
-
-            //echo $row['course_id'];
-            //echo $cou[0];
-
-            //echo array_values($cou);
-            //array_push($courses, $cou);
-        }
-
-
-        echo sizeof($courses);*/
-
-
-        /*$category = $this->getDoctrine()
-            ->getRepository('NSEPBundle:Course')
-            ->find(1);
-
-        $courses = $category->getCourseid();*/
 
         $em = $this->getDoctrine()->getManager();
 

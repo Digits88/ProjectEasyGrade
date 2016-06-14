@@ -1,1 +1,1 @@
-print 100*2'
+print "Hello World!"

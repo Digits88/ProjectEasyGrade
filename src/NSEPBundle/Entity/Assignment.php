@@ -27,7 +27,7 @@ class Assignment
     /**
      * @var string
      *
-     * @ORM\Column(name="assignmentid", type="string", length=255)
+     * @ORM\Column(name="assignmentid", type="string", length=255, unique=true)
      */
     private $assignmentid;
 
@@ -64,6 +64,35 @@ class Assignment
      * @ORM\OneToMany(targetEntity="Submission", mappedBy="assignment")
      */
     private $submissions;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="testinputone", type="string", length=255)
+     */
+    private $testinputone='';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="type", type="string", length=255)
+     */
+    private $type='';
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="testoutputone", type="string", length=255)
+     */
+    private $testoutputone='';
+
+
+
+
+
+
 
 
 
@@ -154,6 +183,7 @@ class Assignment
     public function __construct() {
         $this->courseid = new ArrayCollection();
         $this->studentid = new ArrayCollection();
+
     }
 
 
@@ -248,5 +278,82 @@ class Assignment
     public function getSubmissions()
     {
         return $this->submissions;
+    }
+
+
+    /**
+     * Set testinputone
+     *
+     * @param string $testinputone
+     *
+     * @return Assignment
+     */
+    public function setTestinputone($testinputone)
+    {
+        $this->testinputone = $testinputone;
+
+        return $this;
+    }
+
+    /**
+     * Get testinputone
+     *
+     * @return string
+     */
+    public function getTestinputone()
+    {
+        return $this->testinputone;
+    }
+
+
+
+    /**
+     * Set testoutputone
+     *
+     * @param string $testoutputone
+     *
+     * @return Assignment
+     */
+    public function setTestoutputone($testoutputone)
+    {
+        $this->testoutputone = $testoutputone;
+
+        return $this;
+    }
+
+    /**
+     * Get testoutputone
+     *
+     * @return string
+     */
+    public function getTestoutputone()
+    {
+        return $this->testoutputone;
+    }
+
+
+
+    /**
+     * Set type
+     *
+     * @param string $type
+     *
+     * @return Assignment
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    /**
+     * Get type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->type;
     }
 }

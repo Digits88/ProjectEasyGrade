@@ -15,8 +15,8 @@ class __TwigTemplate_3b43d869129334d27d7ca47ec1574cd4c334b623c15faae67d1eb7198ea
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_05f06997f90b111fd0396fbf407f6737e33bdfa0715fe33ecd56b46132a43834 = $this->env->getExtension("native_profiler");
-        $__internal_05f06997f90b111fd0396fbf407f6737e33bdfa0715fe33ecd56b46132a43834->enter($__internal_05f06997f90b111fd0396fbf407f6737e33bdfa0715fe33ecd56b46132a43834_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "TwigBundle:Exception:logs.html.twig"));
+        $__internal_ea7ccfc3f3a6d84ff15e1171fb420388e15a963371ac9f50d15f1ed36133ef77 = $this->env->getExtension("native_profiler");
+        $__internal_ea7ccfc3f3a6d84ff15e1171fb420388e15a963371ac9f50d15f1ed36133ef77->enter($__internal_ea7ccfc3f3a6d84ff15e1171fb420388e15a963371ac9f50d15f1ed36133ef77_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "TwigBundle:Exception:logs.html.twig"));
 
         // line 1
         echo "<ol class=\"traces logs\">
@@ -49,7 +49,7 @@ class __TwigTemplate_3b43d869129334d27d7ca47ec1574cd4c334b623c15faae67d1eb7198ea
         echo "</ol>
 ";
         
-        $__internal_05f06997f90b111fd0396fbf407f6737e33bdfa0715fe33ecd56b46132a43834->leave($__internal_05f06997f90b111fd0396fbf407f6737e33bdfa0715fe33ecd56b46132a43834_prof);
+        $__internal_ea7ccfc3f3a6d84ff15e1171fb420388e15a963371ac9f50d15f1ed36133ef77->leave($__internal_ea7ccfc3f3a6d84ff15e1171fb420388e15a963371ac9f50d15f1ed36133ef77_prof);
 
     }
 

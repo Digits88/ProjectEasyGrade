@@ -60,22 +60,19 @@ class SubmissionController extends Controller
 
             $spid = $submission->getSphereengineid();
 
-
             $responsedata = Json_decode(file_get_contents("http://4a1a254e.compilers.sphere-engine.com/api/v3/submissions/".$spid."?access_token=0bb470cbea77cab6f0a128bb0eead774&withcmpinfo=true&withSource=true&withOutput=true"));
 
-
-            //var_dump($responsedata);
-
-
-
+            //var_dump($responsedata->output);
             $em = $this->getDoctrine()->getManager();
             $submission = $em->getRepository('NSEPBundle:Submission')->find($id);
+            $type = $submission->getAssignment()->getType();
 
             if (!$submission) {
                 throw $this->createNotFoundException(
                     'No product found for id ' . $id
                 );
             }
+
 
             $submission->setResult($responsedata->result);
             $submission->setSpstatus($responsedata->status);
@@ -84,27 +81,51 @@ class SubmissionController extends Controller
             $submission->setOutput($responsedata->output);
             $submission->setStatus("Graded");
 
-        } else if ($submission->getStatus() == 'Not Graded') {
+            $out = $submission->getOutput();
+
+            if((strcmp("integer",$type))== 0)
+                $testoutput = (int)($submission->getAssignment()->getTestinputone());
+            elseif((strcmp("integer",$type))!==0)
+                $testoutput = ($submission->getAssignment()->getTestinputone());
+
+
+            if($testoutput == $out){
+                var_dump('yes');
+            }
+            else
+                var_dump('np');
+
+
+
+
+        } else if ($submission->getStatus() == 'Not Graded' or $submission->getStatus() == 'Graded') {
             $ch = curl_init();
 
             $sub = file_get_contents("submissions/".$submission->getImageName());
             $lang = $submission->getLanguage();
 
-            //$input = (int)file_get_contents("submissions/testinputfortest14.txt");
+            $type = $submission->getAssignment()->getType();
 
-            //$lg = $submission->getLanguage();
+            if((strcmp("integer",$type))== 0)
+                $input = (int)($submission->getAssignment()->getTestinputone());
+            elseif((strcmp("integer",$type))!==0)
+                $input = ($submission->getAssignment()->getTestinputone());
+
+
+            //var_dump($input);
 
             curl_setopt($ch, CURLOPT_URL, 'http://4a1a254e.compilers.sphere-engine.com/api/v3/submissions?access_token=9af50a60bc23e532ace4043c0895b024');
             curl_setopt($ch, CURLOPT_POST, 1);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
             curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, "sourceCode=$sub&language=$lang");
+            curl_setopt($ch, CURLOPT_POSTFIELDS, "sourceCode=$sub&language=$lang&input=5");
             curl_setopt($ch, CURLOPT_HEADER, false);
             $result = curl_exec($ch);
 
             curl_close($ch);
             $response = json_decode($result, true);
-            //print_r($response['id']);
+            //var_dump($response);
+
             $sphereengineID = $response['id'];
 
             $em = $this->getDoctrine()->getManager();

@@ -1,21 +1,22 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}
+{% block authenticatedUsername %}{{ include('@NSEP/Default/userid.html.twig') }}{% endblock authenticatedUsername %}
+{% block contentdetail %}
     <h1>Assignment edit</h1>
 
     {{ form_start(edit_form) }}
         {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
+        <input  class="btn btn-success" type="submit" value="Save" />
     {{ form_end(edit_form) }}
 
     <ul>
         <li>
-            <a href="{{ path('assignment_index') }}">Back to the list</a>
+            <a href="{{ path('course_assignments') }}" class="btn btn-primary">Back to the list</a>
         </li>
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <input type="submit" value="Delete" class="btn btn-warning">
             {{ form_end(delete_form) }}
         </li>
     </ul>
-{% endblock %}
+{% endblock contentdetail %}

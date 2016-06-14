@@ -1,0 +1,103 @@
+<?php
+
+namespace NSEPBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Testcase
+ *
+ * @ORM\Table(name="testcase")
+ * @ORM\Entity(repositoryClass="NSEPBundle\Repository\TestcaseRepository")
+ */
+class Testcase
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="testinput", type="string", length=255, nullable=true)
+     */
+    private $testinput;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="testoutput", type="string", length=255, nullable=true)
+     */
+    private $testoutput;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Assignment", inversedBy="testcases")
+     * @ORM\JoinColumn(name="assignment_id", referencedColumnName="id")
+     */
+    private $assignment;
+
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set testinput
+     *
+     * @param string $testinput
+     *
+     * @return Testcase
+     */
+    public function setTestinput($testinput)
+    {
+        $this->testinput = $testinput;
+
+        return $this;
+    }
+
+    /**
+     * Get testinput
+     *
+     * @return string
+     */
+    public function getTestinput()
+    {
+        return $this->testinput;
+    }
+
+    /**
+     * Set testoutput
+     *
+     * @param string $testoutput
+     *
+     * @return Testcase
+     */
+    public function setTestoutput($testoutput)
+    {
+        $this->testoutput = $testoutput;
+
+        return $this;
+    }
+
+    /**
+     * Get testoutput
+     *
+     * @return string
+     */
+    public function getTestoutput()
+    {
+        return $this->testoutput;
+    }
+}
+
