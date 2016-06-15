@@ -62,6 +62,7 @@ class AssignmentController extends Controller
         $assignments = $query->getResult();
         return $this->render('assignment/index.html.twig', array(
             'assignments' => $assignments,
+            'cid' => $cid,
         ));
 
 
@@ -78,11 +79,16 @@ class AssignmentController extends Controller
     {
 
 
-        //$id = $request->query->get('id');
+
+        $cid = (int)($request->query->get('cid'));
+        //var_dump($id);
         $assignment = new Assignment();
 
 
+        $em = $this->getDoctrine()->getManager();
+        $course = $em->getRepository('NSEPBundle:Course')->find($cid);
 
+        //var_dump($course);
         //$form = $this->createForm('NSEPBundle\Form\AssignmentType', $assignment);
 
         $form = $this->createFormBuilder($assignment)
@@ -94,6 +100,8 @@ class AssignmentController extends Controller
             ->add('type',ChoiceType::class,array('choices'  => array(
                 'String' => 'string',
                 'Integer' => 'integer',)))
+            ->add('course',ChoiceType::class,array('choices'  => array(
+                $cid => $course,)))
             ->getForm();
 
 

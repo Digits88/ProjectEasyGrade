@@ -14,7 +14,7 @@ class DefaultController extends Controller
 {
     /**
      * This routes different users to different places in when login
-     * @Route("/")
+     * @Route("/" , name="user_homepage")
      */
     public function indexAction()
     {

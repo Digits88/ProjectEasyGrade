@@ -181,7 +181,7 @@ class Assignment
 
 
     public function __construct() {
-        $this->courseid = new ArrayCollection();
+        $this->course = new ArrayCollection();
         $this->studentid = new ArrayCollection();
 
     }
@@ -228,7 +228,7 @@ class Assignment
      *
      * @return Assignment
      */
-    public function setCourse(\NSEPBundle\Entity\Course $course = null)
+    public function setCourse(\NSEPBundle\Entity\Course $course)
     {
         //$this->course = $course;
         $this->course =$course->getId();

@@ -166,7 +166,7 @@ class CourseController extends Controller
             $em->flush();
         }
 
-        return $this->redirectToRoute('course_index');
+        return $this->redirectToRoute('user_courses');
     }
 
     /**

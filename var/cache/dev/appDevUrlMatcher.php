@@ -230,13 +230,13 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        // nsep_default_index
+        // user_homepage
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'nsep_default_index');
+                return $this->redirect($pathinfo.'/', 'user_homepage');
             }
 
-            return array (  '_controller' => 'NSEPBundle\\Controller\\DefaultController::indexAction',  '_route' => 'nsep_default_index',);
+            return array (  '_controller' => 'NSEPBundle\\Controller\\DefaultController::indexAction',  '_route' => 'user_homepage',);
         }
 
         // nsep_default_graph

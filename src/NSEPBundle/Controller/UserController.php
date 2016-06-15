@@ -59,7 +59,7 @@ class UserController extends Controller
             $em->persist($user);
             $em->flush();
 
-            return $this->redirectToRoute('user_edit', array('id' => $user->getId()));
+            return $this->redirectToRoute('user_homepage', array('id' => $user->getId()));
         }
 
         return $this->render('user/edit.html.twig', array(
@@ -97,7 +97,7 @@ class UserController extends Controller
             $em->persist($user);
             $em->flush();
 
-            return $this->redirectToRoute('user_index', array('id' => $user->getId()));
+            return $this->redirectToRoute('user_homepage', array('id' => $user->getId()));
         }
 
         return $this->render('user/new.html.twig', array(
@@ -139,7 +139,7 @@ class UserController extends Controller
             $em->persist($user);
             $em->flush();
 
-            return $this->redirectToRoute('user_edit', array('id' => $user->getId()));
+            return $this->redirectToRoute('user_homepage', array('id' => $user->getId()));
         }
 
         return $this->render('user/edit.html.twig', array(
