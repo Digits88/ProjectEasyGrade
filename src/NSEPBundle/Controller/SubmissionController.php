@@ -84,6 +84,8 @@ class SubmissionController extends Controller
             $submission->setStatus("Graded");
 
             $out = $submission->getOutput();
+            $memory = $submission->getMemory();
+            $language = $submission->getLanguage();
 
             if((strcmp("integer",$type))== 0)
                 $testoutput = (int)($submission->getAssignment()->getTestoutputone());
@@ -95,8 +97,58 @@ class SubmissionController extends Controller
             //var_dump($testoutput);
             //var_dump($out);
 
+            $marks=0;
+
             if($testoutput == $out){
-                $submission->setSubmissionmarks(100);
+                if($language==17){
+                    if($memory <= 5000)
+                        $marks=100;
+                    elseif($memory <= 9000)
+                        $marks=80;
+                    else
+                        $marks=60;
+                }
+                elseif($language==27){
+                    if($memory <= 25000)
+                        $marks=100;
+                    elseif($memory <= 29000)
+                        $marks=80;
+                    else
+                        $marks=60;
+                }
+                elseif($language==1){
+                    if($memory <= 3000)
+                        $marks=100;
+                    elseif($memory <= 3500)
+                        $marks=80;
+                    else
+                        $marks=60;
+                }
+                elseif($language==11){
+                    if($memory <= 3000)
+                        $marks=100;
+                    elseif($memory <= 3500)
+                        $marks=80;
+                    else
+                        $marks=60;
+                }
+                elseif($language==4){
+                    if($memory <= 9000)
+                        $marks=100;
+                    elseif($memory <= 10000)
+                        $marks=80;
+                    else
+                        $marks=60;
+                }
+                elseif($language==10){
+                    if($memory <= 320000)
+                        $marks=100;
+                    elseif($memory <= 340000)
+                        $marks=80;
+                    else
+                        $marks=60;
+                }
+                $submission->setSubmissionmarks($marks);
 
             }
             else {
