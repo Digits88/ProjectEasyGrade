@@ -22,32 +22,32 @@ class __TwigTemplate_3569b9deeebceb1f2241a0989558109862d090d29d740008a646afa64c7
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_110f1c5726e1f107b96c48c6d95366f194362b84b5e8f4266d1b1e79e085942f = $this->env->getExtension("native_profiler");
-        $__internal_110f1c5726e1f107b96c48c6d95366f194362b84b5e8f4266d1b1e79e085942f->enter($__internal_110f1c5726e1f107b96c48c6d95366f194362b84b5e8f4266d1b1e79e085942f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "submission/show.html.twig"));
+        $__internal_186cf7db99e2140de71238b876144b9a86386f1b87075c0d40e359ef9bb47b1e = $this->env->getExtension("native_profiler");
+        $__internal_186cf7db99e2140de71238b876144b9a86386f1b87075c0d40e359ef9bb47b1e->enter($__internal_186cf7db99e2140de71238b876144b9a86386f1b87075c0d40e359ef9bb47b1e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "submission/show.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_110f1c5726e1f107b96c48c6d95366f194362b84b5e8f4266d1b1e79e085942f->leave($__internal_110f1c5726e1f107b96c48c6d95366f194362b84b5e8f4266d1b1e79e085942f_prof);
+        $__internal_186cf7db99e2140de71238b876144b9a86386f1b87075c0d40e359ef9bb47b1e->leave($__internal_186cf7db99e2140de71238b876144b9a86386f1b87075c0d40e359ef9bb47b1e_prof);
 
     }
 
     // line 3
     public function block_authenticatedUsername($context, array $blocks = array())
     {
-        $__internal_b63f3e47ae8f61c637d4cd01c2f019143f4a09a27a0ee367d7c1f891111728d8 = $this->env->getExtension("native_profiler");
-        $__internal_b63f3e47ae8f61c637d4cd01c2f019143f4a09a27a0ee367d7c1f891111728d8->enter($__internal_b63f3e47ae8f61c637d4cd01c2f019143f4a09a27a0ee367d7c1f891111728d8_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "authenticatedUsername"));
+        $__internal_0bb688e854aac190fb317515eb1789b3bc07a26243e9a4cec29f1ebe59fd6715 = $this->env->getExtension("native_profiler");
+        $__internal_0bb688e854aac190fb317515eb1789b3bc07a26243e9a4cec29f1ebe59fd6715->enter($__internal_0bb688e854aac190fb317515eb1789b3bc07a26243e9a4cec29f1ebe59fd6715_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "authenticatedUsername"));
 
         echo twig_include($this->env, $context, "@NSEP/Default/userid.html.twig");
         
-        $__internal_b63f3e47ae8f61c637d4cd01c2f019143f4a09a27a0ee367d7c1f891111728d8->leave($__internal_b63f3e47ae8f61c637d4cd01c2f019143f4a09a27a0ee367d7c1f891111728d8_prof);
+        $__internal_0bb688e854aac190fb317515eb1789b3bc07a26243e9a4cec29f1ebe59fd6715->leave($__internal_0bb688e854aac190fb317515eb1789b3bc07a26243e9a4cec29f1ebe59fd6715_prof);
 
     }
 
     // line 4
     public function block_contentdetail($context, array $blocks = array())
     {
-        $__internal_eb2bb6ff23a950f00ef7a3d31931003bef6c9d0141f522900cc1a21973338fd9 = $this->env->getExtension("native_profiler");
-        $__internal_eb2bb6ff23a950f00ef7a3d31931003bef6c9d0141f522900cc1a21973338fd9->enter($__internal_eb2bb6ff23a950f00ef7a3d31931003bef6c9d0141f522900cc1a21973338fd9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "contentdetail"));
+        $__internal_e8f09ad8d1433e34fe7c34a1f4889dc6c7376ce162290d581e3b334cac574335 = $this->env->getExtension("native_profiler");
+        $__internal_e8f09ad8d1433e34fe7c34a1f4889dc6c7376ce162290d581e3b334cac574335->enter($__internal_e8f09ad8d1433e34fe7c34a1f4889dc6c7376ce162290d581e3b334cac574335_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "contentdetail"));
 
         // line 5
         echo "    <h1>Submission</h1>
@@ -66,6 +66,7 @@ class __TwigTemplate_3569b9deeebceb1f2241a0989558109862d090d29d740008a646afa64c7
                     <th>Status</th>
                     <th>Execution Status</th>
                     <th>Output</th>
+                    <th>Marks</th>
                     <th>Memory</th>
                     <th>Time</th>
                 </tr>
@@ -74,77 +75,81 @@ class __TwigTemplate_3569b9deeebceb1f2241a0989558109862d090d29d740008a646afa64c7
                 <tbody>
                     <tr>
                         <td>";
-        // line 28
+        // line 29
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["submission"]) ? $context["submission"] : $this->getContext($context, "submission")), "id", array()), "html", null, true);
         echo "</td>
                         <td>";
-        // line 29
+        // line 30
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["submission"]) ? $context["submission"] : $this->getContext($context, "submission")), "imageName", array()), "html", null, true);
         echo "</td>
                         <td>";
-        // line 30
+        // line 31
         if ($this->getAttribute((isset($context["submission"]) ? $context["submission"] : $this->getContext($context, "submission")), "updatedAt", array())) {
             echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["submission"]) ? $context["submission"] : $this->getContext($context, "submission")), "updatedAt", array()), "Y-m-d H:i:s"), "html", null, true);
         }
         echo "</td>
                         <td>";
-        // line 31
+        // line 32
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["submission"]) ? $context["submission"] : $this->getContext($context, "submission")), "imageName", array()), "html", null, true);
         echo "</td>
                         <td><button type=\"button\" class=\"btn btn-info\" data-toggle=\"modal\" data-target=\"#myModal\">View Code</button></td>
                         <td>
                             ";
-        // line 34
+        // line 35
         if (($this->getAttribute((isset($context["submission"]) ? $context["submission"] : $this->getContext($context, "submission")), "result", array()) == 15)) {
             echo "Successful
                             ";
-        } elseif (($this->getAttribute(        // line 35
+        } elseif (($this->getAttribute(        // line 36
 (isset($context["submission"]) ? $context["submission"] : $this->getContext($context, "submission")), "result", array()) == 11)) {
             echo "Compilation Error
                             ";
-        } elseif (($this->getAttribute(        // line 36
+        } elseif (($this->getAttribute(        // line 37
 (isset($context["submission"]) ? $context["submission"] : $this->getContext($context, "submission")), "result", array()) == 12)) {
             echo "Runtime Error
                             ";
-        } elseif (($this->getAttribute(        // line 37
+        } elseif (($this->getAttribute(        // line 38
 (isset($context["submission"]) ? $context["submission"] : $this->getContext($context, "submission")), "result", array()) == 13)) {
             echo "Time Limit Exceeded
                             ";
-        } elseif (($this->getAttribute(        // line 38
+        } elseif (($this->getAttribute(        // line 39
 (isset($context["submission"]) ? $context["submission"] : $this->getContext($context, "submission")), "result", array()) == 17)) {
             echo "Memory Limit Exceeded
                             ";
-        } elseif (($this->getAttribute(        // line 39
+        } elseif (($this->getAttribute(        // line 40
 (isset($context["submission"]) ? $context["submission"] : $this->getContext($context, "submission")), "result", array()) == 19)) {
             echo "Illegal System Call
-                            ";
-        } elseif (($this->getAttribute(        // line 40
-(isset($context["submission"]) ? $context["submission"] : $this->getContext($context, "submission")), "result", array()) == 20)) {
-            echo "Internal Error
                             ";
         } elseif (($this->getAttribute(        // line 41
 (isset($context["submission"]) ? $context["submission"] : $this->getContext($context, "submission")), "result", array()) == 20)) {
             echo "Internal Error
                             ";
+        } elseif (($this->getAttribute(        // line 42
+(isset($context["submission"]) ? $context["submission"] : $this->getContext($context, "submission")), "result", array()) == 20)) {
+            echo "Internal Error
+                            ";
         } else {
-            // line 42
+            // line 43
             echo "Not Yet Executed
                             ";
         }
-        // line 44
+        // line 45
         echo "
 
                         </td>
                         <td>";
-        // line 47
+        // line 48
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["submission"]) ? $context["submission"] : $this->getContext($context, "submission")), "output", array()), "html", null, true);
         echo "</td>
                         <td>";
-        // line 48
+        // line 49
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["submission"]) ? $context["submission"] : $this->getContext($context, "submission")), "submissionmarks", array()), "html", null, true);
+        echo "</td>
+                        <td>";
+        // line 50
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["submission"]) ? $context["submission"] : $this->getContext($context, "submission")), "memory", array()), "html", null, true);
         echo "</td>
                         <td>";
-        // line 49
+        // line 51
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["submission"]) ? $context["submission"] : $this->getContext($context, "submission")), "time", array()), "html", null, true);
         echo "</td>
                     </tr>
@@ -158,18 +163,18 @@ class __TwigTemplate_3569b9deeebceb1f2241a0989558109862d090d29d740008a646afa64c7
     <ul>
         <li>
             <a href=\"";
-        // line 60
+        // line 62
         echo $this->env->getExtension('routing')->getPath("submission_index");
         echo "\" class=\"btn btn-primary\">Back to the list</a>
         </li>
         <li>
             ";
-        // line 63
+        // line 65
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'form_start');
         echo "
             <input type=\"submit\" value=\"Delete\" class=\"btn btn-warning\">
             ";
-        // line 65
+        // line 67
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'form_end');
         echo "
         </li>
@@ -199,7 +204,7 @@ class __TwigTemplate_3569b9deeebceb1f2241a0989558109862d090d29d740008a646afa64c7
 
 ";
         
-        $__internal_eb2bb6ff23a950f00ef7a3d31931003bef6c9d0141f522900cc1a21973338fd9->leave($__internal_eb2bb6ff23a950f00ef7a3d31931003bef6c9d0141f522900cc1a21973338fd9_prof);
+        $__internal_e8f09ad8d1433e34fe7c34a1f4889dc6c7376ce162290d581e3b334cac574335->leave($__internal_e8f09ad8d1433e34fe7c34a1f4889dc6c7376ce162290d581e3b334cac574335_prof);
 
     }
 
@@ -215,7 +220,7 @@ class __TwigTemplate_3569b9deeebceb1f2241a0989558109862d090d29d740008a646afa64c7
 
     public function getDebugInfo()
     {
-        return array (  173 => 65,  168 => 63,  162 => 60,  148 => 49,  144 => 48,  140 => 47,  135 => 44,  131 => 42,  126 => 41,  122 => 40,  118 => 39,  114 => 38,  110 => 37,  106 => 36,  102 => 35,  98 => 34,  92 => 31,  86 => 30,  82 => 29,  78 => 28,  53 => 5,  47 => 4,  35 => 3,  11 => 1,);
+        return array (  178 => 67,  173 => 65,  167 => 62,  153 => 51,  149 => 50,  145 => 49,  141 => 48,  136 => 45,  132 => 43,  127 => 42,  123 => 41,  119 => 40,  115 => 39,  111 => 38,  107 => 37,  103 => 36,  99 => 35,  93 => 32,  87 => 31,  83 => 30,  79 => 29,  53 => 5,  47 => 4,  35 => 3,  11 => 1,);
     }
 }
 /* {% extends 'base.html.twig' %}*/
@@ -238,6 +243,7 @@ class __TwigTemplate_3569b9deeebceb1f2241a0989558109862d090d29d740008a646afa64c7
 /*                     <th>Status</th>*/
 /*                     <th>Execution Status</th>*/
 /*                     <th>Output</th>*/
+/*                     <th>Marks</th>*/
 /*                     <th>Memory</th>*/
 /*                     <th>Time</th>*/
 /*                 </tr>*/
@@ -265,6 +271,7 @@ class __TwigTemplate_3569b9deeebceb1f2241a0989558109862d090d29d740008a646afa64c7
 /* */
 /*                         </td>*/
 /*                         <td>{{ submission.output }}</td>*/
+/*                         <td>{{ submission.submissionmarks }}</td>*/
 /*                         <td>{{ submission.memory }}</td>*/
 /*                         <td>{{ submission.time }}</td>*/
 /*                     </tr>*/

@@ -81,6 +81,17 @@ class DefaultController extends Controller
         return $this->render('NSEPBundle:Default:index.html.twig', array('histogram' => $histogram));
     }
 
+    /**
+     * This generates graphs
+     * @Route("/inlinegraph")
+     */
+    public function inlinegraphAction()
+    {
+
+
+        return $this->render('NSEPBundle:Default:graph.html.twig');
+    }
+
 
 
 

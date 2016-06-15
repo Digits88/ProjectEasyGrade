@@ -84,16 +84,26 @@ class SubmissionController extends Controller
             $out = $submission->getOutput();
 
             if((strcmp("integer",$type))== 0)
-                $testoutput = (int)($submission->getAssignment()->getTestinputone());
+                $testoutput = (int)($submission->getAssignment()->getTestoutputone());
             elseif((strcmp("integer",$type))!==0)
-                $testoutput = ($submission->getAssignment()->getTestinputone());
+                $testoutput = ($submission->getAssignment()->getTestoutputone());
 
+
+
+            //var_dump($testoutput);
+            //var_dump($out);
 
             if($testoutput == $out){
-                var_dump('yes');
+                $submission->setSubmissionmarks(100);
+
             }
-            else
-                var_dump('np');
+            else {
+                $submission->setSubmissionmarks(0);
+            }
+
+
+
+
 
 
 
@@ -118,7 +128,7 @@ class SubmissionController extends Controller
             curl_setopt($ch, CURLOPT_POST, 1);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
             curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, "sourceCode=$sub&language=$lang&input=5");
+            curl_setopt($ch, CURLOPT_POSTFIELDS, "sourceCode=$sub&language=$lang&input=$input");
             curl_setopt($ch, CURLOPT_HEADER, false);
             $result = curl_exec($ch);
 

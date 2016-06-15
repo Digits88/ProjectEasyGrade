@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block authenticatedUsername %}{{ include('@NSEP/Default/userid.html.twig') }}{% endblock authenticatedUsername %}
+{% block contentdetail %}
+
+
+<div class="col-md-4">
+    <div class="box box-solid">
+        <div class="box-header">
+            <h3 class="box-title text-warning">Sparkline Bar</h3>
+
+            <div class="box-tools pull-right">
+                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-refresh"></i></button>
+            </div>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body text-center">
+            <div class="sparkline" data-type="bar" data-width="97%" data-height="100px" data-bar-Width="14" data-bar-Spacing="7" data-bar-Color="#f39c12">
+                6,4,8, 9, 10, 5, 13, 18, 21, 7, 9
+            </div>
+        </div>
+        <!-- /.box-body -->
+    </div>
+    <!-- /.box -->
+</div>
+<!-- /.col -->
+</div>
+<!-- /.row -->
+
+
+{% endblock contentdetail %}

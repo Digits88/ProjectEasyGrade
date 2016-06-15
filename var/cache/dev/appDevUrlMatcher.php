@@ -244,6 +244,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'NSEPBundle\\Controller\\DefaultController::graphAction',  '_route' => 'nsep_default_graph',);
         }
 
+        // nsep_default_inlinegraph
+        if ($pathinfo === '/inlinegraph') {
+            return array (  '_controller' => 'NSEPBundle\\Controller\\DefaultController::inlinegraphAction',  '_route' => 'nsep_default_inlinegraph',);
+        }
+
         if (0 === strpos($pathinfo, '/submission')) {
             // submission_index
             if (rtrim($pathinfo, '/') === '/submission') {
