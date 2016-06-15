@@ -24,32 +24,32 @@ class __TwigTemplate_99a36b422a6781d26e121a22bc29e679569518e23d796cd0f0b841c8a03
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_5c6caa4d062423891819efeb68d562047eb1d989597fa91f929a547b09c109ff = $this->env->getExtension("native_profiler");
-        $__internal_5c6caa4d062423891819efeb68d562047eb1d989597fa91f929a547b09c109ff->enter($__internal_5c6caa4d062423891819efeb68d562047eb1d989597fa91f929a547b09c109ff_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FOSUserBundle:Security:login.html.twig"));
+        $__internal_b9b4e3fed2217af36bb331a8761255cecf2f3b68c5ef35ad28be758c5e306fa6 = $this->env->getExtension("native_profiler");
+        $__internal_b9b4e3fed2217af36bb331a8761255cecf2f3b68c5ef35ad28be758c5e306fa6->enter($__internal_b9b4e3fed2217af36bb331a8761255cecf2f3b68c5ef35ad28be758c5e306fa6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FOSUserBundle:Security:login.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_5c6caa4d062423891819efeb68d562047eb1d989597fa91f929a547b09c109ff->leave($__internal_5c6caa4d062423891819efeb68d562047eb1d989597fa91f929a547b09c109ff_prof);
+        $__internal_b9b4e3fed2217af36bb331a8761255cecf2f3b68c5ef35ad28be758c5e306fa6->leave($__internal_b9b4e3fed2217af36bb331a8761255cecf2f3b68c5ef35ad28be758c5e306fa6_prof);
 
     }
 
     // line 3
     public function block_title($context, array $blocks = array())
     {
-        $__internal_9e1073e609bb0d527056a3319bb2c5e155be4a0e099b60983f5d234d01fcfec4 = $this->env->getExtension("native_profiler");
-        $__internal_9e1073e609bb0d527056a3319bb2c5e155be4a0e099b60983f5d234d01fcfec4->enter($__internal_9e1073e609bb0d527056a3319bb2c5e155be4a0e099b60983f5d234d01fcfec4_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_e264950570a97d712ec2fa592f0b547582e96d76a8d307de9a79cc9e055344be = $this->env->getExtension("native_profiler");
+        $__internal_e264950570a97d712ec2fa592f0b547582e96d76a8d307de9a79cc9e055344be->enter($__internal_e264950570a97d712ec2fa592f0b547582e96d76a8d307de9a79cc9e055344be_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         echo "Login";
         
-        $__internal_9e1073e609bb0d527056a3319bb2c5e155be4a0e099b60983f5d234d01fcfec4->leave($__internal_9e1073e609bb0d527056a3319bb2c5e155be4a0e099b60983f5d234d01fcfec4_prof);
+        $__internal_e264950570a97d712ec2fa592f0b547582e96d76a8d307de9a79cc9e055344be->leave($__internal_e264950570a97d712ec2fa592f0b547582e96d76a8d307de9a79cc9e055344be_prof);
 
     }
 
     // line 5
     public function block_body($context, array $blocks = array())
     {
-        $__internal_c514f00c4a7a39b0233584d473bbff51872f63ba60a430922662b6be225c2ffb = $this->env->getExtension("native_profiler");
-        $__internal_c514f00c4a7a39b0233584d473bbff51872f63ba60a430922662b6be225c2ffb->enter($__internal_c514f00c4a7a39b0233584d473bbff51872f63ba60a430922662b6be225c2ffb_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_dc474d00ba2d02864334d1f1c64eccc48481cb5719d4b4189ff1d4dd80ba4624 = $this->env->getExtension("native_profiler");
+        $__internal_dc474d00ba2d02864334d1f1c64eccc48481cb5719d4b4189ff1d4dd80ba4624->enter($__internal_dc474d00ba2d02864334d1f1c64eccc48481cb5719d4b4189ff1d4dd80ba4624_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
         echo "    <div class=\"login-page bk-img\">
@@ -57,7 +57,7 @@ class __TwigTemplate_99a36b422a6781d26e121a22bc29e679569518e23d796cd0f0b841c8a03
             <div class=\"container\">
                 <div class=\"row\">
                     <div class=\"col-md-6 col-md-offset-3\">
-                        <h1 class=\"text-center text-bold text-light mt-4x\">Sign in</h1>
+                        <h1 class=\"text-center text-bold text-light mt-4x\">Sign in to easyGrade</h1>
                         <div class=\"well row pt-2x pb-3x bk-light\">
                             <div class=\"col-md-8 col-md-offset-2\">
 
@@ -115,7 +115,7 @@ class __TwigTemplate_99a36b422a6781d26e121a22bc29e679569518e23d796cd0f0b841c8a03
                             </div>
                         </div>
                         <div class=\"text-center text-light\">
-                            <a href=\"#\" class=\"text-light\">Forgot password?</a>
+
                         </div>
                     </div>
                 </div>
@@ -126,15 +126,15 @@ class __TwigTemplate_99a36b422a6781d26e121a22bc29e679569518e23d796cd0f0b841c8a03
 
 ";
         
-        $__internal_c514f00c4a7a39b0233584d473bbff51872f63ba60a430922662b6be225c2ffb->leave($__internal_c514f00c4a7a39b0233584d473bbff51872f63ba60a430922662b6be225c2ffb_prof);
+        $__internal_dc474d00ba2d02864334d1f1c64eccc48481cb5719d4b4189ff1d4dd80ba4624->leave($__internal_dc474d00ba2d02864334d1f1c64eccc48481cb5719d4b4189ff1d4dd80ba4624_prof);
 
     }
 
     // line 52
     public function block_stylesheets($context, array $blocks = array())
     {
-        $__internal_91e1727e74d25b9409ebb9fa225fc5912e7f2cf974cfb37317a45d3e53416b1a = $this->env->getExtension("native_profiler");
-        $__internal_91e1727e74d25b9409ebb9fa225fc5912e7f2cf974cfb37317a45d3e53416b1a->enter($__internal_91e1727e74d25b9409ebb9fa225fc5912e7f2cf974cfb37317a45d3e53416b1a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
+        $__internal_8c50786b7a420aaadd93f5c3468cbc1a8e1697e4446e392d95441d6866c016f4 = $this->env->getExtension("native_profiler");
+        $__internal_8c50786b7a420aaadd93f5c3468cbc1a8e1697e4446e392d95441d6866c016f4->enter($__internal_8c50786b7a420aaadd93f5c3468cbc1a8e1697e4446e392d95441d6866c016f4_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
 
         // line 53
         echo "    ";
@@ -142,15 +142,15 @@ class __TwigTemplate_99a36b422a6781d26e121a22bc29e679569518e23d796cd0f0b841c8a03
         echo "
 ";
         
-        $__internal_91e1727e74d25b9409ebb9fa225fc5912e7f2cf974cfb37317a45d3e53416b1a->leave($__internal_91e1727e74d25b9409ebb9fa225fc5912e7f2cf974cfb37317a45d3e53416b1a_prof);
+        $__internal_8c50786b7a420aaadd93f5c3468cbc1a8e1697e4446e392d95441d6866c016f4->leave($__internal_8c50786b7a420aaadd93f5c3468cbc1a8e1697e4446e392d95441d6866c016f4_prof);
 
     }
 
     // line 56
     public function block_javascripts($context, array $blocks = array())
     {
-        $__internal_548737bfa3a86337da13f61dc8aee0d3ef708c58f3c0e1c70d8128159c5cb059 = $this->env->getExtension("native_profiler");
-        $__internal_548737bfa3a86337da13f61dc8aee0d3ef708c58f3c0e1c70d8128159c5cb059->enter($__internal_548737bfa3a86337da13f61dc8aee0d3ef708c58f3c0e1c70d8128159c5cb059_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
+        $__internal_ef429d5077e8f131a9d44e90c35d6b6f61f7a769e5b96788a463eaecb04b9a49 = $this->env->getExtension("native_profiler");
+        $__internal_ef429d5077e8f131a9d44e90c35d6b6f61f7a769e5b96788a463eaecb04b9a49->enter($__internal_ef429d5077e8f131a9d44e90c35d6b6f61f7a769e5b96788a463eaecb04b9a49_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
         // line 57
         echo "    ";
@@ -158,7 +158,7 @@ class __TwigTemplate_99a36b422a6781d26e121a22bc29e679569518e23d796cd0f0b841c8a03
         echo "
 ";
         
-        $__internal_548737bfa3a86337da13f61dc8aee0d3ef708c58f3c0e1c70d8128159c5cb059->leave($__internal_548737bfa3a86337da13f61dc8aee0d3ef708c58f3c0e1c70d8128159c5cb059_prof);
+        $__internal_ef429d5077e8f131a9d44e90c35d6b6f61f7a769e5b96788a463eaecb04b9a49->leave($__internal_ef429d5077e8f131a9d44e90c35d6b6f61f7a769e5b96788a463eaecb04b9a49_prof);
 
     }
 
@@ -187,7 +187,7 @@ class __TwigTemplate_99a36b422a6781d26e121a22bc29e679569518e23d796cd0f0b841c8a03
 /*             <div class="container">*/
 /*                 <div class="row">*/
 /*                     <div class="col-md-6 col-md-offset-3">*/
-/*                         <h1 class="text-center text-bold text-light mt-4x">Sign in</h1>*/
+/*                         <h1 class="text-center text-bold text-light mt-4x">Sign in to easyGrade</h1>*/
 /*                         <div class="well row pt-2x pb-3x bk-light">*/
 /*                             <div class="col-md-8 col-md-offset-2">*/
 /* */
@@ -217,7 +217,7 @@ class __TwigTemplate_99a36b422a6781d26e121a22bc29e679569518e23d796cd0f0b841c8a03
 /*                             </div>*/
 /*                         </div>*/
 /*                         <div class="text-center text-light">*/
-/*                             <a href="#" class="text-light">Forgot password?</a>*/
+/* */
 /*                         </div>*/
 /*                     </div>*/
 /*                 </div>*/
