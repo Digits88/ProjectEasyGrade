@@ -56,6 +56,8 @@ class SubmissionController extends Controller
         $em = $this->getDoctrine()->getManager();
         $submission = $em->getRepository('NSEPBundle:Submission')->find($id);
 
+        $assignment = $submission->getAssignment()->getId();
+
         if ($submission->getStatus() == 'Pending') {
 
             $spid = $submission->getSphereengineid();
@@ -100,13 +102,6 @@ class SubmissionController extends Controller
             else {
                 $submission->setSubmissionmarks(0);
             }
-
-
-
-
-
-
-
 
         } else if ($submission->getStatus() == 'Not Graded' or $submission->getStatus() == 'Graded') {
             $ch = curl_init();
@@ -155,7 +150,9 @@ class SubmissionController extends Controller
         $em->flush();
 
 
-        return $this->redirectToRoute('submission_index');
+        return $this->redirectToRoute('submissions_all',['id' => $assignment]);
+
+        //var_dump($assignment);
         //return new Response($state);
     }
 
