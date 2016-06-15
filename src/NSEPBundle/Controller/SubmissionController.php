@@ -170,16 +170,21 @@ class SubmissionController extends Controller
     public function showsubmissionsAction(Request $request)
     {
 
-        $sid = $request->query->get('id');
+        $aid = $request->query->get('id');
+        $em = $this->getDoctrine()->getManager();
+        $assignment = $em->getRepository('NSEPBundle:Assignment')->find($aid);
+        $cid = $assignment->getCourse()->getId();
 
         $em = $this->getDoctrine()->getManager();
         $query = $em->createQuery(
             "SELECT a FROM NSEPBundle\Entity\Submission a JOIN a.assignment c WHERE c.id=:cid"
-        )->setParameter('cid', $sid);
+        )->setParameter('cid', $aid);
 
         $products = $query->getResult();
         return $this->render('submission/index.html.twig', array(
             'submissions' => $products,
+            'aid' => $cid,
+            'id' => $aid,
         ));
 
         //var_dump($products);
@@ -199,6 +204,12 @@ class SubmissionController extends Controller
         //$form = $this->createForm('NSEPBundle\Form\SubmissionType', $submission);
 
 
+        $cid = (int)($request->query->get('id'));
+
+        $em = $this->getDoctrine()->getManager();
+        $assignment = $em->getRepository('NSEPBundle:Assignment')->find($cid);
+        //var_dump($cid);
+
         $form = $this->createFormBuilder($submission)
             ->add('imageFile', FileType::class, array('label' => 'Choose File',
                 'data_class' => 'Symfony\Component\HttpFoundation\File\File',
@@ -208,6 +219,8 @@ class SubmissionController extends Controller
                 'Java' => 10,
                 'Python' => 4,
                 'Java7' => 55,)))
+            ->add('assignment',ChoiceType::class,array('choices'  => array(
+                $cid => $assignment,)))
             ->getForm();
 
         $form->handleRequest($request);
@@ -217,7 +230,7 @@ class SubmissionController extends Controller
             $em->persist($submission);
             $em->flush();
 
-            return $this->redirectToRoute('submission_index', array('id' => $submission->getId()));
+            return $this->redirectToRoute('submission_new', array('id'=> $cid));
         }
 
         return $this->render('submission/new.html.twig', array(
@@ -286,7 +299,7 @@ class SubmissionController extends Controller
             $em->flush();
         }
 
-        return $this->redirectToRoute('submission_index');
+        return $this->redirectToRoute('user_courses');
     }
 
     /**

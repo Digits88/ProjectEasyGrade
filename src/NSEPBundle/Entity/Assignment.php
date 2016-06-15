@@ -181,7 +181,7 @@ class Assignment
 
 
     public function __construct() {
-        $this->course = new ArrayCollection();
+        $this->courseid = new ArrayCollection();
         $this->studentid = new ArrayCollection();
 
     }
@@ -221,30 +221,7 @@ class Assignment
         return $this->studentid;
     }
 
-    /**
-     * Set course
-     *
-     * @param \NSEPBundle\Entity\Course $course
-     *
-     * @return Assignment
-     */
-    public function setCourse(\NSEPBundle\Entity\Course $course)
-    {
-        //$this->course = $course;
-        $this->course =$course->getId();
 
-        return $this;
-    }
-
-    /**
-     * Get course
-     *
-     * @return \NSEPBundle\Entity\Course
-     */
-    public function getCourse()
-    {
-        return $this->course;
-    }
 
     /**
      * Add submission
@@ -355,5 +332,29 @@ class Assignment
     public function getType()
     {
         return $this->type;
+    }
+
+    /**
+     * Set course
+     *
+     * @param \NSEPBundle\Entity\Course $course
+     *
+     * @return Assignment
+     */
+    public function setCourse(\NSEPBundle\Entity\Course $course = null)
+    {
+        $this->course = $course;
+
+        return $this;
+    }
+
+    /**
+     * Get course
+     *
+     * @return \NSEPBundle\Entity\Course
+     */
+    public function getCourse()
+    {
+        return $this->course;
     }
 }

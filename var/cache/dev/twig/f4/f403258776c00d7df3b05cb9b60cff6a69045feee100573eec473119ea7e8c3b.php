@@ -22,32 +22,32 @@ class __TwigTemplate_947d544a7b242abb495e76d8c165b0c453258cb3049478a768067e39264
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_3a2f45fa4f81b377a0b854ec0ea5333a5242e38043654c79541fd505896a5ce7 = $this->env->getExtension("native_profiler");
-        $__internal_3a2f45fa4f81b377a0b854ec0ea5333a5242e38043654c79541fd505896a5ce7->enter($__internal_3a2f45fa4f81b377a0b854ec0ea5333a5242e38043654c79541fd505896a5ce7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "assignment/show.html.twig"));
+        $__internal_03e6528a0d25c076cdf57d67ace36151f4407889704c975bf405d44cfa26e7f4 = $this->env->getExtension("native_profiler");
+        $__internal_03e6528a0d25c076cdf57d67ace36151f4407889704c975bf405d44cfa26e7f4->enter($__internal_03e6528a0d25c076cdf57d67ace36151f4407889704c975bf405d44cfa26e7f4_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "assignment/show.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_3a2f45fa4f81b377a0b854ec0ea5333a5242e38043654c79541fd505896a5ce7->leave($__internal_3a2f45fa4f81b377a0b854ec0ea5333a5242e38043654c79541fd505896a5ce7_prof);
+        $__internal_03e6528a0d25c076cdf57d67ace36151f4407889704c975bf405d44cfa26e7f4->leave($__internal_03e6528a0d25c076cdf57d67ace36151f4407889704c975bf405d44cfa26e7f4_prof);
 
     }
 
     // line 3
     public function block_authenticatedUsername($context, array $blocks = array())
     {
-        $__internal_ccc2c2c0a64a88692d4cec99206a24dfa4898befb59dbd6f663c1099b603bb09 = $this->env->getExtension("native_profiler");
-        $__internal_ccc2c2c0a64a88692d4cec99206a24dfa4898befb59dbd6f663c1099b603bb09->enter($__internal_ccc2c2c0a64a88692d4cec99206a24dfa4898befb59dbd6f663c1099b603bb09_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "authenticatedUsername"));
+        $__internal_46608af6aa7e3ccd34e8970fea64678593d46d355d8168fad8c97afa44d00985 = $this->env->getExtension("native_profiler");
+        $__internal_46608af6aa7e3ccd34e8970fea64678593d46d355d8168fad8c97afa44d00985->enter($__internal_46608af6aa7e3ccd34e8970fea64678593d46d355d8168fad8c97afa44d00985_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "authenticatedUsername"));
 
         echo twig_include($this->env, $context, "@NSEP/Default/userid.html.twig");
         
-        $__internal_ccc2c2c0a64a88692d4cec99206a24dfa4898befb59dbd6f663c1099b603bb09->leave($__internal_ccc2c2c0a64a88692d4cec99206a24dfa4898befb59dbd6f663c1099b603bb09_prof);
+        $__internal_46608af6aa7e3ccd34e8970fea64678593d46d355d8168fad8c97afa44d00985->leave($__internal_46608af6aa7e3ccd34e8970fea64678593d46d355d8168fad8c97afa44d00985_prof);
 
     }
 
     // line 4
     public function block_contentdetail($context, array $blocks = array())
     {
-        $__internal_11844717980dde8bb3e28b3dd508711bc529f29c225581a63cf274555bc104ec = $this->env->getExtension("native_profiler");
-        $__internal_11844717980dde8bb3e28b3dd508711bc529f29c225581a63cf274555bc104ec->enter($__internal_11844717980dde8bb3e28b3dd508711bc529f29c225581a63cf274555bc104ec_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "contentdetail"));
+        $__internal_536018aadc389e7fcd04136fddcf7bb5b47fc49a02063f860f32968ef6d99649 = $this->env->getExtension("native_profiler");
+        $__internal_536018aadc389e7fcd04136fddcf7bb5b47fc49a02063f860f32968ef6d99649->enter($__internal_536018aadc389e7fcd04136fddcf7bb5b47fc49a02063f860f32968ef6d99649_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "contentdetail"));
 
         // line 5
         echo "    <h1>Assignment</h1>
@@ -99,7 +99,7 @@ class __TwigTemplate_947d544a7b242abb495e76d8c165b0c453258cb3049478a768067e39264
                         <li>
                             <a href=\"";
         // line 34
-        echo $this->env->getExtension('routing')->getPath("course_assignments");
+        echo $this->env->getExtension('routing')->getPath("user_courses");
         echo "\" class=\"btn btn-warning\">Back to the list</a>
                             <a href=\"";
         // line 35
@@ -129,7 +129,7 @@ class __TwigTemplate_947d544a7b242abb495e76d8c165b0c453258cb3049478a768067e39264
 
 ";
         
-        $__internal_11844717980dde8bb3e28b3dd508711bc529f29c225581a63cf274555bc104ec->leave($__internal_11844717980dde8bb3e28b3dd508711bc529f29c225581a63cf274555bc104ec_prof);
+        $__internal_536018aadc389e7fcd04136fddcf7bb5b47fc49a02063f860f32968ef6d99649->leave($__internal_536018aadc389e7fcd04136fddcf7bb5b47fc49a02063f860f32968ef6d99649_prof);
 
     }
 
@@ -181,7 +181,7 @@ class __TwigTemplate_947d544a7b242abb495e76d8c165b0c453258cb3049478a768067e39264
 /*                 <td>*/
 /*                     <ul>*/
 /*                         <li>*/
-/*                             <a href="{{ path('course_assignments') }}" class="btn btn-warning">Back to the list</a>*/
+/*                             <a href="{{ path('user_courses') }}" class="btn btn-warning">Back to the list</a>*/
 /*                             <a href="{{ path('assignment_edit', { 'id': assignment.id }) }}" class="btn btn-primary">Edit</a>*/
 /*                             {{ form_start(delete_form) }}*/
 /*                             <input type="submit" value="Delete" class="btn btn-success">*/

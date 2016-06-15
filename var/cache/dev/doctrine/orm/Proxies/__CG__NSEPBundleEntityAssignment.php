@@ -290,28 +290,6 @@ class Assignment extends \NSEPBundle\Entity\Assignment implements \Doctrine\ORM\
     /**
      * {@inheritDoc}
      */
-    public function setCourse(\NSEPBundle\Entity\Course $course = NULL)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setCourse', [$course]);
-
-        return parent::setCourse($course);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getCourse()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getCourse', []);
-
-        return parent::getCourse();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
     public function addSubmission(\NSEPBundle\Entity\Submission $submission)
     {
 
@@ -406,6 +384,28 @@ class Assignment extends \NSEPBundle\Entity\Assignment implements \Doctrine\ORM\
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getType', []);
 
         return parent::getType();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setCourse(\NSEPBundle\Entity\Course $course = NULL)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setCourse', [$course]);
+
+        return parent::setCourse($course);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getCourse()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getCourse', []);
+
+        return parent::getCourse();
     }
 
 }

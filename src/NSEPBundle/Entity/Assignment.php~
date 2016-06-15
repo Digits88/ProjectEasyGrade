@@ -27,7 +27,7 @@ class Assignment
     /**
      * @var string
      *
-     * @ORM\Column(name="assignmentid", type="string", length=255)
+     * @ORM\Column(name="assignmentid", type="string", length=255, unique=true)
      */
     private $assignmentid;
 
@@ -71,7 +71,7 @@ class Assignment
      *
      * @ORM\Column(name="testinputone", type="string", length=255)
      */
-    private $testinputone;
+    private $testinputone='';
 
     /**
      * @var string
@@ -80,26 +80,15 @@ class Assignment
      */
     private $type='';
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="testinputtwo", type="string", length=255)
-     */
-    private $testinputtwo;
 
     /**
      * @var string
      *
      * @ORM\Column(name="testoutputone", type="string", length=255)
      */
-    private $testoutputone;
+    private $testoutputone='';
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="testoutputtwo", type="string", length=255)
-     */
-    private $testoutputtwo;
+
 
 
 
@@ -192,7 +181,7 @@ class Assignment
 
 
     public function __construct() {
-        $this->courseid = new ArrayCollection();
+        $this->course = new ArrayCollection();
         $this->studentid = new ArrayCollection();
 
     }
@@ -232,30 +221,7 @@ class Assignment
         return $this->studentid;
     }
 
-    /**
-     * Set course
-     *
-     * @param \NSEPBundle\Entity\Course $course
-     *
-     * @return Assignment
-     */
-    public function setCourse(\NSEPBundle\Entity\Course $course = null)
-    {
-        //$this->course = $course;
-        $this->course =$course->getId();
 
-        return $this;
-    }
-
-    /**
-     * Get course
-     *
-     * @return \NSEPBundle\Entity\Course
-     */
-    public function getCourse()
-    {
-        return $this->course;
-    }
 
     /**
      * Add submission
@@ -316,29 +282,7 @@ class Assignment
         return $this->testinputone;
     }
 
-    /**
-     * Set testinputtwo
-     *
-     * @param string $testinputtwo
-     *
-     * @return Assignment
-     */
-    public function setTestinputtwo($testinputtwo)
-    {
-        $this->testinputtwo = $testinputtwo;
 
-        return $this;
-    }
-
-    /**
-     * Get testinputtwo
-     *
-     * @return string
-     */
-    public function getTestinputtwo()
-    {
-        return $this->testinputtwo;
-    }
 
     /**
      * Set testoutputone
@@ -364,27 +308,29 @@ class Assignment
         return $this->testoutputone;
     }
 
+
+
     /**
-     * Set testoutputtwo
+     * Set type
      *
-     * @param string $testoutputtwo
+     * @param string $type
      *
      * @return Assignment
      */
-    public function setTestoutputtwo($testoutputtwo)
+    public function setType($type)
     {
-        $this->testoutputtwo = $testoutputtwo;
+        $this->type = $type;
 
         return $this;
     }
 
     /**
-     * Get testoutputtwo
+     * Get type
      *
      * @return string
      */
-    public function getTestoutputtwo()
+    public function getType()
     {
-        return $this->testoutputtwo;
+        return $this->type;
     }
 }

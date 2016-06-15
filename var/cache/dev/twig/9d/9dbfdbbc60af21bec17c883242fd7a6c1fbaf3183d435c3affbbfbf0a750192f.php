@@ -22,32 +22,32 @@ class __TwigTemplate_bdc0f9ced24b9956aa9877d4b26e68d3c58e7d42656128b3a28ade74a7a
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_f9168b2d05fdb2b19a17e42a824577fd25e39da0177018376ccede2a1d0d30d1 = $this->env->getExtension("native_profiler");
-        $__internal_f9168b2d05fdb2b19a17e42a824577fd25e39da0177018376ccede2a1d0d30d1->enter($__internal_f9168b2d05fdb2b19a17e42a824577fd25e39da0177018376ccede2a1d0d30d1_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "assignment/index.html.twig"));
+        $__internal_c4243bb1c7ca01ea09a78a5fee7ca016977f59780ae2ab067bd2ceef292b7fe9 = $this->env->getExtension("native_profiler");
+        $__internal_c4243bb1c7ca01ea09a78a5fee7ca016977f59780ae2ab067bd2ceef292b7fe9->enter($__internal_c4243bb1c7ca01ea09a78a5fee7ca016977f59780ae2ab067bd2ceef292b7fe9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "assignment/index.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_f9168b2d05fdb2b19a17e42a824577fd25e39da0177018376ccede2a1d0d30d1->leave($__internal_f9168b2d05fdb2b19a17e42a824577fd25e39da0177018376ccede2a1d0d30d1_prof);
+        $__internal_c4243bb1c7ca01ea09a78a5fee7ca016977f59780ae2ab067bd2ceef292b7fe9->leave($__internal_c4243bb1c7ca01ea09a78a5fee7ca016977f59780ae2ab067bd2ceef292b7fe9_prof);
 
     }
 
     // line 3
     public function block_authenticatedUsername($context, array $blocks = array())
     {
-        $__internal_9ca40d61f26ed5d8a3f26acb4544a16e5db8a00bb461b81110c656773e82eb3e = $this->env->getExtension("native_profiler");
-        $__internal_9ca40d61f26ed5d8a3f26acb4544a16e5db8a00bb461b81110c656773e82eb3e->enter($__internal_9ca40d61f26ed5d8a3f26acb4544a16e5db8a00bb461b81110c656773e82eb3e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "authenticatedUsername"));
+        $__internal_87b9c6ef89f2750487157e9c4f08ba74977e726de6422589ed90f4b3dcf2c557 = $this->env->getExtension("native_profiler");
+        $__internal_87b9c6ef89f2750487157e9c4f08ba74977e726de6422589ed90f4b3dcf2c557->enter($__internal_87b9c6ef89f2750487157e9c4f08ba74977e726de6422589ed90f4b3dcf2c557_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "authenticatedUsername"));
 
         echo twig_include($this->env, $context, "@NSEP/Default/userid.html.twig");
         
-        $__internal_9ca40d61f26ed5d8a3f26acb4544a16e5db8a00bb461b81110c656773e82eb3e->leave($__internal_9ca40d61f26ed5d8a3f26acb4544a16e5db8a00bb461b81110c656773e82eb3e_prof);
+        $__internal_87b9c6ef89f2750487157e9c4f08ba74977e726de6422589ed90f4b3dcf2c557->leave($__internal_87b9c6ef89f2750487157e9c4f08ba74977e726de6422589ed90f4b3dcf2c557_prof);
 
     }
 
     // line 4
     public function block_contentdetail($context, array $blocks = array())
     {
-        $__internal_08f140e98f665a7a09e714bb664333237a6dc49f145b499d45d0980184300944 = $this->env->getExtension("native_profiler");
-        $__internal_08f140e98f665a7a09e714bb664333237a6dc49f145b499d45d0980184300944->enter($__internal_08f140e98f665a7a09e714bb664333237a6dc49f145b499d45d0980184300944_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "contentdetail"));
+        $__internal_350938421e6c732ac2f54a9fc39848720c91e314630a8d474cd36e732e8bbb6d = $this->env->getExtension("native_profiler");
+        $__internal_350938421e6c732ac2f54a9fc39848720c91e314630a8d474cd36e732e8bbb6d->enter($__internal_350938421e6c732ac2f54a9fc39848720c91e314630a8d474cd36e732e8bbb6d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "contentdetail"));
 
         // line 5
         echo "    <h1>Assignment list</h1>
@@ -112,13 +112,13 @@ class __TwigTemplate_bdc0f9ced24b9956aa9877d4b26e68d3c58e7d42656128b3a28ade74a7a
                                     <a href=\"";
             // line 39
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("assignment_show", array("id" => $this->getAttribute($context["assignment"], "id", array()))), "html", null, true);
-            echo "\">show</a>
+            echo "\" class=\"btn btn-warning\">show</a>
                                 </li>
                                 <li>
                                     <a href=\"";
             // line 42
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("assignment_edit", array("id" => $this->getAttribute($context["assignment"], "id", array()))), "html", null, true);
-            echo "\">edit</a>
+            echo "\" class=\"btn btn-success\">edit</a>
                                 </li>
                             </ul>
                         </td>
@@ -137,7 +137,7 @@ class __TwigTemplate_bdc0f9ced24b9956aa9877d4b26e68d3c58e7d42656128b3a28ade74a7a
 
 ";
         
-        $__internal_08f140e98f665a7a09e714bb664333237a6dc49f145b499d45d0980184300944->leave($__internal_08f140e98f665a7a09e714bb664333237a6dc49f145b499d45d0980184300944_prof);
+        $__internal_350938421e6c732ac2f54a9fc39848720c91e314630a8d474cd36e732e8bbb6d->leave($__internal_350938421e6c732ac2f54a9fc39848720c91e314630a8d474cd36e732e8bbb6d_prof);
 
     }
 
@@ -194,10 +194,10 @@ class __TwigTemplate_bdc0f9ced24b9956aa9877d4b26e68d3c58e7d42656128b3a28ade74a7a
 /*                         <td>*/
 /*                             <ul>*/
 /*                                 <li>*/
-/*                                     <a href="{{ path('assignment_show', { 'id': assignment.id }) }}">show</a>*/
+/*                                     <a href="{{ path('assignment_show', { 'id': assignment.id }) }}" class="btn btn-warning">show</a>*/
 /*                                 </li>*/
 /*                                 <li>*/
-/*                                     <a href="{{ path('assignment_edit', { 'id': assignment.id }) }}">edit</a>*/
+/*                                     <a href="{{ path('assignment_edit', { 'id': assignment.id }) }}" class="btn btn-success">edit</a>*/
 /*                                 </li>*/
 /*                             </ul>*/
 /*                         </td>*/

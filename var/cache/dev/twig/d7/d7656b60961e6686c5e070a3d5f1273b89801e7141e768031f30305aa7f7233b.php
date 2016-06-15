@@ -22,32 +22,32 @@ class __TwigTemplate_6470345c6f5a5391093ee16327936c6942100948def93d581af455264be
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_3fd3eb0f04ef8de1be14fa05ddf826e7b990e95b2a57d7020de6419e4f160d9b = $this->env->getExtension("native_profiler");
-        $__internal_3fd3eb0f04ef8de1be14fa05ddf826e7b990e95b2a57d7020de6419e4f160d9b->enter($__internal_3fd3eb0f04ef8de1be14fa05ddf826e7b990e95b2a57d7020de6419e4f160d9b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", ":assignment:index.html.twig"));
+        $__internal_fcd3e43590bf3dd7daa4131b7f945f9e7a3e64062b8e6bcfae56034a470b2d5e = $this->env->getExtension("native_profiler");
+        $__internal_fcd3e43590bf3dd7daa4131b7f945f9e7a3e64062b8e6bcfae56034a470b2d5e->enter($__internal_fcd3e43590bf3dd7daa4131b7f945f9e7a3e64062b8e6bcfae56034a470b2d5e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", ":assignment:index.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_3fd3eb0f04ef8de1be14fa05ddf826e7b990e95b2a57d7020de6419e4f160d9b->leave($__internal_3fd3eb0f04ef8de1be14fa05ddf826e7b990e95b2a57d7020de6419e4f160d9b_prof);
+        $__internal_fcd3e43590bf3dd7daa4131b7f945f9e7a3e64062b8e6bcfae56034a470b2d5e->leave($__internal_fcd3e43590bf3dd7daa4131b7f945f9e7a3e64062b8e6bcfae56034a470b2d5e_prof);
 
     }
 
     // line 3
     public function block_authenticatedUsername($context, array $blocks = array())
     {
-        $__internal_f8d0a4ee6983af2fd08f4ceb53e9b6e263a6f3ded4c9754b038561fdf7988ac6 = $this->env->getExtension("native_profiler");
-        $__internal_f8d0a4ee6983af2fd08f4ceb53e9b6e263a6f3ded4c9754b038561fdf7988ac6->enter($__internal_f8d0a4ee6983af2fd08f4ceb53e9b6e263a6f3ded4c9754b038561fdf7988ac6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "authenticatedUsername"));
+        $__internal_026e7d5343c32a33509ec8be02246aedd332468f9a82301d36d0a5909f587dc0 = $this->env->getExtension("native_profiler");
+        $__internal_026e7d5343c32a33509ec8be02246aedd332468f9a82301d36d0a5909f587dc0->enter($__internal_026e7d5343c32a33509ec8be02246aedd332468f9a82301d36d0a5909f587dc0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "authenticatedUsername"));
 
         echo twig_include($this->env, $context, "@NSEP/Default/userid.html.twig");
         
-        $__internal_f8d0a4ee6983af2fd08f4ceb53e9b6e263a6f3ded4c9754b038561fdf7988ac6->leave($__internal_f8d0a4ee6983af2fd08f4ceb53e9b6e263a6f3ded4c9754b038561fdf7988ac6_prof);
+        $__internal_026e7d5343c32a33509ec8be02246aedd332468f9a82301d36d0a5909f587dc0->leave($__internal_026e7d5343c32a33509ec8be02246aedd332468f9a82301d36d0a5909f587dc0_prof);
 
     }
 
     // line 4
     public function block_contentdetail($context, array $blocks = array())
     {
-        $__internal_e137f99ea2370d4806625d012e07964d009b74a459e962112cf46bdaf5d6f201 = $this->env->getExtension("native_profiler");
-        $__internal_e137f99ea2370d4806625d012e07964d009b74a459e962112cf46bdaf5d6f201->enter($__internal_e137f99ea2370d4806625d012e07964d009b74a459e962112cf46bdaf5d6f201_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "contentdetail"));
+        $__internal_ef4b26da21a5b34a24f31d80ac75b146e5105ba87e033f152ab4f2ebc91cd147 = $this->env->getExtension("native_profiler");
+        $__internal_ef4b26da21a5b34a24f31d80ac75b146e5105ba87e033f152ab4f2ebc91cd147->enter($__internal_ef4b26da21a5b34a24f31d80ac75b146e5105ba87e033f152ab4f2ebc91cd147_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "contentdetail"));
 
         // line 5
         echo "    <h1>Assignment list</h1>
@@ -56,11 +56,11 @@ class __TwigTemplate_6470345c6f5a5391093ee16327936c6942100948def93d581af455264be
         <li>
             <a href=\"";
         // line 9
-        echo $this->env->getExtension('routing')->getPath("assignment_new");
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("assignment_new", array("cid" => (isset($context["cid"]) ? $context["cid"] : $this->getContext($context, "cid")))), "html", null, true);
         echo "\" class=\"btn btn-warning\">Create a new Assignment</a>
             <a href=\"";
         // line 10
-        echo $this->env->getExtension('routing')->getPath("course_index");
+        echo $this->env->getExtension('routing')->getPath("user_courses");
         echo "\" class=\"btn btn-primary\">Back</a>
         </li>
     </ul>
@@ -137,7 +137,7 @@ class __TwigTemplate_6470345c6f5a5391093ee16327936c6942100948def93d581af455264be
 
 ";
         
-        $__internal_e137f99ea2370d4806625d012e07964d009b74a459e962112cf46bdaf5d6f201->leave($__internal_e137f99ea2370d4806625d012e07964d009b74a459e962112cf46bdaf5d6f201_prof);
+        $__internal_ef4b26da21a5b34a24f31d80ac75b146e5105ba87e033f152ab4f2ebc91cd147->leave($__internal_ef4b26da21a5b34a24f31d80ac75b146e5105ba87e033f152ab4f2ebc91cd147_prof);
 
     }
 
@@ -164,8 +164,8 @@ class __TwigTemplate_6470345c6f5a5391093ee16327936c6942100948def93d581af455264be
 /* */
 /*     <ul>*/
 /*         <li>*/
-/*             <a href="{{ path('assignment_new') }}" class="btn btn-warning">Create a new Assignment</a>*/
-/*             <a href="{{ path('course_index') }}" class="btn btn-primary">Back</a>*/
+/*             <a href="{{ path('assignment_new',{ 'cid' : cid }) }}" class="btn btn-warning">Create a new Assignment</a>*/
+/*             <a href="{{ path('user_courses') }}" class="btn btn-primary">Back</a>*/
 /*         </li>*/
 /*     </ul>*/
 /* */

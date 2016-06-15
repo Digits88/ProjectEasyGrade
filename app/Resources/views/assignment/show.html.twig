@@ -31,7 +31,7 @@
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('course_assignments') }}" class="btn btn-warning">Back to the list</a>
+                            <a href="{{ path('user_courses') }}" class="btn btn-warning">Back to the list</a>
                             <a href="{{ path('assignment_edit', { 'id': assignment.id }) }}" class="btn btn-primary">Edit</a>
                             {{ form_start(delete_form) }}
                             <input type="submit" value="Delete" class="btn btn-success">

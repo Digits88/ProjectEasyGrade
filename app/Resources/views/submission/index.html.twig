@@ -6,7 +6,8 @@
 
     <ul>
         <li>
-            <a href="{{ path('submission_new') }}" class="btn btn-warning">Create a new Submission</a>
+            <a href="{{ path('submission_new',{ 'id' : id }) }}" class="btn btn-warning">Create a new Submission</a>
+            <a href="{{ path('course_assignments',{ 'id' : aid }) }}" class="btn btn-warning">Back</a>
         </li>
     </ul>
 
@@ -36,7 +37,6 @@
                         <ul>
                             <li>
                                 <a href="{{ path('submission_show', { 'id': submission.id }) }}" class="btn btn-primary">show</a>
-                                <a href="{{ path('submission_edit', { 'id': submission.id }) }}" class="btn btn-primary">edit</a>
                                 <a href="{{ path('test_grade',{'id': submission.id }) }}" class="btn btn-primary grade">{{ submission.status }}</a>
                             </li>
                         </ul>

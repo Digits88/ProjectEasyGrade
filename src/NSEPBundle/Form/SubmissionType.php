@@ -16,7 +16,7 @@ class SubmissionType extends AbstractType
     {
         $builder
             ->add('imageName')
-            ->add('updatedAt', 'datetime')
+            //->add('updatedAt', 'datetime')
         ;
     }
     

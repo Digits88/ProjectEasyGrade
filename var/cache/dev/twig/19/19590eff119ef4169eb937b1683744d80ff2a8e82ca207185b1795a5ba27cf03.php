@@ -23,32 +23,32 @@ class __TwigTemplate_5e2cbee8d8c2d33284f3ddbe9ef72e62711eea5e8196c5f236a8012966a
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_75583702d1227ec1f896bc2b2ad607946eba7c7fad781f4ab7ef289587b7dbfb = $this->env->getExtension("native_profiler");
-        $__internal_75583702d1227ec1f896bc2b2ad607946eba7c7fad781f4ab7ef289587b7dbfb->enter($__internal_75583702d1227ec1f896bc2b2ad607946eba7c7fad781f4ab7ef289587b7dbfb_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "submission/index.html.twig"));
+        $__internal_b46b2c815daf87c6aba52914d3f4d357273cbeb620e13391d148682e4e0c5d92 = $this->env->getExtension("native_profiler");
+        $__internal_b46b2c815daf87c6aba52914d3f4d357273cbeb620e13391d148682e4e0c5d92->enter($__internal_b46b2c815daf87c6aba52914d3f4d357273cbeb620e13391d148682e4e0c5d92_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "submission/index.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_75583702d1227ec1f896bc2b2ad607946eba7c7fad781f4ab7ef289587b7dbfb->leave($__internal_75583702d1227ec1f896bc2b2ad607946eba7c7fad781f4ab7ef289587b7dbfb_prof);
+        $__internal_b46b2c815daf87c6aba52914d3f4d357273cbeb620e13391d148682e4e0c5d92->leave($__internal_b46b2c815daf87c6aba52914d3f4d357273cbeb620e13391d148682e4e0c5d92_prof);
 
     }
 
     // line 3
     public function block_authenticatedUsername($context, array $blocks = array())
     {
-        $__internal_7f36801d58e44d2c2aa26e4ced8fe5e9d4209e4a1803e4ef1ea9e37d3eaf82d6 = $this->env->getExtension("native_profiler");
-        $__internal_7f36801d58e44d2c2aa26e4ced8fe5e9d4209e4a1803e4ef1ea9e37d3eaf82d6->enter($__internal_7f36801d58e44d2c2aa26e4ced8fe5e9d4209e4a1803e4ef1ea9e37d3eaf82d6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "authenticatedUsername"));
+        $__internal_19db038e6923c24ed601faba3dee12865b4e312963603fee56ecbbdd07cfb758 = $this->env->getExtension("native_profiler");
+        $__internal_19db038e6923c24ed601faba3dee12865b4e312963603fee56ecbbdd07cfb758->enter($__internal_19db038e6923c24ed601faba3dee12865b4e312963603fee56ecbbdd07cfb758_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "authenticatedUsername"));
 
         echo twig_include($this->env, $context, "@NSEP/Default/userid.html.twig");
         
-        $__internal_7f36801d58e44d2c2aa26e4ced8fe5e9d4209e4a1803e4ef1ea9e37d3eaf82d6->leave($__internal_7f36801d58e44d2c2aa26e4ced8fe5e9d4209e4a1803e4ef1ea9e37d3eaf82d6_prof);
+        $__internal_19db038e6923c24ed601faba3dee12865b4e312963603fee56ecbbdd07cfb758->leave($__internal_19db038e6923c24ed601faba3dee12865b4e312963603fee56ecbbdd07cfb758_prof);
 
     }
 
     // line 4
     public function block_contentdetail($context, array $blocks = array())
     {
-        $__internal_ff192a6935da3b882cb2c82f2c3dcc93cc86e97aafe25c43994995b55812df57 = $this->env->getExtension("native_profiler");
-        $__internal_ff192a6935da3b882cb2c82f2c3dcc93cc86e97aafe25c43994995b55812df57->enter($__internal_ff192a6935da3b882cb2c82f2c3dcc93cc86e97aafe25c43994995b55812df57_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "contentdetail"));
+        $__internal_2adcf40700ef72ea124487d812f7a0bbe4289d39b4600bede0b3743462b2e693 = $this->env->getExtension("native_profiler");
+        $__internal_2adcf40700ef72ea124487d812f7a0bbe4289d39b4600bede0b3743462b2e693->enter($__internal_2adcf40700ef72ea124487d812f7a0bbe4289d39b4600bede0b3743462b2e693_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "contentdetail"));
 
         // line 5
         echo "    <h1>Submission list</h1>
@@ -57,8 +57,12 @@ class __TwigTemplate_5e2cbee8d8c2d33284f3ddbe9ef72e62711eea5e8196c5f236a8012966a
         <li>
             <a href=\"";
         // line 9
-        echo $this->env->getExtension('routing')->getPath("submission_new");
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("submission_new", array("id" => (isset($context["id"]) ? $context["id"] : $this->getContext($context, "id")))), "html", null, true);
         echo "\" class=\"btn btn-warning\">Create a new Submission</a>
+            <a href=\"";
+        // line 10
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("course_assignments", array("id" => (isset($context["aid"]) ? $context["aid"] : $this->getContext($context, "aid")))), "html", null, true);
+        echo "\" class=\"btn btn-warning\">Back</a>
         </li>
     </ul>
 
@@ -79,43 +83,39 @@ class __TwigTemplate_5e2cbee8d8c2d33284f3ddbe9ef72e62711eea5e8196c5f236a8012966a
                 </thead>
                 <tbody>
                 ";
-        // line 29
+        // line 30
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["submissions"]) ? $context["submissions"] : $this->getContext($context, "submissions")));
         foreach ($context['_seq'] as $context["_key"] => $context["submission"]) {
-            // line 30
+            // line 31
             echo "                <tr>
                     <td class=\"sub_id\"><a href=\"";
-            // line 31
+            // line 32
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("submission_show", array("id" => $this->getAttribute($context["submission"], "id", array()))), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, $this->getAttribute($context["submission"], "id", array()), "html", null, true);
             echo "</a></td>
                     <td>";
-            // line 32
+            // line 33
             echo twig_escape_filter($this->env, $this->getAttribute($context["submission"], "imageName", array()), "html", null, true);
             echo "</td>
                     <td>";
-            // line 33
+            // line 34
             if ($this->getAttribute($context["submission"], "updatedAt", array())) {
                 echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["submission"], "updatedAt", array()), "Y-m-d H:i:s"), "html", null, true);
             }
             echo "</td>
                     <td class=\"sub_status\">";
-            // line 34
+            // line 35
             echo twig_escape_filter($this->env, $this->getAttribute($context["submission"], "status", array()), "html", null, true);
             echo "</td>
                     <td>
                         <ul>
                             <li>
                                 <a href=\"";
-            // line 38
+            // line 39
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("submission_show", array("id" => $this->getAttribute($context["submission"], "id", array()))), "html", null, true);
             echo "\" class=\"btn btn-primary\">show</a>
-                                <a href=\"";
-            // line 39
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("submission_edit", array("id" => $this->getAttribute($context["submission"], "id", array()))), "html", null, true);
-            echo "\" class=\"btn btn-primary\">edit</a>
                                 <a href=\"";
             // line 40
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("test_grade", array("id" => $this->getAttribute($context["submission"], "id", array()))), "html", null, true);
@@ -140,15 +140,15 @@ class __TwigTemplate_5e2cbee8d8c2d33284f3ddbe9ef72e62711eea5e8196c5f236a8012966a
 
 ";
         
-        $__internal_ff192a6935da3b882cb2c82f2c3dcc93cc86e97aafe25c43994995b55812df57->leave($__internal_ff192a6935da3b882cb2c82f2c3dcc93cc86e97aafe25c43994995b55812df57_prof);
+        $__internal_2adcf40700ef72ea124487d812f7a0bbe4289d39b4600bede0b3743462b2e693->leave($__internal_2adcf40700ef72ea124487d812f7a0bbe4289d39b4600bede0b3743462b2e693_prof);
 
     }
 
     // line 53
     public function block_cumstomScript($context, array $blocks = array())
     {
-        $__internal_a822f1e657540bde6b15ee647ae37ffff7c3b8813d3adf86ee1f9cecd601b567 = $this->env->getExtension("native_profiler");
-        $__internal_a822f1e657540bde6b15ee647ae37ffff7c3b8813d3adf86ee1f9cecd601b567->enter($__internal_a822f1e657540bde6b15ee647ae37ffff7c3b8813d3adf86ee1f9cecd601b567_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "cumstomScript"));
+        $__internal_3d5e26ff473b4f97e267fbb8bb66c0d40df8f100242bd5c81aceb96e6f572129 = $this->env->getExtension("native_profiler");
+        $__internal_3d5e26ff473b4f97e267fbb8bb66c0d40df8f100242bd5c81aceb96e6f572129->enter($__internal_3d5e26ff473b4f97e267fbb8bb66c0d40df8f100242bd5c81aceb96e6f572129_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "cumstomScript"));
 
         // line 54
         echo "    <script type=\"application/javascript\">
@@ -193,7 +193,7 @@ class __TwigTemplate_5e2cbee8d8c2d33284f3ddbe9ef72e62711eea5e8196c5f236a8012966a
     </script>
 ";
         
-        $__internal_a822f1e657540bde6b15ee647ae37ffff7c3b8813d3adf86ee1f9cecd601b567->leave($__internal_a822f1e657540bde6b15ee647ae37ffff7c3b8813d3adf86ee1f9cecd601b567_prof);
+        $__internal_3d5e26ff473b4f97e267fbb8bb66c0d40df8f100242bd5c81aceb96e6f572129->leave($__internal_3d5e26ff473b4f97e267fbb8bb66c0d40df8f100242bd5c81aceb96e6f572129_prof);
 
     }
 
@@ -209,7 +209,7 @@ class __TwigTemplate_5e2cbee8d8c2d33284f3ddbe9ef72e62711eea5e8196c5f236a8012966a
 
     public function getDebugInfo()
     {
-        return array (  164 => 62,  154 => 54,  148 => 53,  135 => 46,  121 => 40,  117 => 39,  113 => 38,  106 => 34,  100 => 33,  96 => 32,  90 => 31,  87 => 30,  83 => 29,  60 => 9,  54 => 5,  48 => 4,  36 => 3,  11 => 1,);
+        return array (  164 => 62,  154 => 54,  148 => 53,  135 => 46,  121 => 40,  117 => 39,  110 => 35,  104 => 34,  100 => 33,  94 => 32,  91 => 31,  87 => 30,  64 => 10,  60 => 9,  54 => 5,  48 => 4,  36 => 3,  11 => 1,);
     }
 }
 /* {% extends 'base.html.twig' %}*/
@@ -220,7 +220,8 @@ class __TwigTemplate_5e2cbee8d8c2d33284f3ddbe9ef72e62711eea5e8196c5f236a8012966a
 /* */
 /*     <ul>*/
 /*         <li>*/
-/*             <a href="{{ path('submission_new') }}" class="btn btn-warning">Create a new Submission</a>*/
+/*             <a href="{{ path('submission_new',{ 'id' : id }) }}" class="btn btn-warning">Create a new Submission</a>*/
+/*             <a href="{{ path('course_assignments',{ 'id' : aid }) }}" class="btn btn-warning">Back</a>*/
 /*         </li>*/
 /*     </ul>*/
 /* */
@@ -250,7 +251,6 @@ class __TwigTemplate_5e2cbee8d8c2d33284f3ddbe9ef72e62711eea5e8196c5f236a8012966a
 /*                         <ul>*/
 /*                             <li>*/
 /*                                 <a href="{{ path('submission_show', { 'id': submission.id }) }}" class="btn btn-primary">show</a>*/
-/*                                 <a href="{{ path('submission_edit', { 'id': submission.id }) }}" class="btn btn-primary">edit</a>*/
 /*                                 <a href="{{ path('test_grade',{'id': submission.id }) }}" class="btn btn-primary grade">{{ submission.status }}</a>*/
 /*                             </li>*/
 /*                         </ul>*/

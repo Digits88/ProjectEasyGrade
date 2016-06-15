@@ -12,6 +12,8 @@ use NSEPBundle\Form\AssignmentType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 
 /**
  * Assignment controller.
@@ -112,7 +114,7 @@ class AssignmentController extends Controller
             $em->persist($assignment);
             $em->flush();
 
-            return $this->redirectToRoute('course_assignments', array('id' => $assignment->getId()));
+            return $this->redirectToRoute('user_courses', array('id' => $assignment->getId()));
         }
 
         return $this->render('assignment/new.html.twig', array(
@@ -187,7 +189,7 @@ class AssignmentController extends Controller
             $em->flush();
         }
 
-        return $this->redirectToRoute('assignment_index');
+        return $this->redirectToRoute('user_courses');
     }
 
     /**
