@@ -52,17 +52,9 @@
         <nav class="ts-sidebar">
             <ul class="ts-sidebar-menu">
                 {% block sidebarmenu %}
-                    <li class="ts-label">Search</li>
-                    <li>
-                        <input type="text" class="ts-sidebar-search" placeholder="Search here...">
-                    </li>
-                    <li class="ts-label">Main</li>
-                    <li><a href="/"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-                    <li><a href="#"><i class="fa fa-desktop"></i> Courses</a>
-                        <ul>
-                            {% block courselist %}{% endblock courselist %}
-                        </ul>
-                    </li>
+                    <a href="#" class="logo"><img src="{{ asset('bundles/nsep/images/sidebarimage.jpg') }}" class="img-responsive" alt=""></a>
+                    <p style="color: #ffffff; font-size: large;font-weight: 200;text-align: center "><br><br><br><br>easyGrade<br>The platform where programming assignment evaluation made easy.</p>
+
                 {% endblock sidebarmenu %}
             </ul>
         </nav>
