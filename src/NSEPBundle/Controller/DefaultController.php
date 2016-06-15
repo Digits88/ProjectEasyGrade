@@ -9,6 +9,9 @@ use Symfony\Component\HttpFoundation\Response;
 use NSEPBundle\Entity\Submission;
 use NSEPBundle\Entity\User;
 use CMEN\GoogleChartsBundle\GoogleCharts\Charts\Histogram;
+use Ob\HighchartsBundle\Highcharts\Highchart;
+
+
 
 class DefaultController extends Controller
 {
@@ -59,16 +62,16 @@ class DefaultController extends Controller
         $histogram = new Histogram();
         $histogram->getData()->setArrayToDataTable([
             ['Population'],
-            [12000000],
-            [13000000],
-            [100000000],
-            [1000000000],
-            [25000000],
-            [600000],
-            [6000000],
-            [65000000],
-            [210000000],
-            [80000000],
+            [12],
+            [13],
+            [100],
+            [10],
+            [25],
+            [60],
+            [80],
+            [65],
+            [21],
+            [80],
         ]);
         $histogram->getOptions()->setTitle('Country Populations');
         $histogram->getOptions()->setWidth(900);
@@ -76,20 +79,9 @@ class DefaultController extends Controller
         $histogram->getOptions()->getLegend()->setPosition('none');
         $histogram->getOptions()->setColors(['#e7711c']);
         $histogram->getOptions()->getHistogram()->setLastBucketPercentile(10);
-        $histogram->getOptions()->getHistogram()->setBucketSize(10000000);
+        $histogram->getOptions()->getHistogram()->setBucketSize(10);
 
         return $this->render('NSEPBundle:Default:index.html.twig', array('histogram' => $histogram));
-    }
-
-    /**
-     * This generates graphs
-     * @Route("/inlinegraph")
-     */
-    public function inlinegraphAction()
-    {
-
-
-        return $this->render('NSEPBundle:Default:graph.html.twig');
     }
 
 

@@ -14,6 +14,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
+use Ob\HighchartsBundle\Highcharts\Highchart;
 
 /**
  * Assignment controller.
@@ -138,11 +139,6 @@ class AssignmentController extends Controller
             'delete_form' => $deleteForm->createView(),
         ));
 
-
-
-
-
-
     }
 
     /**
@@ -209,7 +205,55 @@ class AssignmentController extends Controller
     }
 
 
+    /**
+     * This generates graphs
+     * @Route("/graphnew/{id}",name="assignment_graph")
+     * @Method("GET")
+     */
+    public function chartAction(Assignment $assignment)
+    {
+
+
+
+        $id = $assignment->getId();
+        $assignmentname = $assignment->getAssignmentname();
+
+        $em = $this->getDoctrine()->getManager();
+        $submissions = $em->getRepository('NSEPBundle:Submission')->findBy(
+            array('assignment' => $assignment)
+        );
+
+        $graphmarks = array();
+        foreach ($submissions as $value) {
+            $marks = $value->getSubmissionmarks();
+            array_push($graphmarks,$marks);
+            //echo "$marks <br>";
+
+        }
+
+        //var_dump($graphmarks);
+
+
+        // Chart
+        $series = array(
+            array("name" => "Marks",    "data" => $graphmarks)
+        );
+
+        $ob = new Highchart();
+        $ob->chart->renderTo('linechart');  // The #id of the div where to render the chart
+        $ob->title->text("".$assignmentname. " Assignment Marks Distribution");
+        $ob->xAxis->title(array('text'  => "Submission Number"));
+        $ob->yAxis->title(array('text'  => "Marks"));
+        $ob->series($series);
+
+        return $this->render('NSEPBundle:Default:index.html.twig', array(
+            'chart' => $ob,
+            'aid' => $id,
+        ));
     }
+
+
+}
 
 
 

@@ -166,6 +166,17 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 }
                 not_assignment_delete:
 
+                // assignment_graph
+                if (0 === strpos($pathinfo, '/user/course/mycourses/assignments/graphnew') && preg_match('#^/user/course/mycourses/assignments/graphnew/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_assignment_graph;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'assignment_graph')), array (  '_controller' => 'NSEPBundle\\Controller\\AssignmentController::chartAction',));
+                }
+                not_assignment_graph:
+
             }
 
             // course_index
@@ -242,11 +253,6 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         // nsep_default_graph
         if ($pathinfo === '/graph') {
             return array (  '_controller' => 'NSEPBundle\\Controller\\DefaultController::graphAction',  '_route' => 'nsep_default_graph',);
-        }
-
-        // nsep_default_inlinegraph
-        if ($pathinfo === '/inlinegraph') {
-            return array (  '_controller' => 'NSEPBundle\\Controller\\DefaultController::inlinegraphAction',  '_route' => 'nsep_default_inlinegraph',);
         }
 
         if (0 === strpos($pathinfo, '/submission')) {
