@@ -34,7 +34,8 @@ class CourseType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'NSEPBundle\Entity\Course'
+            'data_class' => 'NSEPBundle\Entity\Course',
+            'csrf_protection' => false,
         ));
     }
 }

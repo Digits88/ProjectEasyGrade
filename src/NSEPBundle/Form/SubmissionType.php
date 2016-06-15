@@ -26,7 +26,8 @@ class SubmissionType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'NSEPBundle\Entity\Submission'
+            'data_class' => 'NSEPBundle\Entity\Submission',
+            'csrf_protection' => false,
         ));
     }
 }

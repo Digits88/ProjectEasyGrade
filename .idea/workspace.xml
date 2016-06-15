@@ -2,19 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c2eb1f3-3c9c-451d-9586-74ed5d052048" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/sessions/dev/sess_4mel0gq2275sicql32g2p6ap70" afterPath="$PROJECT_DIR$/var/sessions/dev/sess_4mel0gq2275sicql32g2p6ap70" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/NSEPBundle/Controller/SubmissionController.php" afterPath="$PROJECT_DIR$/src/NSEPBundle/Controller/SubmissionController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/annotations/64/5b5b435d4e53455042756e646c655c436f6e74726f6c6c65725c5375626d697373696f6e436f6e74726f6c6c6572405b416e6e6f745d5d5b315d.doctrinecache.data" afterPath="$PROJECT_DIR$/var/cache/dev/annotations/64/5b5b435d4e53455042756e646c655c436f6e74726f6c6c65725c5375626d697373696f6e436f6e74726f6c6c6572405b416e6e6f745d5d5b315d.doctrinecache.data" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/annotations/6a/5b5b435d4e53455042756e646c655c436f6e74726f6c6c65725c5375626d697373696f6e436f6e74726f6c6c65722363726561746544656c657465466f726d405b416e6e6f745d5d5b315d.doctrinecache.data" afterPath="$PROJECT_DIR$/var/cache/dev/annotations/6a/5b5b435d4e53455042756e646c655c436f6e74726f6c6c65725c5375626d697373696f6e436f6e74726f6c6c65722363726561746544656c657465466f726d405b416e6e6f745d5d5b315d.doctrinecache.data" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/annotations/72/5b5b435d4e53455042756e646c655c436f6e74726f6c6c65725c5375626d697373696f6e436f6e74726f6c6c657223696e646578416374696f6e405b416e6e6f745d5d5b315d.doctrinecache.data" afterPath="$PROJECT_DIR$/var/cache/dev/annotations/72/5b5b435d4e53455042756e646c655c436f6e74726f6c6c65725c5375626d697373696f6e436f6e74726f6c6c657223696e646578416374696f6e405b416e6e6f745d5d5b315d.doctrinecache.data" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/annotations/72/5b5b435d4e53455042756e646c655c436f6e74726f6c6c65725c5375626d697373696f6e436f6e74726f6c6c65722373686f777375626d697373696f6e73416374696f6e405b416e6e6f745d5d5b315d.doctrinecache.data" afterPath="$PROJECT_DIR$/var/cache/dev/annotations/72/5b5b435d4e53455042756e646c655c436f6e74726f6c6c65725c5375626d697373696f6e436f6e74726f6c6c65722373686f777375626d697373696f6e73416374696f6e405b416e6e6f745d5d5b315d.doctrinecache.data" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/annotations/7f/5b5b435d4e53455042756e646c655c436f6e74726f6c6c65725c5375626d697373696f6e436f6e74726f6c6c65722365646974416374696f6e405b416e6e6f745d5d5b315d.doctrinecache.data" afterPath="$PROJECT_DIR$/var/cache/dev/annotations/7f/5b5b435d4e53455042756e646c655c436f6e74726f6c6c65725c5375626d697373696f6e436f6e74726f6c6c65722365646974416374696f6e405b416e6e6f745d5d5b315d.doctrinecache.data" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/annotations/c1/5b5b435d4e53455042756e646c655c436f6e74726f6c6c65725c5375626d697373696f6e436f6e74726f6c6c6572236772616465416374696f6e405b416e6e6f745d5d5b315d.doctrinecache.data" afterPath="$PROJECT_DIR$/var/cache/dev/annotations/c1/5b5b435d4e53455042756e646c655c436f6e74726f6c6c65725c5375626d697373696f6e436f6e74726f6c6c6572236772616465416374696f6e405b416e6e6f745d5d5b315d.doctrinecache.data" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/annotations/c3/5b5b435d4e53455042756e646c655c436f6e74726f6c6c65725c5375626d697373696f6e436f6e74726f6c6c65722364656c657465416374696f6e405b416e6e6f745d5d5b315d.doctrinecache.data" afterPath="$PROJECT_DIR$/var/cache/dev/annotations/c3/5b5b435d4e53455042756e646c655c436f6e74726f6c6c65725c5375626d697373696f6e436f6e74726f6c6c65722364656c657465416374696f6e405b416e6e6f745d5d5b315d.doctrinecache.data" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/annotations/c3/5b5b435d4e53455042756e646c655c436f6e74726f6c6c65725c5375626d697373696f6e436f6e74726f6c6c65722373686f77416374696f6e405b416e6e6f745d5d5b315d.doctrinecache.data" afterPath="$PROJECT_DIR$/var/cache/dev/annotations/c3/5b5b435d4e53455042756e646c655c436f6e74726f6c6c65725c5375626d697373696f6e436f6e74726f6c6c65722373686f77416374696f6e405b416e6e6f745d5d5b315d.doctrinecache.data" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/annotations/d3/5b5b435d4e53455042756e646c655c436f6e74726f6c6c65725c5375626d697373696f6e436f6e74726f6c6c6572236e6577416374696f6e405b416e6e6f745d5d5b315d.doctrinecache.data" afterPath="$PROJECT_DIR$/var/cache/dev/annotations/d3/5b5b435d4e53455042756e646c655c436f6e74726f6c6c65725c5375626d697373696f6e436f6e74726f6c6c6572236e6577416374696f6e405b416e6e6f745d5d5b315d.doctrinecache.data" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/var/sessions/dev/sess_4mel0gq2275sicql32g2p6ap70" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/NSEPBundle/Form/AssignmentType.php" afterPath="$PROJECT_DIR$/src/NSEPBundle/Form/AssignmentType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/NSEPBundle/Form/CourseType.php" afterPath="$PROJECT_DIR$/src/NSEPBundle/Form/CourseType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/NSEPBundle/Form/SubmissionType.php" afterPath="$PROJECT_DIR$/src/NSEPBundle/Form/SubmissionType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/NSEPBundle/Form/UserType.php" afterPath="$PROJECT_DIR$/src/NSEPBundle/Form/UserType.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" afterPath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/twig/23/23aed71490bde5a861596c4cc70a3494231f87de14904afeb0359afd8b0f00a0.php" afterPath="$PROJECT_DIR$/var/cache/dev/twig/23/23aed71490bde5a861596c4cc70a3494231f87de14904afeb0359afd8b0f00a0.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/logs/dev.log" afterPath="$PROJECT_DIR$/var/logs/dev.log" />
     </list>
     <ignored path="SEP.iws" />
@@ -44,15 +38,57 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="SubmissionController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SubmissionController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/NSEPBundle/Controller/SubmissionController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5924596">
-              <caret line="154" column="32" selection-start-line="154" selection-start-column="32" selection-end-line="154" selection-end-column="32" />
+            <state vertical-scroll-proportion="-10.076923">
+              <caret line="150" column="0" selection-start-line="150" selection-start-column="0" selection-end-line="150" selection-end-column="0" />
               <folding>
                 <element signature="e#41#86#0#PHP" expanded="true" />
                 <element signature="e#7642#7668#0#PHP" expanded="true" />
                 <marker date="1465991902994" expanded="true" signature="5800:5880" placeholder="SELECT a FRO... NSEPBundle" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserType.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/NSEPBundle/Form/UserType.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.115385">
+              <caret line="23" column="39" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SubmissionType.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/NSEPBundle/Form/SubmissionType.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-15.884615">
+              <caret line="28" column="59" selection-start-line="28" selection-start-column="59" selection-end-line="28" selection-end-column="59" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CourseType.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/NSEPBundle/Form/CourseType.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-16.538462">
+              <caret line="37" column="39" selection-start-line="37" selection-start-column="39" selection-end-line="37" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AssignmentType.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/NSEPBundle/Form/AssignmentType.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.8940754">
+              <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+              <folding>
+                <element signature="e#35#75#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -75,7 +111,6 @@
         <option value="$PROJECT_DIR$/app/Resources/views/user/index.html.twig" />
         <option value="$PROJECT_DIR$/src/NSEPBundle/Repository/CourseRepository.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/course/index.html.twig" />
-        <option value="$PROJECT_DIR$/src/NSEPBundle/Form/UserType.php" />
         <option value="$PROJECT_DIR$/src/NSEPBundle/Entity/Course.php" />
         <option value="$PROJECT_DIR$/app/AppKernel.php" />
         <option value="$PROJECT_DIR$/app/config/config.yml" />
@@ -83,7 +118,6 @@
         <option value="$PROJECT_DIR$/app/config/parameters.yml" />
         <option value="$PROJECT_DIR$/web/submissions/testinputfortest14.txt" />
         <option value="$PROJECT_DIR$/src/NSEPBundle/Controller/TestingController.php" />
-        <option value="$PROJECT_DIR$/src/NSEPBundle/Form/CourseType.php" />
         <option value="$PROJECT_DIR$/src/NSEPBundle/Form/TestCaseType.php" />
         <option value="$PROJECT_DIR$/src/NSEPBundle/Controller/TestCaseController.php" />
         <option value="$PROJECT_DIR$/src/NSEPBundle/Entity/TestCase.php" />
@@ -108,15 +142,17 @@
         <option value="$PROJECT_DIR$/app/Resources/views/assignment/new.html.twig" />
         <option value="$PROJECT_DIR$/src/NSEPBundle/Entity/Assignment.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/assignment/show.html.twig" />
-        <option value="$PROJECT_DIR$/src/NSEPBundle/Form/AssignmentType.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/assignment/edit.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/assignment/index.html.twig" />
         <option value="$PROJECT_DIR$/src/NSEPBundle/Controller/AssignmentController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/submission/show.html.twig" />
-        <option value="$PROJECT_DIR$/src/NSEPBundle/Form/SubmissionType.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/submission/index.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/submission/new.html.twig" />
         <option value="$PROJECT_DIR$/src/NSEPBundle/Controller/SubmissionController.php" />
+        <option value="$PROJECT_DIR$/src/NSEPBundle/Form/UserType.php" />
+        <option value="$PROJECT_DIR$/src/NSEPBundle/Form/SubmissionType.php" />
+        <option value="$PROJECT_DIR$/src/NSEPBundle/Form/CourseType.php" />
+        <option value="$PROJECT_DIR$/src/NSEPBundle/Form/AssignmentType.php" />
       </list>
     </option>
   </component>
@@ -872,13 +908,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/NSEPBundle/Form/UserType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.78456014">
-          <caret line="36" column="12" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/NSEPBundle/Controller/DefaultController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.30520648">
@@ -900,25 +929,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/NSEPBundle/Entity/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.6923077">
-          <caret line="18" column="14" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/NSEPBundle/Controller/CourseController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-54.73077">
           <caret line="165" column="25" selection-start-line="165" selection-start-column="25" selection-end-line="165" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/NSEPBundle/Form/CourseType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.807693">
-          <caret line="26" column="156" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="156" />
         </state>
       </provider>
     </entry>
@@ -987,25 +1001,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/NSEPBundle/Form/SubmissionType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.961538">
-          <caret line="18" column="14" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/submission/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.230769">
           <caret line="8" column="59" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/NSEPBundle/Form/AssignmentType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43333334">
-          <caret line="37" column="7" selection-start-line="37" selection-start-column="7" selection-end-line="37" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -1016,14 +1015,56 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/NSEPBundle/Entity/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.030520646">
+          <caret line="18" column="14" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/NSEPBundle/Controller/SubmissionController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5924596">
-          <caret line="154" column="32" selection-start-line="154" selection-start-column="32" selection-end-line="154" selection-end-column="32" />
+        <state vertical-scroll-proportion="-10.076923">
+          <caret line="150" column="0" selection-start-line="150" selection-start-column="0" selection-end-line="150" selection-end-column="0" />
           <folding>
             <element signature="e#41#86#0#PHP" expanded="true" />
             <element signature="e#7642#7668#0#PHP" expanded="true" />
             <marker date="1465991902994" expanded="true" signature="5800:5880" placeholder="SELECT a FRO... NSEPBundle" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NSEPBundle/Form/UserType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.115385">
+          <caret line="23" column="39" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NSEPBundle/Form/SubmissionType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.884615">
+          <caret line="28" column="59" selection-start-line="28" selection-start-column="59" selection-end-line="28" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NSEPBundle/Form/CourseType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.538462">
+          <caret line="37" column="39" selection-start-line="37" selection-start-column="39" selection-end-line="37" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NSEPBundle/Form/AssignmentType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8940754">
+          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+          <folding>
+            <element signature="e#35#75#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

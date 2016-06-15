@@ -41,7 +41,8 @@ class AssignmentType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'NSEPBundle\Entity\Assignment'
+            'data_class' => 'NSEPBundle\Entity\Assignment',
+            'csrf_protection' => false,
         ));
     }
 }
