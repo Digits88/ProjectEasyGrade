@@ -95,7 +95,7 @@ class AssignmentController extends Controller
 
         $form = $this->createFormBuilder($assignment)
             ->add('assignmentid',TextType::class,array('label' => 'Assignment ID', 'attr' => array('placeholder'=>'Assignment ID','class' => 'form-control col-sm-2')))
-            ->add('assignmentname',TextType::class,array('label' => 'Assignment Name', 'attr' => array('placeholder'=>'Assignment Nam','class' => 'form-control col-sm-2')))
+            ->add('assignmentname',TextType::class,array('label' => 'Assignment Name', 'attr' => array('placeholder'=>'Assignment Name','class' => 'form-control col-sm-2')))
             ->add('assignmentdescription',TextType::class,array('label' => 'Assignment Description', 'attr' => array('placeholder'=>'Assignment Description','class' => 'form-control col-sm-2')))
             ->add('testinputone',TextareaType::class,array('label' => 'Test Input one','data' => 'null', 'attr' => array('placeholder'=>'Test Input one','class' => 'form-control col-sm-2')))
             ->add('testoutputone',TextareaType::class,array('label' => 'Test Output One', 'attr' => array('placeholder'=>'Test Output One','class' => 'form-control col-sm-2')))

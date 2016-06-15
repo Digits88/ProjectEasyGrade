@@ -215,7 +215,10 @@ class SubmissionController extends Controller
             ->add('language',ChoiceType::class,array('choices'  => array(
                 'Java' => 10,
                 'Python' => 4,
-                'Java7' => 55,)))
+                'C#' => 27,
+                'Ruby' => 17,
+                'C' => 11,
+                'C++' => 1,)))
             ->add('assignment',ChoiceType::class,array('choices'  => array(
                 $cid => $assignment,)))
             ->getForm();
