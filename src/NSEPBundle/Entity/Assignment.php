@@ -12,7 +12,6 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
  *
  * @ORM\Table(name="assignment")
  * @ORM\Entity(repositoryClass="NSEPBundle\Repository\AssignmentRepository")
- * @UniqueEntity("assignmentid")
  */
 class Assignment
 {
@@ -88,6 +87,14 @@ class Assignment
      * @ORM\Column(name="testoutputone", type="string", length=255)
      */
     private $testoutputone='';
+
+
+
+
+
+
+
+
 
     /**
      * Get id

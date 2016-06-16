@@ -1343,3 +1343,11 @@ dd461d,127.0.0.1,GET,http://localhost:8000/bundles/lecturer/css/bootsrap.min.css
 a348a2,127.0.0.1,GET,http://localhost:8000/user/course/mycourses,1466055662,,200
 1e0d7a,127.0.0.1,GET,http://localhost:8000/bundles/lecturer/css/bootsrap.min.css,1466055671,2ce911,200
 2ce911,127.0.0.1,GET,http://localhost:8000/bundles/lecturer/css/bootsrap.min.css,1466055671,,404
+db6af2,127.0.0.1,GET,http://localhost:8000/user/course/mycourses/assignments/assignmentlist?id=1,1466057847,f1e753,200
+f1e753,127.0.0.1,GET,http://localhost:8000/user/course/mycourses/assignments/assignmentlist?id=1,1466057848,,500
+c2b742,127.0.0.1,GET,http://localhost:8000/user/course/mycourses/assignments/assignmentlist?id=1,1466058069,432346,200
+432346,127.0.0.1,GET,http://localhost:8000/user/course/mycourses/assignments/assignmentlist?id=1,1466058069,,500
+f3c219,127.0.0.1,GET,http://localhost:8000/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DNSEPBundle%253ADefault%253Ausername,1466058105,de9743,200
+de9743,127.0.0.1,GET,http://localhost:8000/user/course/mycourses/assignments/assignmentlist?id=1,1466058105,,200
+a6a98e,127.0.0.1,GET,http://localhost:8000/bundles/lecturer/css/bootsrap.min.css,1466058113,d37d74,200
+d37d74,127.0.0.1,GET,http://localhost:8000/bundles/lecturer/css/bootsrap.min.css,1466058113,,404

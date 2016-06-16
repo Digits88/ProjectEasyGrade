@@ -4,8 +4,13 @@ namespace NSEPBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use NSEPBundle\Entity\User;
+use NSEPBundle\Entity\Course;
+use NSEPBundle\Form\UserType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 
@@ -17,7 +22,7 @@ use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 class UserController extends Controller
 {
     /**
-     * Lists all User entities for admin user
+     * Lists all User entities.
      *
      * @Route("/admin/allusers", name="user_index")
      * @Method("GET")
@@ -25,14 +30,18 @@ class UserController extends Controller
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
+
         $users = $em->getRepository('NSEPBundle:User')->findAll();
+
         return $this->render('user/index.html.twig', array(
             'users' => $users,
         ));
     }
 
+
+
     /**
-     * Displays a form to edit an existing User entity.as a self edit
+     * Displays a form to edit an existing User entity.
      *
      * @Route("/myaccount/edit", name="own_account")
      * @Method({"GET", "POST"})
@@ -60,6 +69,8 @@ class UserController extends Controller
         ));
     }
 
+
+
     /**
      * Creates a new User entity.
      *
@@ -69,11 +80,15 @@ class UserController extends Controller
     public function newAction(Request $request)
     {
         $user = new User();
+        //$form = $this->createForm('NSEPBundle\Form\UserType', $user);
+
         $form = $this->createFormBuilder($user)
             ->add('username', TextType::class,array('label' => 'Username', 'attr' => array('placeholder'=>'Username','class' => 'form-control col-sm-2')))
             ->add('email', EmailType::class,array('label' => 'Email', 'attr' => array('placeholder'=>'Email','class' => 'form-control col-sm-2')))
             ->add('plainPassword', PasswordType::class,array('label' => 'Password', 'attr' => array('placeholder'=>'Password','class' => 'form-control col-sm-2')))
             ->getForm();
+
+
 
         $form->handleRequest($request);
 
@@ -92,7 +107,7 @@ class UserController extends Controller
     }
 
     /**
-     * Finds and displays a User entity by admin.
+     * Finds and displays a User entity.
      *
      * @Route("/{id}", name="user_show")
      * @Method("GET")
