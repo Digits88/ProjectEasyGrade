@@ -1330,3 +1330,12 @@ bc5919,127.0.0.1,GET,http://localhost:8000/_fragment?_path=_format%3Dhtml%26_loc
 152017,127.0.0.1,GET,http://localhost:8000/user/course/mycourses,1466012615,,200
 006dca,127.0.0.1,GET,http://localhost:8000/bundles/lecturer/css/bootsrap.min.css,1466012620,542f8a,200
 542f8a,127.0.0.1,GET,http://localhost:8000/bundles/lecturer/css/bootsrap.min.css,1466012620,,404
+c11097,127.0.0.1,GET,http://localhost:8000/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DNSEPBundle%253ADefault%253Ausername,1466016203,cfea31,200
+cfea31,127.0.0.1,GET,http://localhost:8000/user/course/mycourses,1466016204,,200
+5c1fdd,127.0.0.1,GET,http://localhost:8000/bundles/lecturer/css/bootsrap.min.css,1466016210,f16cee,200
+f16cee,127.0.0.1,GET,http://localhost:8000/bundles/lecturer/css/bootsrap.min.css,1466016210,,404
+c1e038,127.0.0.1,GET,http://localhost:8000/,1466055194,,302
+e0b542,127.0.0.1,GET,http://localhost:8000/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DNSEPBundle%253ADefault%253Ausername,1466055218,276426,200
+276426,127.0.0.1,GET,http://localhost:8000/user/course/mycourses,1466055219,,200
+842c9f,127.0.0.1,GET,http://localhost:8000/bundles/lecturer/css/bootsrap.min.css,1466055236,dd461d,200
+dd461d,127.0.0.1,GET,http://localhost:8000/bundles/lecturer/css/bootsrap.min.css,1466055237,,404
