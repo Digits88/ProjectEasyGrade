@@ -2,18 +2,10 @@
 
 namespace NSEPBundle\Controller;
 
-use Doctrine\ORM\Query\ResultSetMapping;
-use NSEPBundle\Entity\User;
-use Symfony\Component\Console\Logger\ConsoleLogger;
-use Symfony\Component\Console\Output\OutputInterface;
+
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use NSEPBundle\Entity\Course;
-use NSEPBundle\Entity\Assignment;
-use NSEPBundle\Entity\Submission;
-use NSEPBundle\Form\CourseType;
 use Doctrine\ORM\Query;
 
 /**
@@ -24,19 +16,15 @@ use Doctrine\ORM\Query;
 class CourseController extends Controller
 {
     /**
-     * Lists all Course entities.
+     * Lists all Course entities for admin.
      *
      * @Route("/admin/allcourses", name="course_index")
      * @Method("GET")
      */
     public function indexAction()
     {
-
         $em = $this->getDoctrine()->getManager();
-
         $courses = $em->getRepository('NSEPBundle:Course')->findAll();
-
-
 
         return $this->render('course/index.html.twig', array(
             'courses' => $courses,
@@ -45,16 +33,13 @@ class CourseController extends Controller
 
 
     /**
-     * Finds and displays a Course entity.
+     * Finds and displays a Course entity of a user.
      *
      * @Route("/mycourses", name="user_courses")
      */
     public function usercourseAction()
     {
-
         $cid=$this->getUser()->getId();
-
-
         $em = $this->getDoctrine()->getManager();
 
         $query = $em->createQuery(
@@ -70,12 +55,6 @@ class CourseController extends Controller
     }
 
 
-
-
-
-
-
-
     /**
      * Creates a new Course entity.
      *
@@ -89,8 +68,6 @@ class CourseController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-
-            //var_dump($course);
             $em = $this->getDoctrine()->getManager();
             $em->persist($course);
             $em->flush();

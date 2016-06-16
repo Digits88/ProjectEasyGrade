@@ -3,9 +3,7 @@
 namespace NSEPBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use NSEPBundle\Entity\User;
 use Doctrine\Common\Collections\ArrayCollection;
-use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * Course

@@ -11,8 +11,6 @@ namespace NSEPBundle\Entity;
 
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
-use NSEPBundle\Entity\Course;
-use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 
 /**
@@ -41,11 +39,7 @@ class User extends BaseUser
     {
         parent::__construct();
         $this->courses = new \Doctrine\Common\Collections\ArrayCollection();
-
-        // your own logic
     }
-
-    
 
 
     /**

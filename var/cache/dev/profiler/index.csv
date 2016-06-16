@@ -1339,3 +1339,7 @@ e0b542,127.0.0.1,GET,http://localhost:8000/_fragment?_path=_format%3Dhtml%26_loc
 276426,127.0.0.1,GET,http://localhost:8000/user/course/mycourses,1466055219,,200
 842c9f,127.0.0.1,GET,http://localhost:8000/bundles/lecturer/css/bootsrap.min.css,1466055236,dd461d,200
 dd461d,127.0.0.1,GET,http://localhost:8000/bundles/lecturer/css/bootsrap.min.css,1466055237,,404
+4eeb2b,127.0.0.1,GET,http://localhost:8000/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DNSEPBundle%253ADefault%253Ausername,1466055662,a348a2,200
+a348a2,127.0.0.1,GET,http://localhost:8000/user/course/mycourses,1466055662,,200
+1e0d7a,127.0.0.1,GET,http://localhost:8000/bundles/lecturer/css/bootsrap.min.css,1466055671,2ce911,200
+2ce911,127.0.0.1,GET,http://localhost:8000/bundles/lecturer/css/bootsrap.min.css,1466055671,,404

@@ -4,16 +4,11 @@ namespace NSEPBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use NSEPBundle\Entity\Assignment;
 use NSEPBundle\Entity\Course;
-use NSEPBundle\Form\AssignmentType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
-use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Ob\HighchartsBundle\Highcharts\Highchart;
 
 /**
@@ -38,26 +33,18 @@ class AssignmentController extends Controller
         return $this->render('assignment/index.html.twig', array(
             'assignments' => $assignments,
         ));
-
-
-
-
     }
 
 
     /**
-     * Finds and displays a Assignment entity.
+     * Finds and displays a Assignment entity related to a particular course.
      *
      * @Route("/assignmentlist", name="course_assignments")
      */
     public function courseassignmentAction(Request $request)
     {
-
-        //$cid=$request->request->get('id');
         $cid=$request->query->get('id');
-
         $em = $this->getDoctrine()->getManager();
-
         $query = $em->createQuery(
             "SELECT a FROM NSEPBundle\Entity\Assignment a JOIN a.course c WHERE c.id=$cid"
         );
@@ -80,19 +67,10 @@ class AssignmentController extends Controller
      */
     public function newAction(Request $request)
     {
-
-
-
         $cid = (int)($request->query->get('cid'));
-        //var_dump($id);
         $assignment = new Assignment();
-
-
         $em = $this->getDoctrine()->getManager();
         $course = $em->getRepository('NSEPBundle:Course')->find($cid);
-
-        //var_dump($course);
-        //$form = $this->createForm('NSEPBundle\Form\AssignmentType', $assignment);
 
         $form = $this->createFormBuilder($assignment)
             ->add('assignmentid',TextType::class,array('label' => 'Assignment ID', 'attr' => array('placeholder'=>'Assignment ID','class' => 'form-control col-sm-2')))
@@ -106,7 +84,6 @@ class AssignmentController extends Controller
             ->add('course',ChoiceType::class,array('choices'  => array(
                 $cid => $course,)))
             ->getForm();
-
 
         $form->handleRequest($request);
 
@@ -212,9 +189,6 @@ class AssignmentController extends Controller
      */
     public function chartAction(Assignment $assignment)
     {
-
-
-
         $id = $assignment->getId();
         $assignmentname = $assignment->getAssignmentname();
 
@@ -227,12 +201,7 @@ class AssignmentController extends Controller
         foreach ($submissions as $value) {
             $marks = $value->getSubmissionmarks();
             array_push($graphmarks,$marks);
-            //echo "$marks <br>";
-
         }
-
-        //var_dump($graphmarks);
-
 
         // Chart
         $series = array(

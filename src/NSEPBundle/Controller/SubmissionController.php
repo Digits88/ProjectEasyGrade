@@ -4,15 +4,10 @@ namespace NSEPBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use NSEPBundle\Entity\Submission;
 use NSEPBundle\Entity\Assignment;
-use NSEPBundle\Form\SubmissionType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 /**
  * Submission controller.
@@ -47,9 +42,6 @@ class SubmissionController extends Controller
     {
         $id = $request->query->get('id'); //this is used for GET requests
         //$id = $request->request->get('id');   //this is used for POST requests
-        //$id=1;
-
-
 
         $state = "FAIL:" . $id;
 
@@ -63,8 +55,6 @@ class SubmissionController extends Controller
             $spid = $submission->getSphereengineid();
 
             $responsedata = Json_decode(file_get_contents("http://4a1a254e.compilers.sphere-engine.com/api/v3/submissions/".$spid."?access_token=0bb470cbea77cab6f0a128bb0eead774&withcmpinfo=true&withSource=true&withOutput=true"));
-
-            //var_dump($responsedata->output);
             $em = $this->getDoctrine()->getManager();
             $submission = $em->getRepository('NSEPBundle:Submission')->find($id);
             $type = $submission->getAssignment()->getType();
@@ -87,18 +77,15 @@ class SubmissionController extends Controller
             $memory = $submission->getMemory();
             $language = $submission->getLanguage();
 
-            if((strcmp("integer",$type))== 0)
+            if((strcmp("integer",$type))== 0)  //check whether inputs are strings or integers
                 $testoutput = (int)($submission->getAssignment()->getTestoutputone());
             elseif((strcmp("integer",$type))!==0)
                 $testoutput = ($submission->getAssignment()->getTestoutputone());
 
-
-
-            //var_dump($testoutput);
-            //var_dump($out);
-
             $marks=0;
 
+
+            //grading algorithm
             if($testoutput == $out){
                 if($language==17){
                     if($memory <= 5000)
@@ -168,9 +155,6 @@ class SubmissionController extends Controller
             elseif((strcmp("integer",$type))!==0)
                 $input = ($submission->getAssignment()->getTestinputone());
 
-
-            //var_dump($input);
-
             curl_setopt($ch, CURLOPT_URL, 'http://4a1a254e.compilers.sphere-engine.com/api/v3/submissions?access_token=9af50a60bc23e532ace4043c0895b024');
             curl_setopt($ch, CURLOPT_POST, 1);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -181,7 +165,6 @@ class SubmissionController extends Controller
 
             curl_close($ch);
             $response = json_decode($result, true);
-            //var_dump($response);
 
             $sphereengineID = $response['id'];
 
@@ -200,12 +183,8 @@ class SubmissionController extends Controller
 
 
         $em->flush();
-
-
         return $this->redirectToRoute('submissions_all',['id' => $assignment]);
 
-        //var_dump($assignment);
-        //return new Response($state);
     }
 
 
@@ -236,8 +215,6 @@ class SubmissionController extends Controller
             'id' => $aid,
         ));
 
-        //var_dump($products);
-
     }
 
 
@@ -250,14 +227,11 @@ class SubmissionController extends Controller
     public function newAction(Request $request)
     {
         $submission = new Submission();
-        //$form = $this->createForm('NSEPBundle\Form\SubmissionType', $submission);
-
 
         $cid = (int)($request->query->get('id'));
 
         $em = $this->getDoctrine()->getManager();
         $assignment = $em->getRepository('NSEPBundle:Assignment')->find($cid);
-        //var_dump($cid);
 
         $form = $this->createFormBuilder($submission)
             ->add('imageFile', FileType::class, array('label' => 'Choose File',
